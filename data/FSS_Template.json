@@ -1,0 +1,3238 @@
+[
+  {
+    "FssTemplateName": "CORPFSS",
+    "FssTemplateItems": [
+      {
+        "FssType": "BS",
+        "Seq": 1,
+        "CatCode": "CFD",
+        "Item": "Cash and Fixed Deposit",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 2,
+        "CatCode": "CFD",
+        "Item": "Cash",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.CFD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 3,
+        "CatCode": "CFD",
+        "Item": "Fixed Deposit",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.CFD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 4,
+        "CatCode": "GS",
+        "Item": "Government Securities",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 5,
+        "CatCode": "GS",
+        "Item": "Government Securities",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.GS"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 6,
+        "CatCode": "MS",
+        "Item": "Marketable Securities",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 7,
+        "CatCode": "MS",
+        "Item": "Marketable Securities",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.MS"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 8,
+        "CatCode": "NAR",
+        "Item": "Net Account Receivables",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 9,
+        "CatCode": "NAR",
+        "Item": "Net Trade Receivables",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.NAR"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 10,
+        "CatCode": "NAR",
+        "Item": "Less : Provision",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.NAR"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 11,
+        "CatCode": "NARRP",
+        "Item": "Net Account Receivables (Related Parties)",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 12,
+        "CatCode": "NARRP",
+        "Item": "Trade Receivables due from Related Parties",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.NARRP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 13,
+        "CatCode": "INV",
+        "Item": "Total Inventory",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 14,
+        "CatCode": "INV",
+        "Item": "Inventory - Raw Materials",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.INV"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 15,
+        "CatCode": "INV",
+        "Item": "Inventory - Work in Progress",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.INV"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 16,
+        "CatCode": "INV",
+        "Item": "Inventory - Finished Goods",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.INV"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 17,
+        "CatCode": "PE",
+        "Item": "Prepaid Expenses",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 18,
+        "CatCode": "PE",
+        "Item": "Prepaid Expenses & Deposits",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.PE"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 19,
+        "CatCode": "OCA",
+        "Item": "Other Current Assets",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 20,
+        "CatCode": "OCA",
+        "Item": "Other Current Assets",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.OCA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 21,
+        "CatCode": "CA",
+        "Item": "CURRENT ASSETS",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CAGS + Y0.MS + Y0.NAR + Y0.NARRP + Y0.INV + Y0.PE + Y0.OCA",
+        "DependentItems": "Y0.TA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 22,
+        "CatCode": "FA",
+        "Item": "Fixed Assets",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NFA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 23,
+        "CatCode": "FA",
+        "Item": "Land & Buildings",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.FA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 24,
+        "CatCode": "FA",
+        "Item": "Plan & Machinery",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.FA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 25,
+        "CatCode": "FA",
+        "Item": "Motor Vehicles",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.FA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 26,
+        "CatCode": "FA",
+        "Item": "Fixed Assets",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.FA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 27,
+        "CatCode": "CI",
+        "Item": "Capitalised Interest",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NFA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 28,
+        "CatCode": "CI",
+        "Item": "Capitalised Interest",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.CI"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 29,
+        "CatCode": "ADEP",
+        "Item": "Accumulated Depreciation",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NFA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 30,
+        "CatCode": "ADEP",
+        "Item": "Less : Accumulated Depreciation",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.ADEP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 31,
+        "CatCode": "NFA",
+        "Item": "NET FIXED ASSETS",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.FA + Y0.CI + Y0.ADEP",
+        "DependentItems": "Y0.NCA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 32,
+        "CatCode": "INS",
+        "Item": "Investments",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.OA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 33,
+        "CatCode": "INS",
+        "Item": "Investments in Subsidiaries/Associates",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.INS"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 34,
+        "CatCode": "INS",
+        "Item": "Investments",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.INS"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 35,
+        "CatCode": "RPA",
+        "Item": "Related Parties Assets",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.OA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 36,
+        "CatCode": "RPA",
+        "Item": "Due from Parent/Subsidiaries",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.RPA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 37,
+        "CatCode": "RPA",
+        "Item": "Due from Associates/Other Related Parties",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.RPA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 38,
+        "CatCode": "RPA",
+        "Item": "Related Parties Assets",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.RPA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 39,
+        "CatCode": "ONCA",
+        "Item": "Other Non Current Assets",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.OA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 40,
+        "CatCode": "ONCA",
+        "Item": "Other Non Current Assets",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.ONCA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 41,
+        "CatCode": "ONCA",
+        "Item": "Provision for tax",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.ONCA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 42,
+        "CatCode": "INT",
+        "Item": "Intangibles",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.OA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 43,
+        "CatCode": "INT",
+        "Item": "Intangibles",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.INT"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 44,
+        "CatCode": "OA",
+        "Item": "OTHER ASSETS",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.INS + Y0.RPA + Y0.ONCA + Y0.INT",
+        "DependentItems": "Y0.NCA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 45,
+        "CatCode": "NCA",
+        "Item": "NON-CURRENT ASSETS",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.NFA + Y0.OA",
+        "DependentItems": "Y0.TA"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 46,
+        "CatCode": "TA",
+        "Item": "TOTAL ASSETS",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CA + Y0.NCA",
+        "DependentItems": "RECALC"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 47,
+        "CatCode": "NA",
+        "Item": "",
+        "ItemType": "NA",
+        "Formula": "NA",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "BS",
+        "Seq": 48,
+        "CatCode": "AP",
+        "Item": "Account Payable",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 49,
+        "CatCode": "AP",
+        "Item": "Trade Payables",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.AP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 50,
+        "CatCode": "AP",
+        "Item": "Other Payable",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.AP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 51,
+        "CatCode": "APRP",
+        "Item": "Account Payable (Related Parties)",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 52,
+        "CatCode": "APRP",
+        "Item": "Account Payable (Related Parties)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.APRP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 53,
+        "CatCode": "BP",
+        "Item": "Bills Payable",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 54,
+        "CatCode": "BP",
+        "Item": "Bills Payable (Secured)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.BP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 55,
+        "CatCode": "BP",
+        "Item": "Bills Payable (Unsecured)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.BP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 56,
+        "CatCode": "STD",
+        "Item": "Short Term Debt",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 57,
+        "CatCode": "STD",
+        "Item": "Bank Debts (Secured)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.STD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 58,
+        "CatCode": "STD",
+        "Item": "Bank Debts (Unsecured)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.STD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 59,
+        "CatCode": "CPLTD",
+        "Item": "Current Portion of Long Term Debt",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 60,
+        "CatCode": "CPLTD",
+        "Item": "Hire Purchase Creditors",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.CPLTD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 61,
+        "CatCode": "CPLTD",
+        "Item": "Current Portion of Long Term Debt (Secured)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.CPLTD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 62,
+        "CatCode": "CPLTD",
+        "Item": "Current Portion of Long Term Debt (Unsecured)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.CPLTD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 63,
+        "CatCode": "OP",
+        "Item": "Other Payable",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 64,
+        "CatCode": "OP",
+        "Item": "Other Payable",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.OP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 65,
+        "CatCode": "ITP",
+        "Item": "Income Tax Payable",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 66,
+        "CatCode": "ITP",
+        "Item": "Income Tax Payable",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.ITP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 67,
+        "CatCode": "IP",
+        "Item": "Interest Payable",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 68,
+        "CatCode": "IP",
+        "Item": "Interest Payable",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.IP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 69,
+        "CatCode": "DPML",
+        "Item": "Dividends Payable (Mainboard Listed)",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 70,
+        "CatCode": "DPML",
+        "Item": "Dividends Payable (Mainboard Listed)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.DPML"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 71,
+        "CatCode": "DPO",
+        "Item": "Dividends Payable (Others)",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 72,
+        "CatCode": "DPO",
+        "Item": "Dividends Payable (Others)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.DPO"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 73,
+        "CatCode": "AE",
+        "Item": "Accrued Expenses",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 74,
+        "CatCode": "AE",
+        "Item": "Accrued Expenses",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.AE"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 75,
+        "CatCode": "RPL",
+        "Item": "Related Parties Liabilities",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 76,
+        "CatCode": "RPL",
+        "Item": "Due to Parent/Subsidiaries",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.RPL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 77,
+        "CatCode": "RPL",
+        "Item": "Due to Associates/Other Related Parties",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.RPL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 78,
+        "CatCode": "RPL",
+        "Item": "Due to Shareholders/ Directors",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.RPL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 79,
+        "CatCode": "OCL",
+        "Item": "Other Current Liabilities",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.CL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 80,
+        "CatCode": "OCL",
+        "Item": "Other Current Liabilities",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.OCL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 81,
+        "CatCode": "CL",
+        "Item": "CURRENT LIABILITIES",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.AP + Y0.APRP + Y0.BP + Y0.STD + Y0.CPLTD + Y0.OP + Y0.RPL + Y0.OCL",
+        "DependentItems": "Y0.TL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 82,
+        "CatCode": "LTD",
+        "Item": "Long Term Debt",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.LTL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 83,
+        "CatCode": "LTD",
+        "Item": "Bank Debts (Secured)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.LTD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 84,
+        "CatCode": "LTD",
+        "Item": "Bank Debts (Unsecured)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.LTD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 85,
+        "CatCode": "LTD",
+        "Item": "Hire Purchase Creditors",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.LTD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 86,
+        "CatCode": "LTD",
+        "Item": "Other Debts (Unsecured)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.LTD"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 87,
+        "CatCode": "SDOCB",
+        "Item": "Subordinated Debts (to bank)",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.LTL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 88,
+        "CatCode": "SDOCB",
+        "Item": "Subordinated Debts (to bank)",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.SDOCB"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 89,
+        "CatCode": "DIT",
+        "Item": "Deferred Income Tax",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.LTL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 90,
+        "CatCode": "DIT",
+        "Item": "Deferred Tax",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.DIT"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 91,
+        "CatCode": "ONCL",
+        "Item": "Other Non Current Libabilities",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.LTL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 92,
+        "CatCode": "ONCL",
+        "Item": "Provision for Directors' Fee",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.ONCL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 93,
+        "CatCode": "LTL",
+        "Item": "LONG TERM LIABILITIES",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.LTD + Y0.DIT + Y0.ONCL",
+        "DependentItems": "Y0.TL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 94,
+        "CatCode": "TL",
+        "Item": "TOTAL LIABILITIES",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CL + Y0.LTL",
+        "DependentItems": "Y0.TLNW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 95,
+        "CatCode": "OS",
+        "Item": "Ordinary Shares",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 96,
+        "CatCode": "OS",
+        "Item": "Ordinary Shares",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.OS"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 97,
+        "CatCode": "PS",
+        "Item": "Preference Shares",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 98,
+        "CatCode": "PS",
+        "Item": "Preference Shares",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.PS"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 99,
+        "CatCode": "SP",
+        "Item": "Share Premium",
+        "ItemType": "CAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 100,
+        "CatCode": "SP",
+        "Item": "Share Premium",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.SP"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 101,
+        "CatCode": "FXGLR",
+        "Item": "FX Gains and Losses Reserves",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 102,
+        "CatCode": "FXGLR",
+        "Item": "FX Gains and Losses Reserves",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.FXGLR"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 103,
+        "CatCode": "RR",
+        "Item": "Revaluation Reserves",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 104,
+        "CatCode": "RR",
+        "Item": "Revaluation Reserves",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.RR"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 105,
+        "CatCode": "GR",
+        "Item": "General Reserves",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 106,
+        "CatCode": "GR",
+        "Item": "General Reserves",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.GR"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 107,
+        "CatCode": "REAL",
+        "Item": "Retained Earnings / Accumulated Losses",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 108,
+        "CatCode": "REAL",
+        "Item": "Retained Earnings / Accumulated Losses",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.REAL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 109,
+        "CatCode": "SDQU",
+        "Item": "Quasi Capital",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.NW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 110,
+        "CatCode": "SDQU",
+        "Item": "Quasi Capital",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.SDQU"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 111,
+        "CatCode": "NW",
+        "Item": "NET WORTH",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.OS + Y0.PS + Y0.SP + Y0.FXGLR + Y0.RR + Y0.GR + Y0.FXGLR + Y0.REAL",
+        "DependentItems": "Y0.TLNW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 112,
+        "CatCode": "MI",
+        "Item": "Minority Interest",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": "Y0.TLNW"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 113,
+        "CatCode": "MI",
+        "Item": "Minority Interest",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.MI"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 114,
+        "CatCode": "TLNW",
+        "Item": "TOTAL LIABILITIES, NET WORTH & M.I.",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.TL + Y0.NW + Y0.MI",
+        "DependentItems": "RECALC"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 115,
+        "CatCode": "COL",
+        "Item": "CONTINGENT LIABILITIES",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "BS",
+        "Seq": 116,
+        "CatCode": "COL",
+        "Item": "CONTINGENT LIABILITIES",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.COL"
+      },
+      {
+        "FssType": "BS",
+        "Seq": 117,
+        "CatCode": "COMT",
+        "Item": "COMMITMENTS",
+        "ItemType": "CAT",
+        "Formula": "SUMUP",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "BS",
+        "Seq": 118,
+        "CatCode": "COMT",
+        "Item": "COMMITMENTS",
+        "ItemType": "ITEM",
+        "Formula": "NA",
+        "DependentItems": "Y0.COMT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 1,
+        "CatCode": "SR",
+        "Item": "Net Sales",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.GPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 2,
+        "CatCode": "COGS",
+        "Item": "Cost of Goods Sold",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.GPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 3,
+        "CatCode": "GPL",
+        "Item": "Gross Profit (Loss)",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.SR+Y0.COGS",
+        "DependentItems": "Y0.OPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 4,
+        "CatCode": "SAE",
+        "Item": "Selling and Admin Expenses",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.OPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 5,
+        "CatCode": "DRML",
+        "Item": "Directors' Remuneration (Mainboard Listed)",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.OPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 6,
+        "CatCode": "DRO",
+        "Item": "Directors' Remuneration (Others)",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.OPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 7,
+        "CatCode": "IE",
+        "Item": "Interest Expense",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.OPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 8,
+        "CatCode": "DEP",
+        "Item": "Depreciation",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.OPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 9,
+        "CatCode": "AMORT",
+        "Item": "Amortisation",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.OPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 10,
+        "CatCode": "FXGL",
+        "Item": "FX Gains / Losses",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.OPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 11,
+        "CatCode": "OE",
+        "Item": "Other Expenses",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.OPL"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 12,
+        "CatCode": "OPL",
+        "Item": "Operating Profit (Loss)",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.GPL+Y0.SAE+Y0.DRML+Y0.DRO+Y0.IE+Y0.DEP+Y0.AMORT+Y0.FXGL+Y0.OE",
+        "DependentItems": "Y0.NPBT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 13,
+        "CatCode": "SACPL",
+        "Item": "Share of Profits (Losses) of Associated Companies",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPBT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 14,
+        "CatCode": "OI",
+        "Item": "FD Interest",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPBT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 15,
+        "CatCode": "OI",
+        "Item": "Non- operating Income",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPBT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 16,
+        "CatCode": "ONOE",
+        "Item": "Unrealised Gain/ (Loss) on foreign exchange",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPBT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 17,
+        "CatCode": "ONOE",
+        "Item": "Other Non-operating Expenses",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPBT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 18,
+        "CatCode": "GLSFA",
+        "Item": "Gains/Losses on sale of Fixed Assets",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPBT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 19,
+        "CatCode": "GLSOA",
+        "Item": "Gains/Losses on sale of Other Assets",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPBT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 20,
+        "CatCode": "NPBT",
+        "Item": "Net Profit (Loss) Before Tax",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.OPL+Y0.SACPL+Y0.OI+Y0.ONOE+Y0.GLSFA+Y0.GLSOA",
+        "DependentItems": "Y0.NPAT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 21,
+        "CatCode": "ITE",
+        "Item": "Income Tax Expense",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPAT"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 22,
+        "CatCode": "NPAT",
+        "Item": "Net Profit (Loss) After Tax",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.NPBT+Y0.ITE",
+        "DependentItems": "Y0.NPATM"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 23,
+        "CatCode": "MISPL",
+        "Item": "Minority Interest Share of P/L",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPATM"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 24,
+        "CatCode": "EIC",
+        "Item": "Extraordinary Item (Cash)",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPATM"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 25,
+        "CatCode": "EINC",
+        "Item": "Extraordinary Item (Non Cash)",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "Y0.NPATM"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 26,
+        "CatCode": "NPATM",
+        "Item": "Net Profit (Loss) After Tax, M.I & E.I.",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.NPAT+Y0.MISPL+Y0.EIC+Y0.EINC+Y0.EINC",
+        "DependentItems": "RECALC"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 27,
+        "CatCode": "DML",
+        "Item": "Dividends (Mainboard Listed)",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "RECALC"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 28,
+        "CatCode": "DO",
+        "Item": "Dividends (Others)",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "RECALC"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 29,
+        "CatCode": "RM",
+        "Item": "Reserves movements",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "RECALC"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 30,
+        "CatCode": "TGR",
+        "Item": "Transfer from (to) General Reserves",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "RECALC"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 31,
+        "CatCode": "TRR",
+        "Item": "Transfer from (to) Revaluation Reserves",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "RECALC"
+      },
+      {
+        "FssType": "PL",
+        "Seq": 32,
+        "CatCode": "TPUCB",
+        "Item": "Transfer (to) Paid Up Capital (Bonus Issue)",
+        "ItemType": "ITEMCAT",
+        "Formula": "NA",
+        "DependentItems": "RECALC"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 1,
+        "CatCode": "RC1",
+        "Item": "Opening Retained Earnings",
+        "ItemType": "CALC_ITEM",
+        "Formula": "H1.REAL",
+        "DependentItems": "Y0.RC4"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 2,
+        "CatCode": "RC2",
+        "Item": "(+) Add Net Profit/Loss",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.NPATM",
+        "DependentItems": "Y0.RC4"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 3,
+        "CatCode": "RC3",
+        "Item": "(-) Less Dividents",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.DML + Y0.DO",
+        "DependentItems": "Y0.RC4"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 4,
+        "CatCode": "RC4",
+        "Item": "Closing Retained Earnings",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.RC1+Y0.RC2+Y0.RC3",
+        "DependentItems": "Y0.RC6"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 5,
+        "CatCode": "RC5",
+        "Item": "Closing Retained Earnings per B/S",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.REAL",
+        "DependentItems": "Y0.RC6"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 6,
+        "CatCode": "RC6",
+        "Item": "Different",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.RC4 - Y0.RC5",
+        "DependentItems": "Y0.RC10"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 7,
+        "CatCode": "NA",
+        "Item": "",
+        "ItemType": "NA",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RC",
+        "Seq": 8,
+        "CatCode": "NA",
+        "Item": "Add Transfer from/(to)",
+        "ItemType": "NA",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RC",
+        "Seq": 9,
+        "CatCode": "RC7",
+        "Item": "(+) Bonus Issued",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.TPUCB",
+        "DependentItems": "Y0.RC10"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 10,
+        "CatCode": "RC8",
+        "Item": "(+) General Reserved",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.TGR",
+        "DependentItems": "Y0.RC10"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 11,
+        "CatCode": "RC9",
+        "Item": "(+) Revaluation Reserves",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.TRR",
+        "DependentItems": "Y0.RC10"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 12,
+        "CatCode": "RC10",
+        "Item": "Recon Different",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.RC6 + Y0.RC7 + Y0.RC8 + Y0.RC9",
+        "DependentItems": "Y0.RC14"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 13,
+        "CatCode": "NA",
+        "Item": "",
+        "ItemType": "NA",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RC",
+        "Seq": 14,
+        "CatCode": "NA",
+        "Item": "Balance Sheet Recon",
+        "ItemType": "NA",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RC",
+        "Seq": 15,
+        "CatCode": "RC11",
+        "Item": "Total Assets",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.TA",
+        "DependentItems": "Y0.RC13"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 16,
+        "CatCode": "RC12",
+        "Item": "Total Liabilities & Networth",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.TLNW",
+        "DependentItems": "Y0.RC13"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 17,
+        "CatCode": "RC13",
+        "Item": "Different",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.RC11 - Y0.RC12",
+        "DependentItems": "Y0.RC14"
+      },
+      {
+        "FssType": "RC",
+        "Seq": 18,
+        "CatCode": "NA",
+        "Item": "",
+        "ItemType": "NA",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RC",
+        "Seq": 19,
+        "CatCode": "RECON_RESULT",
+        "Item": "Recon Results",
+        "ItemType": "CALC_CAT",
+        "Formula": "abs(Y0.RC10)<1 & abs(Y0.RC13)<1",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF1",
+        "Seq": 1,
+        "Item": "Sales Revenue",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.SR ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF2",
+        "Seq": 2,
+        "Item": "^ A/C Receivables (Non-Related Parties)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)?(Y0.NAR  - H1.NAR  ) * ( -1 ) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF3",
+        "Seq": 3,
+        "Item": "^ A/C Receivables (Related Parties)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)?(Y0.NARRP - H1.NARRP ) * ( -1 ) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF4",
+        "Seq": 4,
+        "Item": "Cash from sales",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF1 + Y0.CF2 + Y0.CF3",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 5,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF5",
+        "Seq": 6,
+        "Item": "Cost of Goods Sold (less Non-cash COGS)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.COGS",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF6",
+        "Seq": 7,
+        "Item": "^ Inventory",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)?(Y0.INV - H1.INV) * ( -1) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF7",
+        "Seq": 8,
+        "Item": "^ A/C Payables (Non-Related Parties)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.AP - H1.AP : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF8",
+        "Seq": 9,
+        "Item": "^ A/C Payables (Related Parties)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.APRP - H1.APRP : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF9",
+        "Seq": 10,
+        "Item": "Cash paid for production",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF5 + Y0.CF6  + Y0.CF7 + Y0.CF8",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF10",
+        "Seq": 11,
+        "Item": "Cash from trading activities",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF4 + Y0.CF9",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 12,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF11",
+        "Seq": 13,
+        "Item": "Selling, General & Admin Expenses",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.SAE",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF12",
+        "Seq": 14,
+        "Item": "Directors Remuneration/Fees (Mainboard-listed)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.DRML",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF13",
+        "Seq": 15,
+        "Item": "^ Prepaid Expenses",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (Y0.PE - H1.PE) * ( -1 ) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF14",
+        "Seq": 16,
+        "Item": "^ Accrued Expenses",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.AE - H1.AE : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF15",
+        "Seq": 17,
+        "Item": " Cash paid for operating costs",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF11 + Y0.CF12 + Y0.CF13 + Y0.CF14",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF16",
+        "Seq": 18,
+        "Item": "Cash after operations",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF10 + Y0.CF15",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 19,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF17",
+        "Seq": 20,
+        "Item": "Other Income (Expense)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.OI + Y0.OE + Y0.ONOE",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF18",
+        "Seq": 21,
+        "Item": "Gains (Losses) on Sale of Fixed Assets",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.GLSFA ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF19",
+        "Seq": 22,
+        "Item": "Gains (Losses) from Non-Operating Activities",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.GLSOA",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF20",
+        "Seq": 23,
+        "Item": "FX Gains (Losses)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (Y0.FXGLR - H1.FXGLR) + Y0.FXGL : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF21",
+        "Seq": 24,
+        "Item": "^ Other Current Asset accounts",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? ((Y0.OCA - H1.OCA) + (Y0.MS - H1.MS)) * (-1 ) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF22",
+        "Seq": 25,
+        "Item": "^ Other Non-current Asset accounts",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? ( Y0.ONCA - H1.ONCA ) * ( - 1 ) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF23",
+        "Seq": 26,
+        "Item": "^ Other Current Liabilities accounts",
+        "ItemType": "CALC_ITEM",
+        "Formula": " (H1.HASDATA_IND)? Y0.OCL - H1.OCL : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF24",
+        "Seq": 27,
+        "Item": "^ Other Non-current Liabilities accounts",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.ONCL - H1.ONCL : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF25",
+        "Seq": 28,
+        "Item": "Income Tax Expense",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.ITE",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF26",
+        "Seq": 29,
+        "Item": "^ Deferred Tax",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.DIT - H1.DIT : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF27",
+        "Seq": 30,
+        "Item": "^ Taxes Payable",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.ITP - H1.ITP : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF28",
+        "Seq": 31,
+        "Item": "Taxes paid and other income (expense)",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF17 + Y0.CF18 + Y0.CF19 + Y0.CF20 + Y0.CF21 + Y0.CF22 + Y0.CF23 + Y0.CF24 + Y0.CF25 + Y0.CF26 + Y0.CF27",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF29",
+        "Seq": 32,
+        "Item": "Net cash after operations",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF16 + Y0.CF28",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 33,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF30",
+        "Seq": 34,
+        "Item": "Interest Expense",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.IE",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF31",
+        "Seq": 35,
+        "Item": "^ Interest Payable",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.IP - H1.IP : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF32",
+        "Seq": 36,
+        "Item": "Dividends Declared (Mainboard Listed)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.DML",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF33",
+        "Seq": 37,
+        "Item": "^ Dividends Payable (Mainboard Listed)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.DPML - H1.DPML : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF34",
+        "Seq": 38,
+        "Item": "Cash paid for dividends and interest",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF30 + Y0.CF31 + Y0.CF32 + Y0.CF33",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF35",
+        "Seq": 39,
+        "Item": "Cash after financing costs",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF29 + Y0.CF34",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 40,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF36",
+        "Seq": 41,
+        "Item": "Current Portion of Long Term Debts (prior year)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? H1.CPLTD*(-1) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF37",
+        "Seq": 42,
+        "Item": "Cash after debt amortisation",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF35 + Y0.CF36",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 43,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF38",
+        "Seq": 44,
+        "Item": "^ Fixed Assets",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? ((Y0.NFA) - ( H1.NFA))*(-1) + (Y0.DEP) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF39",
+        "Seq": 45,
+        "Item": "^ Capitalised Interest",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (H1.CI - Y0.CI)*(1) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF40",
+        "Seq": 46,
+        "Item": "^ Investments",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (H1.INS - Y0.INS) + Y0.SACPL : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF41",
+        "Seq": 47,
+        "Item": "^ Intangibles",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (H1.INT - Y0.INT ) + Y0.AMORT : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF42",
+        "Seq": 48,
+        "Item": "Cash paid for plant and investments",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF38 + Y0.CF39 + Y0.CF40 + Y0.CF41",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF43",
+        "Seq": 49,
+        "Item": "Cash after capital & investment expenditure",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF37 + Y0.CF42",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 50,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF44",
+        "Seq": 51,
+        "Item": "Extraordinary Items (Cash)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.EIC",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF45",
+        "Seq": 52,
+        "Item": "Extraordinary Items (Non-cash)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.EINC",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF46",
+        "Seq": 53,
+        "Item": "Cash after extraordinary items",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF43 + Y0.CF44 + Y0.CF45",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 54,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF47",
+        "Seq": 55,
+        "Item": "Directors Remuneration / Fee (Others)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.DRO",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF48",
+        "Seq": 56,
+        "Item": "Dividend declared / Owners withdrawal (Others)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.DO",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF49",
+        "Seq": 57,
+        "Item": "^ Dividends Payable (Others)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.DPO - H1.DPO : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF50",
+        "Seq": 58,
+        "Item": "^ Related Parties Assets",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (Y0.RPA - H1.RPA)*(-1) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF51",
+        "Seq": 59,
+        "Item": "^ Related Parties Liabilities",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.RPL - H1.RPL : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF52",
+        "Seq": 60,
+        "Item": "^ Subordinated Debts (to OCBC)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.SDOCB - H1.SDOCB : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF53",
+        "Seq": 61,
+        "Item": "^ Ordinary Shares",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (Y0.OS - H1.OS) + Y0.TPUCB : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF54",
+        "Seq": 62,
+        "Item": "^ Preference Shares",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.PS - H1.PS : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF55",
+        "Seq": 63,
+        "Item": "^ Other Capital",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (Y0.SP - H1.SP )+ (Y0.RR - H1.RR )+ (Y0.GR - H1.GR )+ (Y0.SDQU - H1.SDQU )+ Y0.TGR+ Y0.TRR : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF56",
+        "Seq": 64,
+        "Item": "^ Minority Interest",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (Y0.MI - H1.MI) + Y0.MISPL : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF57",
+        "Seq": 65,
+        "Item": "Total internal financing",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF47 + Y0.CF48 + Y0.CF49 + Y0.CF50 + Y0.CF51 + Y0.CF52 + Y0.CF53 + Y0.CF54 + Y0.CF55 + Y0.CF56",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF58",
+        "Seq": 66,
+        "Item": "Financing surplus (requirement)",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF46 + Y0.CF57",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 67,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF59",
+        "Seq": 68,
+        "Item": "^ Bills Payables",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.BP - H1.BP : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF60",
+        "Seq": 69,
+        "Item": "^ Short Term Debts",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? Y0.STD - H1.STD : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF61",
+        "Seq": 70,
+        "Item": "^ Long Term Debts",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (Y0.LTD - H1.LTD ) + Y0.CPLTD : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF62",
+        "Seq": 71,
+        "Item": "Total external financing",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF59 + Y0.CF60 + Y0.CF61",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF63",
+        "Seq": 72,
+        "Item": "Net cash after financing",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF58 + Y0.CF62",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "NA",
+        "Seq": 73,
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF64",
+        "Seq": 74,
+        "Item": "PROOF:  Cash, FD and govt securities",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (Y0.CFD +Y0.GS) - (H1.CFD + H1.GS) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CF",
+        "CatCode": "CF65",
+        "Seq": 75,
+        "Item": "Difference",
+        "ItemType": "CALC_CAT",
+        "Formula": "Y0.CF63 - Y0.CF64",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 1,
+        "CatCode": "NA",
+        "Item": "Risk Grading",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 2,
+        "CatCode": "RT1",
+        "Item": "EBITDA",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.NPBT - Y0.IE - Y0.DEP - Y0.AMORT ) * (12 / Y0.MthCover ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 3,
+        "CatCode": "RT2",
+        "Item": "Net Profit Margin (%)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.SR != 0)? Y0.NPAT / Y0.SR : 0",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 4,
+        "CatCode": "RT3",
+        "Item": "Total Liab / Tangible NW",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.TL / ( Y0.NW - Y0.INT ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 5,
+        "CatCode": "RT4",
+        "Item": "Tangible NW / (Int + ST Debt + CPLTD)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)?  ((((-Y0.IE * 12 / Y0.MthCover )  + Y0.STD + H1.CPLTD )  == 0)? \"\" :  (Y0.NW - Y0.INT ) / ((-Y0.IE * 12 / Y0.MthCover )  + Y0.STD + H1.CPLTD))  : \"\" ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 6,
+        "CatCode": "RT5",
+        "Item": "Cash after Ops / (Int + ST Debt + CPLTD)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "((H1.HASDATA_IND) &  (( (-Y0.IE * 12 / Y0.MthCover) + Y0.STD + H1.CPLTD ) !=0) )? (Y0.CF16 * 12 / Y0.MthCover) / ( (-Y0.IE * 12 / Y0.MthCover) + Y0.STD + H1.CPLTD ) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 7,
+        "CatCode": "RT6",
+        "Item": "Sales / Total Assets",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.SR * 12 / Y0.MthCover) / Y0.TA",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 8,
+        "CatCode": "RT7",
+        "Item": "Sales Growth",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? ((Y0.SR * 12 / Y0.MthCover ) - (H1.SR * 12 / H1.MthCover )) / (H1.SR * 12 / H1.MthCover) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 9,
+        "CatCode": "RT8",
+        "Item": "Adj. Liquid Assets / Adj. Curr Liab",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.GS + Y0.CFD + Y0.MS *0.5 )*12 / ( Y0.BP + Y0.STD + Y0.CPLTD + Y0.AP + Y0.APRP + Y0.ITP + Y0.IP )  ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 10,
+        "CatCode": "RT9",
+        "Item": "Tangible Net Worth",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.NW - Y0.INT ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 11,
+        "CatCode": "NA",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 12,
+        "CatCode": "NA",
+        "Item": "Growth",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 13,
+        "CatCode": "RT10",
+        "Item": "Sales Growth",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.RT7",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 14,
+        "CatCode": "RT11",
+        "Item": "Net Income Growth",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? (( Y0.NPAT * 12/Y0.MthCover) - (H1.NPAT * 12/H1.MthCover)) / ( abs(H1.NPAT)* 12/H1.MthCover) : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 15,
+        "CatCode": "RT12",
+        "Item": "Total Asset Growth",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(H1.HASDATA_IND)? ( Y0.TA - H1.TA ) / H1.TA : \"\"",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 16,
+        "CatCode": "NA",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 17,
+        "CatCode": "NA",
+        "Item": "Performance",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 18,
+        "CatCode": "RT11",
+        "Item": "Return on Assets",
+        "ItemType": "CALC_ITEM",
+        "Formula": " (Y0.NPAT / Y0.TA )* 12/Y0.MthCover",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 19,
+        "CatCode": "RT12",
+        "Item": "Return on Equity",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.NPAT / (Y0.NW - Y0.INT ) ) * 12/Y0.MthCover",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 20,
+        "CatCode": "NA",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 21,
+        "CatCode": "NA",
+        "Item": "Coverage",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 22,
+        "CatCode": "CORP_RC_CO_EBITOSTDEBT",
+        "Item": "EBIT / (Int + ST Debt + CPLTD + BP)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(( Y0.NPBT - Y0.IE) * 12/ Y0.MthCover)   / ( (-Y0.IE * 12/ Y0.MthCover) + Y0.STD + Y0.CPLTD  + Y0.BP )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 23,
+        "CatCode": "CORP_RC_CO_EBITOINT",
+        "Item": "EBIT / Int",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.NPBT - Y0.IE )  / ( -Y0.IE ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 24,
+        "CatCode": "CORP_RC_CO_EBITDAOSTDEBT",
+        "Item": "EBITDA / (Int + ST Debt + CPLTD + BP)",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ( Y0.NPBT - Y0.IE - Y0.DEP -  Y0.AMORT ) * 12/ Y0.MthCover  / (  -Y0.IE * 12/Y0.MthCover   + Y0.STD + Y0.CPLTD + Y0.BP ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 25,
+        "CatCode": "CORP_RC_CO_EBITDAOINT",
+        "Item": "EBITDA / Int",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ( Y0.NPBT - Y0.IE - Y0.DEP - Y0.AMORT ) / ( -Y0.IE ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 26,
+        "CatCode": "CORP_RC_CO_NCAOPOSTDEBT",
+        "Item": "Net Cash after Ops / (Int + ST Debt + CPLTD + BP)",
+        "ItemType": "CALC_ITEM",
+        "Formula": " (Y0.CORP_CF_NCAOP * 12 / Y0.MthCover) / ( (-Y0.IE * 12 / Y0.MthCover) + Y0.STD + Y0.CPLTD  + Y0.BP )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 27,
+        "CatCode": "CORP_RC_CO_NCAOPOINT",
+        "Item": "Net Cash after Ops / Int ",
+        "ItemType": "CALC_ITEM",
+        "Formula": " (Y0.CORP_CF_NCAOP * 12 / Y0.MthCover) / (-Y0.IE * 12 / Y0.MthCover) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 28,
+        "CatCode": "CORP_RC_RG_CAOPOSTDEBT",
+        "Item": "Cash after Ops / (Int + ST Debt + CPLTD + BP)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.CORP_CF_CAOP * 12 / Y0.MthCover) / ( (-Y0.IE * 12 / Y0.MthCover)  + Y0.STD + Y0.CPLTD + Y0.BP )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 29,
+        "CatCode": "",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 30,
+        "CatCode": "",
+        "Item": "Liquidity",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 31,
+        "CatCode": "CORP_RC_LQ_WCAP",
+        "Item": "Working Capital",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.CA - Y0.CL ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 32,
+        "CatCode": "CORP_RC_LQ_QUICKRAT",
+        "Item": "Quick Ratio",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.CA - Y0.INV ) / Y0.CL ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 33,
+        "CatCode": "CORP_RC_LQ_CURRRAT",
+        "Item": "Current Ratio",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.CA / Y0.CL ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 34,
+        "CatCode": "CORP_RC_LQ_LIQASSOTOTASS",
+        "Item": "Liquid Assets / Total Assets",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.CFD + Y0.GS + Y0.MS*0.5 ) / Y0.TA ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 35,
+        "CatCode": "CORP_RC_LQ_LIQASSOSTDEBT",
+        "Item": "Liquid Assets / (ST Debt + CPLTD +BP)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.CFD + Y0.GS + (Y0.MS * 0.5  )) / ( Y0.STD + Y0.CPLTD + Y0.BP ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 36,
+        "CatCode": "CORP_RC_LQ_LIQASSOTCURRLIAB",
+        "Item": "Adj. Liquid Assets / Adj. Total Curr Liab",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ( Y0.CFD + Y0.GS + Y0.MS*0.5 )*12 / ( Y0.BP + Y0.STD + Y0.CPLTD + Y0.AP + Y0.APRP + Y0.ITP + Y0.IP ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 37,
+        "CatCode": "",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 38,
+        "CatCode": "",
+        "Item": "Leverage",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 39,
+        "CatCode": "CORP_RC_LV_TLIABOEBITDA",
+        "Item": "Total Liab / EBITDA",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.TL)  / (( Y0.NPBT - Y0.IE - Y0.DEP - Y0.AMORT ) * 12 / Y0.MthCover)",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 40,
+        "CatCode": "CORP_RC_LV_TLIABOTGNW",
+        "Item": "Total Liab / Tangible NW",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.TL / ( Y0.NW - Y0.INT ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 41,
+        "CatCode": "CORP_RC_LV_TSLIABOTGNW",
+        "Item": "Tot Snr Liab / (Tangible NW + Sub Debt + Quasi Capital)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.TL - Y0.SDOCB ) / (  Y0.NW + Y0.SDOCB + Y0.SDQU - Y0.INT ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 42,
+        "CatCode": "CORP_RC_RG_TGNWOSTDDEBT",
+        "Item": "Tangible NW / (Int + ST Debt + CPLTD +BP)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.NW - Y0.INT ) / ( (-Y0.IE * 12 / Y0.MthCover ) + Y0.STD + Y0.CPLTD + Y0.BP ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 43,
+        "CatCode": "",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 44,
+        "CatCode": "",
+        "Item": "Activity",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 45,
+        "CatCode": "CORP_RC_AC_ARDOH",
+        "Item": "ARDOH (days)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.NAR + Y0.NARRP) / Y0.SR * (Y0.MthCover / 12 ) * 365",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 46,
+        "CatCode": "CORP_RC_AC_INVDOH",
+        "Item": "InvDOH (days)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.INV / (-Y0.COGS * ( 12 / Y0.MthCover)) * 365",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 47,
+        "CatCode": "CORP_RC_AC_APDOH",
+        "Item": "APDOH (days)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.AP + Y0.APRP)  / (-Y0.COGS * ( 12 / Y0.MthCover)) * 365",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 48,
+        "CatCode": "CORP_RC_AC_INVDOHOSAL",
+        "Item": "InvDOH (days) over sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.INV / Y0.SR * ( Y0.MthCover / 12 ) * 365",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 49,
+        "CatCode": "CORP_RC_AC_ARDOHOSAL",
+        "Item": "APDOH (days) over sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.AP + Y0.APRP ) / Y0.SR * ( Y0.MthCover / 12 )*365",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 50,
+        "CatCode": "CORP_RC_AC_AROSAL",
+        "Item": "AR / Sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.NAR + Y0.NARRP ) / Y0.SR * ( Y0.MthCover / 12 )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 51,
+        "CatCode": "CORP_RC_AC_COGSOSAL",
+        "Item": "COGS / Sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.COGS*(-1) / Y0.SR ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 52,
+        "CatCode": "CORP_RC_AC_CASHOSAL",
+        "Item": "Cash SG&A / Sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.SAE*(-1) / Y0.SR ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 53,
+        "CatCode": "",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 54,
+        "CatCode": "",
+        "Item": "Cash Flow Effect",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 55,
+        "CatCode": "CORP_RC_CF_ARTOSAL",
+        "Item": "^   AR due to ^  Sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ( H1.NAR + H1.NARRP ) *(-1) *  ((Y0.SR * ( 12 / Y0.MthCover)) - (H1.SR *( 12 / H1.MthCover ) )) / (H1.SR  * 12 / H1.MthCover )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 56,
+        "CatCode": "CORP_RC_CF_ARTOARDOH",
+        "Item": "^    AR due to   ^    ARDOH",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ( H1.NAR + H1.NARRP ) - ( Y0.NAR + Y0.NARRP ) + ( ( H1.NAR + H1.NARRP ) * ( ( Y0.SR * 12 / Y0.MthCover)  - (H1.SR* 12 / H1.MthCover ) )  /  (H1.SR * 12 / H1.MthCover )) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 57,
+        "CatCode": "CORP_RC_CF_COGSOSAL",
+        "Item": "^    COGS / Sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( ( Y0.COGS / Y0.SR ) - ( H1.COGS / H1.SR ) ) * Y0.SR * 12 / Y0.MthCover ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 58,
+        "CatCode": "CORP_RC_CF_INVTOCOGS",
+        "Item": "^    Inv due to ^   COGS",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ( -H1.INV * ( (Y0.COGS * 12 / Y0.MthCover)  - (H1.COGS * 12 / H1.MthCover ) ) )/ ( H1.COGS * 12 / H1.MthCover ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 59,
+        "CatCode": "CORP_RC_CF_INVTOINVDOH",
+        "Item": "^    Inv due to ^   InvDOH",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ((((Y0.COGS *  12 / Y0.MthCover ) - ( H1.COGS *  12 / H1.MthCover ))/( H1.COGS *  12 / H1.MthCover )) * H1.INV ) - Y0.INV+H1.INV",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 60,
+        "CatCode": "CORP_RC_CF_APTOCOGS",
+        "Item": "^    AP due to ^   COGS ",
+        "ItemType": "CALC_ITEM",
+        "Formula": " (((Y0.COGS * 12 / Y0.MthCover) - (H1.COGS * 12 / H1.MthCover )) / (H1.COGS * 12 / H1.MthCover )) * (H1.AP + H1.APRP)",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 61,
+        "CatCode": "CORP_RC_CF_APTOAPDOH",
+        "Item": "^    AP due to  ^  APDOH",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( ( Y0.AP + Y0.APRP ) - ( H1.AP + H1.APRP )) - ( (H1.COGS * 12 / H1.MthCover )   - (Y0.COGS * 12 / Y0.MthCover )) / (H1.COGS * 12 / H1.MthCover) * (-1) * ( H1.AP + H1.APRP ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 62,
+        "CatCode": "CORP_RC_OT_SGAOSAL",
+        "Item": "^SG&A/Sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(( -Y0.SAE / Y0.SR )- ((-1)* H1.SAE / H1.SR) ) * Y0.SR * 12 / Y0.MthCover ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 63,
+        "CatCode": "",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 64,
+        "CatCode": "",
+        "Item": "Other",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 65,
+        "CatCode": "CORP_RC_OT_DIVPAYRATE",
+        "Item": "Dividend Payout Rate",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( ( Y0.DO + Y0.DML ) * ( -1 ) )  / Y0.NPATM",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 66,
+        "CatCode": "CORP_RC_OT_SALOTASS",
+        "Item": "Sales / Total Assets",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.SR *  12 / Y0.MthCover) / Y0.TA",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 67,
+        "CatCode": "CORP_RC_OT_DEPREXPONFIXASS",
+        "Item": "Dep Exp / Net Fixed Assets",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( -Y0.DEP * 12 / Y0.MthCover  ) / ( Y0.NFA ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 68,
+        "CatCode": "CORP_RC_OT_CPFAODEPREXP",
+        "Item": "Cash paid for Fixed Assets / Dep Exp",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.CORP_CF_FA ) / ( Y0.DEP )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 69,
+        "CatCode": "",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 70,
+        "CatCode": "",
+        "Item": "NBFI Model - Ratios",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 71,
+        "CatCode": "CORP_RC_NB_ROE",
+        "Item": "ROE (EBT)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.NPBT * 12 / Y0.MthCover)  / ( Y0.NW - Y0.INT )  ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 72,
+        "CatCode": "CORP_RC_NB_TDEBTOTLIAB",
+        "Item": "Total Debt / Total Liabilities",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ( Y0.STD + Y0.CPLTD + Y0.LTD + Y0.SDOCB + Y0.RPL ) / (Y0.TL) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 73,
+        "CatCode": "CORP_RC_NB_TDEBTOEQTDEBT",
+        "Item": "Total Debt / (Equity + Total Debt)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.STD + Y0.CPLTD + Y0.LTD + Y0.SDOCB + Y0.RPL ) / ( Y0.NW - Y0.INT + Y0.STD + Y0.CPLTD + Y0.LTD + Y0.SDOCB + Y0.RPL )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 74,
+        "CatCode": "CORP_RC_NB_QTMOFCAP",
+        "Item": "Quantum of Capital",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.NW - ( Y0.INT + Y0.RR + Y0.FXGLR + Y0.SDQU ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 75,
+        "CatCode": "",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 76,
+        "CatCode": "",
+        "Item": "RECO Models - Ratios",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 77,
+        "CatCode": "CORP_RC_RED_SAL",
+        "Item": "Sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.SR * 12 / Y0.MthCover ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 78,
+        "CatCode": "CORP_RC_RED_EBITINTCOVG",
+        "Item": "EBIT Interest coverage (x)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.NPBT - Y0.IE  - Y0.II  + Y0.IOBSD )  / ( Y0.IOBSD - Y0.IE  - Y0.II )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 79,
+        "CatCode": "CORP_RC_RED_OPINCOSAL",
+        "Item": "Operating Income / Sales (%)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.OPL / Y0.SR",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 80,
+        "CatCode": "CORP_RC_RED_EBITDAINTCOVG",
+        "Item": "EBITDA Interest Coverage (x)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.NPBT - Y0.IE - Y0.DEP - Y0.AMORT  - Y0.II  + Y0.IOBSD ) / ( Y0.IOBSD - Y0.IE - Y0.II ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 81,
+        "CatCode": "CORP_RC_RED_TDEBTOEBITDA",
+        "Item": "Total Debt / EBITDA (x)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.STD + Y0.BP + Y0.CPLTD + Y0.LTD + Y0.SDOCB + Y0.CCLO + Y0.CLO + Y0.TOBSD ) / (( Y0.NPBT - Y0.IE - Y0.DEP -Y0.AMORT )*12 / Y0.MthCover)",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 82,
+        "CatCode": "CORP_RC_REI_TGNWINCMI",
+        "Item": "Tangible Net Worth Includes MI",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.NW - Y0.INT + Y0.MI ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 83,
+        "CatCode": "CORP_RC_REI_ROPERMCAP",
+        "Item": "Return on Permanent Capital (%)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.NPBT- Y0.II - Y0.IE - Y0.PDEP + Y0.IOBSD ) *( 12 / Y0.MthCover)  / ( Y0.NW  - Y0.INT + Y0.MI +  Y0.STD + Y0.CPLTD + Y0.CCLO + Y0.CLO + Y0.LTD + Y0.DIT )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 84,
+        "CatCode": "CORP_RC_REI_DEBTSVCCOVG",
+        "Item": "Debt Service Coverage (x)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(( Y0.OPL - Y0.IE + Y0.II - Y0.AMORT - Y0.DEP ) *  12 / Y0.MthCover ) / ( Y0.STD + Y0.CPLTD - Y0.IE*(12 / Y0.MthCover) ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 85,
+        "CatCode": "CORP_RC_REI_FIXCHRCOVG",
+        "Item": "Fixed Charge Coverage (x)",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ( Y0.NPBT - Y0.IE - Y0.AMORT - Y0.DEP - Y0.LC ) / ( Y0.IOBSD - Y0.IE - Y0.LC - Y0.II ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 86,
+        "CatCode": "CORP_RC_REI_VARATDEBTOTDEBT",
+        "Item": "Variable Rate Debt / Total Debt (%)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.VIRD / ( Y0.BP + Y0.STD + Y0.CPLTD + Y0.LTD + Y0.SDOCB + Y0.CCLO + Y0.CLO + Y0.TOBSD  )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 87,
+        "CatCode": "CORP_RC_REI_TDEBTTOCAP",
+        "Item": "Total Debt to Capitalisation (%)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "( Y0.BP + Y0.STD + Y0.CPLTD + Y0.LTD + Y0.SDOCB + Y0.CCLO + Y0.CLO + Y0.TOBSD  ) / ( Y0.BP + Y0.STD + Y0.CPLTD + Y0.LTD + Y0.SDOCB + Y0.CCLO + Y0.CLO + Y0.TOBSD + Y0.MI  + Y0.NW  - Y0.INT  )",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 88,
+        "CatCode": "",
+        "Item": "",
+        "ItemType": "",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 89,
+        "CatCode": "",
+        "Item": "OWH Corp Model - Ratios",
+        "ItemType": "DISPLAY_BOLD",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 90,
+        "CatCode": "CORP_RC_GC_SALGRW",
+        "Item": "Sales Growth",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.CORP_RC_RG_SALGRW ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 91,
+        "CatCode": "CORP_RC_GC_SALGRW_Trend",
+        "Item": "Sales Growth Trend (1=Not Deteriorating)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "1 or 2",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 92,
+        "CatCode": "CORP_RC_GC_OPMARG",
+        "Item": "Operating Margin",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.OPL / Y0.SR ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 93,
+        "CatCode": "CORP_RC_GC_OPMAR_Trend",
+        "Item": "Operating Margin Trend (1=Not Deteriorating)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "1,2,3 or 4",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 94,
+        "CatCode": "CORP_RC_GC_ARDOH",
+        "Item": "ARDOH (days)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "(Y0.NAR + Y0.NARRP) / Y0.SR * (Y0.MthCover / 12 ) * 365",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 95,
+        "CatCode": "CORP_RC_GC_ARDOH_Trend",
+        "Item": "ARDOH Trend (1=Not Deteriorating)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 96,
+        "CatCode": "CORP_RC_GC_INVDOH",
+        "Item": "InvDOH (days)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.INV / (-Y0.COGS * ( 12 / Y0.MthCover)) * 365",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 97,
+        "CatCode": "CORP_RC_GC_INVDOH_Trend",
+        "Item": "InvDOH Trend (1=Not Deteriorating)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 98,
+        "CatCode": "CORP_RC_GC_EBITDA_DSR",
+        "Item": "EBITDA DSR",
+        "ItemType": "CALC_ITEM",
+        "Formula": " ( Y0.NPBT - Y0.IE - Y0.DEP -  Y0.AMORT ) * 12/ Y0.MthCover  / (  -Y0.IE * 12/Y0.MthCover   + Y0.STD + Y0.CPLTD + Y0.BP ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 99,
+        "CatCode": "CORP_RC_GC_EBITDA_DSR_Trend",
+        "Item": "EBITDA DSR Trend (1=Not Deteriorating)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 100,
+        "CatCode": "CORP_RC_GC_DEBT",
+        "Item": "Debt Servicing",
+        "ItemType": "CALC_ITEM",
+        "Formula": " (-1)*Y0.IE * 12/Y0.MthCover   + Y0.STD + Y0.CPLTD + Y0.BP ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 101,
+        "CatCode": "CORP_RC_GC_LIQASS_DSR",
+        "Item": "Liquid Assets DSR",
+        "ItemType": "CALC_ITEM",
+        "Formula": " (Y0.CFD + Y0.GS + (Y0.MS * 0.5  )) / ( (-Y0.IE * 12/Y0.MthCover) + Y0.STD + Y0.CPLTD + Y0.BP ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 102,
+        "CatCode": "CORP_RC_GC_LIQASS_DSR_Trend",
+        "Item": "Liquid Assets DSR Trend (1=Not Deteriorating)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 103,
+        "CatCode": "CORP_RC_GC_TL_ADJTNW",
+        "Item": "Total Liab / Adj. TNW",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.TL / ( Y0.NW - Y0.INT - Y0.RPA  ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 104,
+        "CatCode": "CORP_RC_GC_TL_ADJTNW_Trend",
+        "Item": "Total Liab / Adj. TNW Trend (1=Not Deteriorating)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 105,
+        "CatCode": "CORP_RC_GC_FUND_MISMATCH",
+        "Item": "Non Curr Assets / (LT Liab +NW)",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.NCA / ( Y0.LTL + Y0.NW ) ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 106,
+        "CatCode": "CORP_RC_GC_ANN_SALES",
+        "Item": "Annual Sales",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.SR * 12 / Y0.MthCover ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "RATIO",
+        "Seq": 107,
+        "CatCode": "CORP_RC_GC_TNW",
+        "Item": "Tangible Net Worth",
+        "ItemType": "CALC_ITEM",
+        "Formula": "Y0.NW - Y0.INT ",
+        "DependentItems": ""
+      },
+      {
+        "FssType": "CONTROL",
+        "Seq": 1,
+        "CatCode": "FSS_DATE",
+        "Item": "",
+        "ItemType": "CONTROL",
+        "Formula": ""
+      },
+      {
+        "FssType": "CONTROL",
+        "Seq": 2,
+        "CatCode": "MthCover",
+        "Item": "",
+        "ItemType": "CONTROL",
+        "Formula": ""
+      },
+      {
+        "FssType": "CONTROL",
+        "Seq": 3,
+        "CatCode": "FSS_CCY",
+        "Item": "",
+        "ItemType": "CONTROL",
+        "Formula": ""
+      },
+      {
+        "FssType": "CONTROL",
+        "Seq": 4,
+        "CatCode": "FSS_DENOM",
+        "Item": "",
+        "ItemType": "CONTROL",
+        "Formula": ""
+      },
+      {
+        "FssType": "CONTROL",
+        "Seq": 5,
+        "CatCode": "AUDIT_OPINION",
+        "Item": "",
+        "ItemType": "CONTROL",
+        "Formula": ""
+      },
+      {
+        "FssType": "CONTROL",
+        "Seq": 6,
+        "CatCode": "AUDITOR",
+        "Item": "",
+        "ItemType": "CONTROL",
+        "Formula": ""
+      },
+      {
+        "FssType": "CONTROL",
+        "Seq": 7,
+        "CatCode": "AUDIT_TYPE",
+        "Item": "",
+        "ItemType": "CONTROL",
+        "Formula": ""
+      },
+      {
+        "FssType": "CONTROL",
+        "Seq": 8,
+        "CatCode": "HASDATA_IND",
+        "Item": "",
+        "ItemType": "CONTROL",
+        "Formula": "abs(Y0.TA)>0 & abs(Y0.TLNW)>0"
+      },
+      {
+        "FssType": "CONTROL",
+        "Seq": 9,
+        "CatCode": "BALANCED_IND",
+        "Item": "",
+        "ItemType": "CONTROL",
+        "Formula": "Y0.RECON_RESULT"
+      }
+    ]
+  }
+]

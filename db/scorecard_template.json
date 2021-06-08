@@ -1,0 +1,1640 @@
+{
+	"scModelInfo": {
+		"scModelType": "CORP",
+		"scModelID": "CORPV1",
+		"scModelName": "Corporate Scorecard",
+		"scModelStatus": "AC",
+		"scModelInheritable": ["CORPV1", "CORPV2"],
+		"scModelCreatedDate": "2021-04-30T00:00:00.000Z",
+		"scModelCreatedBy": "Tester01",
+		"scModelAprrovedDate": "2021-04-30T00:00:00.000Z",
+		"scModeApprovedBy": "Tester03",
+		"scModelActivatedDate": "2021-04-30T00:00:00.000Z",
+		"scModeActivatedBy": "Tester03"
+	},
+	"scModelFactorGroups": [
+		{
+			"grpID": "FIN",
+			"grpName": "Financial",
+			"fssImportInd": true,
+			"initValue": {
+				"grpID": "FIN",
+				"grpScore": 0
+			},
+			"factors": [
+				{
+					"facID": "FIN_1",
+					"seq": 1,
+					"facName": "Profitability - Net Profit Margin",
+					"facDesc": "To measure profitability using financial spreadsheet",
+					"weight": 0.045,
+					"attrCnt": 5,
+					"attrSelectable": false,
+					"finConfig": {
+						"fssImportCat": "RT2",
+						"facValue_prefix": "",
+						"facValue_suffix": "%"
+					},
+					"initValue": {
+						"facID": "FIN_1",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0,
+						"finValue": {
+							"facValue": 0,
+							"facValue_prev": 0,
+							"facValue_import": 0,
+							"facValue_IsOvrd": false,
+							"ovrdJustification": ""
+						}
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0.1,
+							"id": "FIN_1_1",
+							"label": "x >= 10%",
+							"condition": "x >= 0.1"
+						},
+						{
+							"value": 2,
+							"score": 1.6,
+							"id": "FIN_1_2",
+							"label": "4% <= x < 10%",
+							"condition": "0.04 <= x  < 0.1"
+						},
+						{
+							"value": 3,
+							"score": 3,
+							"id": "FIN_1_3",
+							"label": "1% <= x < 4%",
+							"condition": "0.01 <= x < 0.04"
+						},
+						{
+							"value": 4,
+							"score": 5.8,
+							"id": "FIN_1_4",
+							"label": "0% < x < 1%",
+							"condition": "0 < x < 0.01"
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "FIN_1_5",
+							"label": "x <= 0%",
+							"condition": "x <= 0"
+						}
+					]
+				},
+				{
+					"facID": "FIN_2",
+					"seq": 2,
+					"facName": "Leverage - TL/TNW",
+					"facDesc": "",
+					"weight": 0.03,
+					"attrCnt": 5,
+					"attrSelectable": false,
+					"finConfig": {
+						"fssImportCat": "RT3",
+						"facValue_prefix": "",
+						"facValue_suffix": "x"
+					},
+					"initValue": {
+						"facID": "FIN_2",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0,
+						"finValue": {
+							"facValue": 0,
+							"facValue_prev": 0,
+							"facValue_import": 0,
+							"facValue_IsOvrd": false,
+							"ovrdJustification": ""
+						}
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0.2,
+							"id": "FIN_2_1",
+							"label": "0.01x <= x < 0.75x",
+							"condition": "0.01 <= x < 0.75"
+						},
+						{
+							"value": 2,
+							"score": 1.8,
+							"id": "FIN_2_2",
+							"label": "0.75x <= x < 1.6x",
+							"condition": "0.75 <= x < 1.6"
+						},
+						{
+							"value": 3,
+							"score": 7.3,
+							"id": "FIN_2_3",
+							"label": "1.6x <= x < 2.9x",
+							"condition": "1.6 <= x < 2.9"
+						},
+						{
+							"value": 4,
+							"score": 9,
+							"id": "FIN_2_4",
+							"label": "2.9x <= x < 6.2x",
+							"condition": "2.9 <= x < 6.2"
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "FIN_2_5",
+							"label": "x >= 6.2x or x<0.01x",
+							"condition": "6.2 <= x or x< 0.01"
+						}
+					]
+				},
+				{
+					"facID": "FIN_3",
+					"seq": 3,
+					"facName": "Leverage - TNW/(Int + CPLTD + STD)",
+					"facDesc": "",
+					"weight": 0.1,
+					"attrCnt": 5,
+					"attrSelectable": false,
+					"finConfig": {
+						"fssImportCat": "RT4",
+						"facValue_prefix": "",
+						"facValue_suffix": "x"
+					},
+					"initValue": {
+						"facID": "FIN_3",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0,
+						"finValue": {
+							"facValue": 0,
+							"facValue_prev": 0,
+							"facValue_import": 0,
+							"facValue_IsOvrd": false,
+							"ovrdJustification": ""
+						}
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0,
+							"id": "FIN_3_1",
+							"label": "x >= 18x",
+							"condition": "x >= 18"
+						},
+						{
+							"value": 2,
+							"score": 2.9,
+							"id": "FIN_3_2",
+							"label": "4x <= x < 18x",
+							"condition": "4 <= x < 18"
+						},
+						{
+							"value": 3,
+							"score": 5.4,
+							"id": "FIN_3_3",
+							"label": "1x <= x < 4x",
+							"condition": "1 <= x < 4"
+						},
+						{
+							"value": 4,
+							"score": 7.2,
+							"id": "FIN_3_4",
+							"label": "0.3x <= x < 1x",
+							"condition": "0.3 <= x < 1"
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "FIN_3_5",
+							"label": "x < 0.3x",
+							"condition": "x < 0.3"
+						}
+					]
+				},
+				{
+					"facID": "FIN_4",
+					"seq": 4,
+					"facName": "Cashflow - CAO/(Int + CPLTD + STD)",
+					"facDesc": "",
+					"weight": 0.1,
+					"attrCnt": 5,
+					"attrSelectable": false,
+					"finConfig": {
+						"fssImportCat": "RT5",
+						"facValue_prefix": "",
+						"facValue_suffix": "x"
+					},
+					"initValue": {
+						"facID": "FIN_4",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0,
+						"finValue": {
+							"facValue": 0,
+							"facValue_prev": 0,
+							"facValue_import": 0,
+							"facValue_IsOvrd": false,
+							"ovrdJustification": ""
+						}
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0.1,
+							"id": "FIN_4_1",
+							"label": "x >= 17x",
+							"condition": "x >= 17"
+						},
+						{
+							"value": 2,
+							"score": 3.2,
+							"id": "FIN_4_2",
+							"label": "4x <= x < 17x",
+							"condition": "4 <= x < 17"
+						},
+						{
+							"value": 3,
+							"score": 5.6,
+							"id": "FIN_4_3",
+							"label": "1.2x <= x < 4x",
+							"condition": "1.2 <= x < 4"
+						},
+						{
+							"value": 4,
+							"score": 8.9,
+							"id": "FIN_4_4",
+							"label": "0.1x <= x < 1.2x",
+							"condition": "0.1 <= x < 1.2"
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "FIN_4_5",
+							"label": "x < 0.1x",
+							"condition": "x < 0.1"
+						}
+					]
+				},
+				{
+					"facID": "FIN_5",
+					"seq": 5,
+					"facName": "Activity - Ops Gearing (Sales/Total Assets)",
+					"facDesc": "",
+					"weight": 0.06,
+					"attrCnt": 5,
+					"attrSelectable": false,
+					"finConfig": {
+						"fssImportCat": "RT6",
+						"facValue_prefix": "",
+						"facValue_suffix": "x"
+					},
+					"initValue": {
+						"facID": "FIN_5",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0,
+						"finValue": {
+							"facValue": 0,
+							"facValue_prev": 0,
+							"facValue_import": 0,
+							"facValue_IsOvrd": false,
+							"ovrdJustification": ""
+						}
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0.1,
+							"id": "FIN_5_1",
+							"label": "x >= 2.5x",
+							"condition": "x >= 2.5"
+						},
+						{
+							"value": 2,
+							"score": 3.1,
+							"id": "FIN_5_2",
+							"label": "1.5x <= x < 2.5x",
+							"condition": "1.5 <= x < 2.5"
+						},
+						{
+							"value": 3,
+							"score": 5,
+							"id": "FIN_5_3",
+							"label": "0.8x <= x < 1.5x",
+							"condition": "0.8 <= x < 1.5"
+						},
+						{
+							"value": 4,
+							"score": 8.5,
+							"id": "FIN_5_4",
+							"label": "0.3x <= x < 0.8x",
+							"condition": "0.3 <= x < 0.8"
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "FIN_5_5",
+							"label": "x < 0.3x",
+							"condition": "x < 0.3"
+						}
+					]
+				},
+				{
+					"facID": "FIN_6",
+					"facName": "Activity - Sales Growth",
+					"facDesc": "",
+					"seq": 6,
+					"allowOvr": true,
+					"weight": 0.025,
+					"attrCnt": 5,
+					"attrSelectable": false,
+					"finConfig": {
+						"fssImportCat": "RT7",
+						"facValue_prefix": "",
+						"facValue_suffix": "%"
+					},
+					"initValue": {
+						"facID": "FIN_6",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0,
+						"finValue": {
+							"facValue": 0,
+							"facValue_prev": 0,
+							"facValue_import": 0,
+							"facValue_IsOvrd": false,
+							"ovrdJustification": ""
+						}
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0.2,
+							"id": "FIN_6_1",
+							"label": "1% <= x < 11%",
+							"condition": "0.01 <= x < 0.11"
+						},
+						{
+							"value": 2,
+							"score": 3.4,
+							"id": "FIN_6_2",
+							"label": "-15% <= x < 1%",
+							"condition": "-0.15 <= x < 0.01"
+						},
+						{
+							"value": 3,
+							"score": 4.3,
+							"id": "FIN_6_3",
+							"label": "11% <= x < 40%",
+							"condition": "0.11 <= x < 0.4"
+						},
+						{
+							"value": 4,
+							"score": 8.5,
+							"id": "FIN_6_4",
+							"label": "x < - 15%",
+							"condition": "x < -0.15"
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "FIN_6_5",
+							"label": "x >= 40%",
+							"condition": "x >= 0.4"
+						}
+					]
+				},
+				{
+					"facID": "FIN_7",
+					"seq": 7,
+					"facName": "Liquidity - Liquidity Asset/Current Liability",
+					"facDesc": "",
+					"weight": 0.11,
+					"attrCnt": 5,
+					"attrSelectable": false,
+					"finConfig": {
+						"fssImportCat": "RT8",
+						"facValue_prefix": "",
+						"facValue_suffix": "x"
+					},
+					"initValue": {
+						"facID": "FIN_7",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0,
+						"finValue": {
+							"facValue": 0,
+							"facValue_prev": 0,
+							"facValue_import": 0,
+							"facValue_IsOvrd": false,
+							"ovrdJustification": ""
+						}
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0,
+							"id": "FIN_7_1",
+							"label": "x >= 18 mths",
+							"condition": "x >= 18"
+						},
+						{
+							"value": 2,
+							"score": 2.5,
+							"id": "FIN_7_2",
+							"label": "6 mths <= x < 18 mths",
+							"condition": "6 <= x < 18"
+						},
+						{
+							"value": 3,
+							"score": 5,
+							"id": "FIN_7_3",
+							"label": "3 mths <= x < 6 mths",
+							"condition": "3 <= x < 6"
+						},
+						{
+							"value": 4,
+							"score": 6.5,
+							"id": "FIN_7_4",
+							"label": "1 mth <= x < 3 mths",
+							"condition": "1 <= x < 3"
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "FIN_7_5",
+							"label": "x < 1 mth",
+							"condition": "x < 1"
+						}
+					]
+				},
+				{
+					"facID": "FIN_8",
+					"facName": "Size - TNW (USD mil)",
+					"facDesc": "",
+					"seq": 8,
+					"weight": 0.03,
+					"attrCnt": 5,
+					"attrSelectable": false,
+					"finConfig": {
+						"fssImportCat": "RT9",
+						"facValue_prefix": "$M",
+						"facValue_suffix": ""
+					},
+					"initValue": {
+						"facID": "FIN_8",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0,
+						"finValue": {
+							"facValue": 0,
+							"facValue_prev": 0,
+							"facValue_import": 0,
+							"facValue_IsOvrd": false,
+							"ovrdJustification": ""
+						}
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 2,
+							"id": "FIN_8_1",
+							"label": "x >= 100 mil",
+							"condition": "x >= 100"
+						},
+						{
+							"value": 2,
+							"score": 3,
+							"id": "FIN_8_2",
+							"label": "20 mil <= x < 100 mil",
+							"condition": "20 <= x < 100"
+						},
+						{
+							"value": 3,
+							"score": 6,
+							"id": "FIN_8_3",
+							"label": "2 mil <= x < 20 mil",
+							"condition": "2 <= x < 20"
+						},
+						{
+							"value": 4,
+							"score": 8,
+							"id": "FIN_8_4",
+							"label": "$1 <= x < 2 mil",
+							"condition": "0.000001 <= x < 2"
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "FIN_8_5",
+							"label": "x < $1",
+							"condition": "x < 0.000001"
+						}
+					]
+				}
+			]
+		},
+		{
+			"grpID": "MAN",
+			"grpName": "Management",
+			"fssImportInd": false,
+			"initValue": {
+				"grpID": "MAN",
+				"grpScore": 0
+			},
+			"factors": [
+				{
+					"facID": "MAN_1",
+					"seq": 1,
+					"facName": "Experience",
+					"facDesc": "To assess this factor,  you have to consider track records of the management team. \n- Has it lead company outperformed its competitors in the industry in both good and bad times?\n- How established the track records \n- How does it respond to unexpected events? \n- If the management team is new, does it have experience in running similar company with similar complexity",
+					"weight": 0.045,
+					"attrCnt": 6,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "MAN_1",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 1,
+							"id": "MAN_1_1",
+							"label": "Management has strong understanding of the business drivers and economics. Companies under its leadership consistently achieved exceptional growth compared to peers in last 5 years",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 2,
+							"id": "MAN_1_2",
+							"label": "Management has good understanding of the business drivers and economics. Companies under its leadership consistently outperformed industry average in last 3 years",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 4,
+							"id": "MAN_1_3",
+							"label": "Management understands the business drivers and economics. Companies under its leadership perform inline with industry average in last 3 years",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 6,
+							"id": "MAN_1_4",
+							"label": "Management is aware of business drivers and economics. Companies under its leadership performed inline with industry average in last 2 years",
+							"condition": ""
+						},
+						{
+							"value": 5,
+							"score": 8,
+							"id": "MAN_1_5",
+							"label": "Management is aware of business drivers and economics. Companies is still have profits but below industry average",
+							"condition": ""
+						}
+					]
+				},
+				{
+					"facID": "MAN_2",
+					"seq": 2,
+					"facName": "Management Strength",
+					"facDesc": "",
+					"weight": 0.03,
+					"attrCnt": 5,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "MAN_2",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 1,
+							"id": "MAN_2_1",
+							"label": "Broad-based senior and middle management team. Senior and middle managers in key positions have extensive professional/management skills with average of 15 years industry experience. Systematic succession planning for key positions",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 2,
+							"id": "MAN_2_2",
+							"label": "Broad-based management team supporting a small senior management team. Middle managers in key positions have extensive professional/management skills with average of 10 years industry experience. Systematic succession planning for key positions",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 5,
+							"id": "MAN_2_3",
+							"label": "Small but strong senior and middle management team. Managers may hold more than 1 key positions and have adequate skills with average 7 years of experience. Marginally impact upon unavailability of one/few key members.",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 8,
+							"id": "MAN_2_4",
+							"label": "Senior management centrallised around one or a few related persons. Severe impact upon the unavailability of a few key members",
+							"condition": ""
+						},
+						{
+							"value": 5,
+							"score": 12,
+							"id": "MAN_2_5",
+							"label": "Frequent changes in management and totally depend on a single key member on decision making",
+							"condition": ""
+						}
+					]
+				},
+				{
+					"facID": "MAN_3",
+					"seq": 3,
+					"facName": "Controls",
+					"facDesc": "",
+					"weight": 0.045,
+					"attrCnt": 5,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "MAN_3",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 1,
+							"id": "MAN_3_1",
+							"label": "Risk management, MIS and financial control systems in place. Strong use of technology. Management is assited by real time and detailed information such as key financial and performance indicators. Contigency plans to prepare for business disruption exist and tested.",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 3,
+							"id": "MAN_3_2",
+							"label": "MIS and financial control systems in place. Appropriate use of technology",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 5,
+							"id": "MAN_3_3",
+							"label": "Basic daily financial controls exist. Mainly manual records kept. Business information provided within 3 months time lag. Some inaccuracies may exist.",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 7,
+							"id": "MAN_3_4",
+							"label": "Basic controls exist but they are not subjected to prompt monitoring. Potential exists for significant financial discrepancies.",
+							"condition": ""
+						},
+						{
+							"value": 5,
+							"score": 12,
+							"id": "MAN_3_5",
+							"label": "Controls have not fully defined or documented.",
+							"condition": ""
+						}
+					]
+				},
+				{
+					"facID": "MAN_4",
+					"seq": 4,
+					"facName": "Account conduct",
+					"facDesc": "",
+					"weight": 0.03,
+					"attrCnt": 5,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "MAN_4",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 1,
+							"id": "MAN_4_1",
+							"label": "Management provides excellent quality financial information in timely maner. Company readily inform bankers of new or negative development. Excellent repayment history.",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 2,
+							"id": "MAN_4_2",
+							"label": "Management is very co-operative. Provides information on request. Does not attempt to hide critical information. Good repayment history.",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 5,
+							"id": "MAN_4_3",
+							"label": "Management provides information upon requested. Negative information furnished with some probing. Management not known to dishonour commitments. Repayment missed occasionally but paid off promptly after reminded.",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 8,
+							"id": "MAN_4_4",
+							"label": "Information, if provided, is either incomplete or much delayed. Management attempts not to disclose negative developments. Regular breach of loan conditions. Negative market check.",
+							"condition": ""
+						},
+						{
+							"value": 5,
+							"score": 12,
+							"id": "MAN_4_5",
+							"label": "Relationship between the management and financier is poor with limited communication",
+							"condition": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"grpID": "IND",
+			"grpName": "Industry",
+			"fssImportInd": false,
+			"initValue": {
+				"grpID": "IND",
+				"grpScore": 0
+			},
+			"factors": [
+				{
+					"facID": "IND_1",
+					"seq": 1,
+					"facName": "Market Position",
+					"facDesc": "",
+					"weight": 0.05,
+					"attrCnt": 6,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "IND_1",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 1,
+							"id": "IND_1_1",
+							"label": "Monopoly or company is a dominant player with more than 50% market shares",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 2,
+							"id": "IND_1_2",
+							"label": "Company is an industry leader with ability to set trends and influence prices",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 5,
+							"id": "IND_1_3",
+							"label": "Company is competitive with strength in certain areas and market position is improving",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 8,
+							"id": "IND_1_4",
+							"label": "Company market position can be maintained in the medium terms. Some degree of product differentiation exists. Need for price discounting not frequent",
+							"condition": ""
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "IND_1_5",
+							"label": "No product differentiation. Substitues are readily available. Pricing power is weak",
+							"condition": ""
+						}
+					]
+				},
+				{
+					"facID": "IND_2",
+					"seq": 2,
+					"facName": "Barriers To Entry",
+					"facDesc": "",
+					"weight": 0.05,
+					"attrCnt": 5,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "IND_2",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 1,
+							"id": "IND_2_1",
+							"label": "Very high barrier to entry because of strong government protection or regulation",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 3,
+							"id": "IND_2_2",
+							"label": "High barrier to entry. Difficult for competitors to enter because of heavy capital requirements or stringent licensing environment.",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 5,
+							"id": "IND_2_3",
+							"label": "Average barrier to entry. Number of competitors in the market is unlikely to growth in next few years",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 8,
+							"id": "IND_2_4",
+							"label": "Low barrier to entry. Number of competitors in the market is expected to growth substantially in next few years",
+							"condition": ""
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "IND_2_5",
+							"label": "No barrier to entry. Easy entry and exit for participants in the market.",
+							"condition": ""
+						}
+					]
+				},
+				{
+					"facID": "IND_3",
+					"seq": 3,
+					"facName": "Industry Outlook",
+					"facDesc": "",
+					"weight": 0.1,
+					"attrCnt": 5,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "IND_3",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0,
+							"id": "IND_3_1",
+							"label": "Strong outlook. High growth trend is expected to continue in next 2 years with growth rate exceeding 15%",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 2,
+							"id": "IND_3_2",
+							"label": "Favourable outlook. Industry is expected to grow between 10% to 15% in next 2 years.",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 4,
+							"id": "IND_3_3",
+							"label": "Neutral outlook. Industry is expected to grow between 5% to 10% in next 2 years. No unfavourable event is expected to adversely affect profit levels.",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 10,
+							"id": "IND_3_4",
+							"label": "Weak outlook. Industry is under-going a slow down and profits are expected to be adversely impacted.",
+							"condition": ""
+						},
+						{
+							"value": 5,
+							"score": 15,
+							"id": "IND_3_5",
+							"label": "Crisis. Industry is under-going a severe downturn",
+							"condition": ""
+						}
+					]
+				},
+				{
+					"facID": "IND_4",
+					"seq": 4,
+					"facName": "Technology Risk",
+					"facDesc": "",
+					"weight": 0.025,
+					"attrCnt": 4,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "IND_4",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 1,
+							"id": "IND_4_1",
+							"label": "Little technology is employed in the industry. Threat of technologies obsolescence is low",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 4,
+							"id": "IND_4_2",
+							"label": "Technology employed in the industry is fairly stable and not expected to change significantly in the short terms",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 7,
+							"id": "IND_4_3",
+							"label": "Technology employed in the industry is evolving. Changes would be expected",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 10,
+							"id": "IND_4_4",
+							"label": "Technology employed in the industry is fast evolving. Changes would be unanticipated. High obsolescence rate.",
+							"condition": ""
+						}
+					]
+				},
+				{
+					"facID": "IND_5",
+					"seq": 5,
+					"facName": "Retooling Flexibility",
+					"facDesc": "",
+					"weight": 0.025,
+					"attrCnt": 4,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "IND_5",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 1,
+							"id": "IND_5_1",
+							"label": "Not vunerable to technology changes",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 4,
+							"id": "IND_5_2",
+							"label": "Flexible in re-configuring equipments and processes to meeting changing business environment.",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 7,
+							"id": "IND_5_3",
+							"label": "Some degree of inflexible in re-configuring equipments and processes. Cost of re-configuring is high.",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 10,
+							"id": "IND_5_4",
+							"label": "Highly inflexible in re-configuring equipments and processes.",
+							"condition": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"grpID": "OTH",
+			"grpName": "Others",
+			"fssImportInd": false,
+			"initValue": {
+				"grpID": "OTH",
+				"grpScore": 0
+			},
+			"factors": [
+				{
+					"facID": "OTH_1",
+					"seq": 1,
+					"facName": "Litigation",
+					"facDesc": "",
+					"weight": 0.02,
+					"attrCnt": 6,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "OTH_1",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0,
+							"id": "OTH_1_1",
+							"label": "No adverse litigation is anticipated.",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 2,
+							"id": "OTH_1_2",
+							"label": "Risk of litigation is low.",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 5,
+							"id": "OTH_1_3",
+							"label": "Average risk of litigation but not consider significant.",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 7,
+							"id": "OTH_1_4",
+							"label": "High risk of litigation but company has the capacity to manage without severe impacting the business.",
+							"condition": ""
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "OTH_1_5",
+							"label": "Litigation issues are being addressed but having modest effect on the business.",
+							"condition": ""
+						}
+					]
+				},
+				{
+					"facID": "OTH_2",
+					"seq": 2,
+					"facName": "Market Exposures",
+					"facDesc": "",
+					"weight": 0.03,
+					"attrCnt": 6,
+					"attrSelectable": true,
+					"initValue": {
+						"facID": "OTH_2",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 0,
+							"id": "OTH_2_1",
+							"label": "No exposure",
+							"condition": ""
+						},
+						{
+							"value": 2,
+							"score": 2,
+							"id": "OTH_2_2",
+							"label": "Limited exposures to exchange rate and other risks.",
+							"condition": ""
+						},
+						{
+							"value": 3,
+							"score": 5,
+							"id": "OTH_2_3",
+							"label": "Currency risks and other risks are present but below peers",
+							"condition": ""
+						},
+						{
+							"value": 4,
+							"score": 7,
+							"id": "OTH_2_4",
+							"label": "Currency risks and other risks are present but managable",
+							"condition": ""
+						},
+						{
+							"value": 5,
+							"score": 10,
+							"id": "OTH_2_5",
+							"label": "Currency risks and other risks begin to impact the business",
+							"condition": ""
+						}
+					]
+				},
+				{
+					"facID": "OTH_3",
+					"seq": 3,
+					"facName": "Country of Exposures",
+					"facDesc": "Weighted of country rating of Primary Ctry of Exposure & Secondary Ctry of Exp",
+					"weight": 0.05,
+					"attrCnt": 6,
+					"attrSelectable": false,
+					"inputBox": {
+						"boxtype": "MyCtryRatingBox",
+						"params": ["param_ctryratings", "param_rating2rank_mapping"]
+					},
+					"initValue": {
+						"facID": "OTH_3",
+						"facLevel": 0,
+						"facScore": 0,
+						"facLevel_prev": 0,
+						"inputBox": {
+							"priCtryCode": "",
+							"priCtryPct": 0,
+							"priSPRating": "",
+							"priMoodyRating": "",
+							"priFitchRating": "",
+							"priCombinedRank": 0,
+							"priCombinedRating": "",
+							"secCtryCode": "",
+							"secCtryPct": 0,
+							"secSPRating": "",
+							"secMoodyRating": "",
+							"secFitchRating": "",
+							"secCombinedRank": 0,
+							"secCombinedRating": "",
+							"totalPct": 0,
+							"totalCombinedRank": 0,
+							"totalCombinedRating": "",
+							"ctryrisk": ""
+						}
+					},
+					"attrs": [
+						{
+							"value": 1,
+							"score": 1,
+							"id": "OTH_3_1",
+							"label": "Majority of the cashflow are from operating assets based in countries with long-term rating of Aa3 or better (AA- or better)",
+							"condition": "ctryrisk == 1"
+						},
+						{
+							"value": 2,
+							"score": 2,
+							"id": "OTH_3_2",
+							"label": "Majority of the cashflow are from operating assets based in countries with long-term rating from A3 to A1 (A- to A+)",
+							"condition": "ctryrisk == 2"
+						},
+						{
+							"value": 3,
+							"score": 10,
+							"id": "OTH_3_3",
+							"label": "Majority of the cashflow are from operating assets based in countries with long-term rating from Baa3 to Baa1 (BBB- to BBB+)",
+							"condition": "ctryrisk == 3"
+						},
+						{
+							"value": 4,
+							"score": 12,
+							"id": "OTH_3_4",
+							"label": "Majority of the cashflow are from operating assets based in countries with long-term rating from Ba3 to Ba1 (BB- to BB+)",
+							"condition": "ctryrisk == 4"
+						},
+						{
+							"value": 5,
+							"score": 20,
+							"id": "OTH_3_5",
+							"label": "Majority of the cashflow are from operating assets based in countries with long-term rating from B3 to B1 (B- to B+)",
+							"condition": "ctryrisk == 5"
+						}
+					]
+				}
+			]
+		}
+	],
+	"scModelSpecialTreatments": [
+		{
+			"seq": 1,
+			"name": "Tangible Net Worth Capped",
+			"outcome": "BOG",
+			"showNA": "false",
+			"outcomeBox": {
+				"rule": "gradeAdj == grade ? \"No\" : \"Yes\" ",
+				"showOutcome": ""
+			},
+			"adjustGrade": [
+				{
+					"rule": "RT9 >= 100",
+					"gradeAdj": "gradeAdj"
+				},
+				{
+					"rule": "5 <= RT9 < 100",
+					"gradeAdj": "max(gradeAdj,5)"
+				},
+				{
+					"rule": "2 <= RT9 < 5",
+					"gradeAdj": "max(gradeAdj,7)"
+				},
+				{
+					"rule": "RT9 < 2",
+					"gradeAdj": "max(gradeAdj,9)"
+				}
+			],
+			"initValue": {
+				"seq": 1,
+				"outcomeBox": ""
+			}
+		},
+		{
+			"seq": 2,
+			"name": "Outdated Financial",
+			"outcome": "BOGA",
+			"showNA": "outdated_1",
+			"optionBox": {
+				"options": [
+					{
+						"seq": 1,
+						"value": "outdated_1",
+						"label": "No"
+					},
+					{
+						"seq": 2,
+						"value": "outdated_2",
+						"label": "Yes - Less than 6 months - BOG + 1"
+					},
+					{
+						"seq": 3,
+						"value": "outdated_3",
+						"label": "Yes - Outdated from 6 to 12 months - BOG + 2"
+					},
+					{
+						"seq": 4,
+						"value": "outdated_4",
+						"label": "Yes - Outdated more than 12 months - BOG + 3"
+					}
+				]
+			},
+			"adjustGrade": [
+				{
+					"rule": "outdated_1",
+					"gradeAdj": "gradeAdj"
+				},
+				{
+					"rule": "outdated_2",
+					"gradeAdj": "gradeAdj + 1"
+				},
+				{
+					"rule": "outdated_3",
+					"gradeAdj": "gradeAdj + 2"
+				},
+				{
+					"rule": "outdated_4",
+					"gradeAdj": "gradeAdj + 3"
+				}
+			],
+			"initValue": {
+				"seq": 2,
+				"optionBox": ""
+			}
+		},
+		{
+			"seq": 3,
+			"name": "Qualified Financial",
+			"outcome": "BOGB",
+			"showNA": "qualified_1",
+			"optionBox": {
+				"options": [
+					{
+						"seq": 1,
+						"value": "qualified_1",
+						"label": "No"
+					},
+					{
+						"seq": 2,
+						"value": "qualified_2",
+						"label": "Yes - MAX(BOG, 12)"
+					}
+				]
+			},
+			"adjustGrade": [
+				{
+					"rule": "qualified_1",
+					"gradeAdj": "gradeAdj"
+				},
+				{
+					"rule": "qualified_2",
+					"gradeAdj": "max(gradeAdj,12)"
+				}
+			],
+			"initValue": {
+				"seq": 3,
+				"optionBox": ""
+			}
+		},
+		{
+			"seq": 4,
+			"name": "Parent Support",
+			"outcome": "BOGC",
+			"showNA": "parent_1",
+			"optionBox": {
+				"options": [
+					{
+						"seq": 1,
+						"value": "parent_1",
+						"label": "No"
+					},
+					{
+						"seq": 2,
+						"value": "parent_2",
+						"label": "Yes -  Implicit Support (Parent OG + 1)"
+					},
+					{
+						"seq": 3,
+						"value": "parent_3",
+						"label": "Yes -  Weak Support (Parent OG + 2)"
+					}
+				]
+			},
+			"inputBox": {
+				"type": "Input",
+				"label": "Parent Standalone Grade",
+				"output": "POG",
+				"hideRule": "parent_1"
+			},
+			"adjustGrade": [
+				{
+					"rule": "parent_1",
+					"gradeAdj": "gradeAdj"
+				},
+				{
+					"rule": "parent_2",
+					"gradeAdj": "POG + 1"
+				},
+				{
+					"rule": "parent_3",
+					"gradeAdj": "POG + 2"
+				}
+			],
+			"initValue": {
+				"seq": 4,
+				"optionBox": "",
+				"inputBox": { "value": 0 }
+			}
+		},
+		{
+			"seq": 5,
+			"name": "Manual Override",
+			"outcome": "ROG",
+			"showNA": "ovrd_1",
+			"optionBox": {
+				"options": [
+					{
+						"seq": 1,
+						"value": "ovrd_1",
+						"label": "No"
+					},
+					{
+						"seq": 2,
+						"value": "ovrd_2",
+						"label": "Yes - Additional Info"
+					},
+					{
+						"seq": 3,
+						"value": "ovrd_3",
+						"label": "Yes - Just I like to do it"
+					}
+				]
+			},
+			"inputBox": {
+				"type": "Input",
+				"label": "Recommended Grade",
+				"output": "userROG",
+				"hideRule": "ovrd_1"
+			},
+			"justificationBox": {
+				"label": "Justification for Recommendation",
+				"hideRule": "guar_1"
+			},
+			"adjustGrade": [
+				{
+					"rule": "ovrd_1",
+					"gradeAdj": "gradeAdj"
+				},
+				{
+					"rule": "ovrd_2",
+					"gradeAdj": "userROG"
+				},
+				{
+					"rule": "ovrd_3",
+					"gradeAdj": "userROG"
+				}
+			],
+			"initValue": {
+				"seq": 5,
+				"optionBox": "",
+				"inputBox": { "value": 0 },
+				"justificationBox": ""
+			}
+		},
+		{
+			"seq": 6,
+			"name": "Standalone Grade",
+			"outcome": "SOG",
+			"showNA": "false",
+			"adjustGrade": [
+				{
+					"rule": "true",
+					"gradeAdj": "gradeAdj"
+				}
+			],
+			"initValue": {
+				"seq": 6
+			}
+		},
+		{
+			"seq": 7,
+			"name": "Guarantees",
+			"outcome": "GOG",
+			"showNA": "guar_1",
+			"optionBox": {
+				"options": [
+					{
+						"seq": 1,
+						"value": "guar_1",
+						"label": "No"
+					},
+					{
+						"seq": 2,
+						"value": "guar_2",
+						"label": "Yes - Have Guarantees"
+					}
+				]
+			},
+			"inputBox": {
+				"type": "Input",
+				"label": "Weighted Guarantors' Grade",
+				"output": "userGOG",
+				"hideRule": "guar_1"
+			},
+			"adjustGrade": [
+				{
+					"rule": "guar_1",
+					"gradeAdj": "gradeAdj"
+				},
+				{
+					"rule": "guar_2",
+					"gradeAdj": "userGOG"
+				}
+			],
+			"initValue": {
+				"seq": 7,
+				"optionBox": "",
+				"inputBox": { "value": 0 }
+			}
+		}
+	],
+	"scScore2Grade": [
+		{
+			"lbound": 0,
+			"ubound": 0.01,
+			"grade": 1,
+			"PD": 0.0001,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 0.01,
+			"ubound": 0.02,
+			"grade": 2,
+			"PD": 0.0002,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 0.02,
+			"ubound": 2.9,
+			"grade": 3,
+			"PD": 0.0004,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 2.9,
+			"ubound": 3.5,
+			"grade": 4,
+			"PD": 0.001,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 3.5,
+			"ubound": 4,
+			"grade": 5,
+			"PD": 0.0014,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 4,
+			"ubound": 4.6,
+			"grade": 6,
+			"PD": 0.0037,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 4.6,
+			"ubound": 5,
+			"grade": 7,
+			"PD": 0.0054,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 5,
+			"ubound": 5.6,
+			"grade": 8,
+			"PD": 0.0111,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 5.6,
+			"ubound": 6,
+			"grade": 9,
+			"PD": 0.019,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 6,
+			"ubound": 6.6,
+			"grade": 10,
+			"PD": 0.032,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 6.6,
+			"ubound": 7.2,
+			"grade": 11,
+			"PD": 0.064,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 7.2,
+			"ubound": 7.8,
+			"grade": 12,
+			"PD": 0.111,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 7.8,
+			"ubound": 999,
+			"grade": 13,
+			"PD": 0.204,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		},
+		{
+			"lbound": 999,
+			"ubound": 99999,
+			"grade": 14,
+			"PD": 1,
+			"lboundSign": ">=",
+			"uboundSign": "<"
+		}
+	],
+	"scCommonValues": {
+		"custInfo": {
+			"custID": "",
+			"custName": "",
+			"bizRegNum": "",
+			"bizRegDate": "",
+			"industryInfo": {
+				"code": "",
+				"desc": ""
+			}
+		},
+		"scInfo": {
+			"scType": "CORP",
+			"scID": "",
+			"scStatus": "PE",
+			"scCreatedDate": null,
+			"scCreatedBy": "",
+			"scAprrovedDate": null,
+			"scApprovedBy": "",
+			"scAprrovedDate_prev": null,
+			"fssDate": null,
+			"fssMthsCover": 0,
+			"fssAuditType": "",
+			"fssDate_prev": null,
+			"fssMthsCover_prev": null,
+			"fssAuditType_prev": "",
+			"scConclusion": ""
+		},
+		"scVariables": {
+			"aggScore": 0,
+			"grade": 0,
+			"gradeAdj": 0,
+			"BOG": 0,
+			"SOG": 0,
+			"FOG": 0
+		}
+	}
+}

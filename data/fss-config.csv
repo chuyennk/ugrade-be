@@ -1,0 +1,3503 @@
+VariableRef,FinancialSpreadsheetVariableCategoryRef,DisplayName,FinalPos,ItemPosition,FinancialSpreadsheetItemID,fkParentFinancialSpreadsheetItemID,fkFinancialSpreadsheetVariableID,fkFinancialSpreadsheetVariableCategoryID,AssumptionFormula,ProjectionFormula,ProjectionBaseYearFormula
+CORP_ASUM_SRATE,CORP_ASSUM_BS,Ave. Int Rate on Short Term Debt,0,0,1326,,502,11,"Case Name: 
+   Condition: true
+   Formula: Math.Abs (Math.Avg (Math.Divide (YBN.CORP_IS_IE, ( Math.Sum(YBN.CORP_BS_STD, YBN.CORP_BS_BP, YBN.CORP_BS_LTD, YBN.CORP_BS_CPLTD )))))
+",,
+CORP_ASUM_SRATE_ATI,CORP_ASSUM_BS,Ave. Int Rate on Short Term Debt (%AddToInterest),1,1,1722,,829,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+CORP_ASUM_LRATE,CORP_ASSUM_BS,Ave. Int Rate on Long Term Debt,2,2,1327,,503,11,"Case Name: 
+   Condition: true
+   Formula: Math.Abs (Math.Avg (Math.Divide (YBN.CORP_IS_IE, ( Math.Sum(YBN.CORP_BS_STD, YBN.CORP_BS_BP, YBN.CORP_BS_LTD, YBN.CORP_BS_CPLTD )))))
+",,
+CORP_ASUM_LRATE_ATI,CORP_ASSUM_BS,Ave. Int Rate on Long Term Debt (%AddToInterest),3,3,1723,,830,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+CORP_ASUM_GS_PERSR,CORP_ASSUM_BS,% Sales,4,0,1509,1508,649,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_GS) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_GS, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_GS, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_GS_ABS,CORP_ASSUM_BS,Absolute,4,1,1510,1508,650,11,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_GS 
+",,
+CORP_ASUM_GS_ATS,CORP_ASSUM_BS,%AddtoSales,4,2,1724,1508,831,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Government Securities,4,4,1508,,,11,,,
+CORP_ASUM_MS_PERSR,CORP_ASSUM_BS,%Sales,5,0,1411,1356,459,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_MS) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_MS, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_MS, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_MS_ABS,CORP_ASSUM_BS,Absolute,5,1,1410,1356,460,11,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_MS 
+",,
+CORP_ASUM_MS_ATS,CORP_ASSUM_BS,%AddtoSales,5,2,1725,1356,832,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Marketable Securities,5,5,1356,,,11,,,
+CORP_ASUM_NAR_ARDOH,CORP_ASSUM_BS,ARDOH,6,0,1409,1407,461,11,"Case Name: 
+   Condition: true
+   Formula:  Math.Avg (Math.Divide (YBN.CORP_BS_NAR,YBN.CORP_IS_SR)) *365 
+",,
+CORP_ASUM_NAR_ABS,CORP_ASSUM_BS,Absolute,6,1,1408,1407,462,11,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_NAR 
+",,
+CORP_ASUM_NAR_PERARDOH,CORP_ASSUM_BS,%AddtoARDOH,6,2,1713,1407,820,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,A/C Receivables (Non-Related Parties),6,6,1407,,,11,,,
+CORP_ASUM_NARRP_ARDOH,CORP_ASSUM_BS,ARDOH,7,0,1606,1518,651,11,"Case Name: 
+   Condition: true
+   Formula:  Math.Avg (Math.Divide (YBN.CORP_BS_NARRP,YBN.CORP_IS_SR)) *365 
+",,
+CORP_ASUM_NARRP_ABS,CORP_ASSUM_BS,Absolute,7,1,1605,1518,652,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_NARRP)
+",,
+CORP_ASUM_NARRP_PERARDOH,CORP_ASSUM_BS,%AddtoARDOH,7,2,1714,1518,821,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,A/C Receivables (Related Parties),7,7,1518,,,11,,,
+CORP_ASUM_INV_DOCOGS,CORP_ASSUM_BS,Inventory (days) over COGS,8,0,1406,1403,463,11,"Case Name: 
+   Condition: true
+   Formula: Math.Avg ( YBN.CORP_RC_AC_INVDOH )
+",,
+CORP_ASUM_INV_DOSR,CORP_ASSUM_BS,Inventory (days) over Sales,8,1,1405,1403,464,11,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (YBN.CORP_RC_AC_INVDOHOSAL)
+",,
+CORP_ASUM_INV_ABS,CORP_ASSUM_BS,Absolute,8,2,1404,1403,465,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_INV)
+",,
+CORP_ASUM_INV_PERDOCOGS,CORP_ASSUM_BS,%AddToDaysOverCOGS,8,3,1715,1403,822,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+CORP_ASUM_INV_PERDOSR,CORP_ASSUM_BS,%AddToDaysOverSales,8,4,1716,1403,823,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Inventory,8,8,1403,,,11,,,
+CORP_ASUM_PE_PERSR,CORP_ASSUM_BS,%Sales,9,0,1402,1400,466,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_PE) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_PE, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_PE, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_PE_ABS,CORP_ASSUM_BS,Absolute,9,1,1401,1400,467,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_PE)
+",,
+CORP_ASUM_PE_ATS,CORP_ASSUM_BS,%AddtoSales,9,2,1726,1400,833,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Prepaid Expenses,9,9,1400,,,11,,,
+CORP_ASUM_OCA_PERSR,CORP_ASSUM_BS,%Sales,10,0,1399,1397,468,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_OCA) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_OCA, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_OCA, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_OCA_ABS,CORP_ASSUM_BS,Absolute,10,1,1398,1397,469,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_OCA)
+",,
+CORP_ASUM_OCA_ATS,CORP_ASSUM_BS,%AddtoSales,10,2,1727,1397,834,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Others Current Assets,10,10,1397,,,11,,,
+CORP_ASUM_FA_PERSR,CORP_ASSUM_BS,%Sales,11,0,1396,1394,470,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_NFA) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_NFA, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_NFA, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_FA_ABS,CORP_ASSUM_BS,Absolute,11,1,1395,1394,471,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_NFA)
+",,
+CORP_ASUM_NFA_ATS,CORP_ASSUM_BS,%AddtoSales,11,2,1731,1394,838,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Net Fixed Assets,11,11,1394,,,11,,,
+CORP_ASUM_INS_PERSR,CORP_ASSUM_BS,%Sales,12,0,1393,1391,472,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_INS) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_INS, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_INS, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_INS_ABS,CORP_ASSUM_BS,Absolute,12,1,1392,1391,473,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_INS)
+",,
+CORP_ASUM_INS_ATS,CORP_ASSUM_BS,%AddtoSales,12,2,1732,1391,839,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Investments,12,12,1391,,,11,,,
+CORP_ASUM_REPRY_PERSR,CORP_ASSUM_BS,%Sales,13,0,1390,1388,474,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_RPA) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_RPA, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_RPA, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_RPA_ABS,CORP_ASSUM_BS,Absolute,13,1,1389,1388,475,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_RPA)
+",,
+CORP_ASUM_RPA_ATS,CORP_ASSUM_BS,%AddtoSales,13,2,1733,1388,840,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Related Parties Assets,13,13,1388,,,11,,,
+CORP_ASUM_ONCA_PERSR,CORP_ASSUM_BS,%Sales,14,0,1355,1353,476,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_ONCA) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_ONCA, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_ONCA, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_ONCA_ABS,CORP_ASSUM_BS,Absolute,14,1,1354,1353,477,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_ONCA)
+",,
+CORP_ASUM_ONCA_ATS,CORP_ASSUM_BS,%AddtoSales,14,2,1734,1353,841,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Others Non Current Assets,14,14,1353,,,11,,,
+CORP_ASUM_INT,CORP_ASSUM_BS,Intangibles,15,15,1562,,687,11,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_INT 
+",,
+CORP_ASUM_AP_DOCOGS,CORP_ASSUM_BS,APDOH(days) over COGS,16,0,1352,1349,478,11,"Case Name: 
+   Condition: true
+   Formula:  - Math.Avg (Math.Divide (YBN.CORP_BS_AP,YBN.CORP_IS_COGS)) * 365  
+",,
+CORP_ASUM_AP_DOSR,CORP_ASSUM_BS,APDOH(days) over Sales,16,1,1351,1349,479,11,"Case Name: 
+   Condition: true
+   Formula:  Math.Avg (Math.Divide (YBN.CORP_BS_AP,YBN.CORP_IS_SR)) * 365 
+",,
+CORP_ASUM_AP_ABS,CORP_ASSUM_BS,Absolute,16,2,1350,1349,480,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_AP)
+",,
+CORP_ASUM_AP_PERDOCOGS,CORP_ASSUM_BS,%AddToDaysOverCOGS,16,3,1717,1349,824,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+CORP_ASUM_AP_PERDOSR,CORP_ASSUM_BS,%AddToDaysOverSales,16,4,1718,1349,825,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,A/C Payables (Non-Related Parties),16,16,1349,,,11,,,
+CORP_ASUM_APRP_DOCOGS,CORP_ASSUM_BS,APDOH (days) over COGS,17,0,1515,1514,653,11,"Case Name: 
+   Condition: true
+   Formula:  - Math.Avg (Math.Divide (YBN.CORP_BS_APRP,YBN.CORP_IS_COGS)) * 365  
+",,
+CORP_ASUM_APRP_DOSR,CORP_ASSUM_BS,APDOH (days) over Sales,17,1,1516,1514,654,11,"Case Name: 
+   Condition: true
+   Formula:  Math.Avg (Math.Divide (YBN.CORP_BS_APRP,YBN.CORP_IS_SR)) * 365 
+",,
+CORP_ASUM_APRP_ABS,CORP_ASSUM_BS,Absolute,17,2,1517,1514,655,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_APRP)
+",,
+CORP_ASUM_APRP_PERDOCOGS,CORP_ASSUM_BS,%AddToDaysOverCOGS,17,3,1719,1514,826,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+CORP_ASUM_APRP_PERDOSR,CORP_ASSUM_BS,%AddToDaysOverSales,17,4,1720,1514,827,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,A/C Payables (Related Parties),17,17,1514,,,11,,,
+CORP_ASUM_BP_PERSR,CORP_ASSUM_BS,%Sales,18,0,1348,1346,481,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_BP) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_BP, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_BP, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_BP_ABS,CORP_ASSUM_BS,Absolute,18,1,1347,1346,482,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_BP)
+",,
+CORP_ASUM_BP_ATS,CORP_ASSUM_BS,%AddtoSales,18,2,1735,1346,842,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Bills Payables,18,18,1346,,,11,,,
+CORP_ASUM_AE_PERSR,CORP_ASSUM_BS,%Sales,19,0,1345,1343,483,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_AE) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_AE, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_AE, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_AE_ABS,CORP_ASSUM_BS,Absolute,19,1,1344,1343,484,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_AE)
+",,
+CORP_ASUM_AE_ATS,CORP_ASSUM_BS,%AddtoSales,19,2,1736,1343,843,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Accrued Expenses,19,19,1343,,,11,,,
+CORP_ASUM_RPL_PERSR,CORP_ASSUM_BS,%Sales,20,0,1342,1340,485,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_RPL) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_RPL, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_RPL, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_RPL_ABS,CORP_ASSUM_BS,Absolute,20,1,1341,1340,486,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_RPL)
+",,
+CORP_ASUM_RPL_ATS,CORP_ASSUM_BS,%AddtoSales,20,2,1728,1340,835,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Related Parties Liabilities,20,20,1340,,,11,,,
+CORP_ASUM_OCL_PERSR,CORP_ASSUM_BS,%Sales,21,0,1310,1309,487,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_OCL) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_OCL, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_OCL, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_OCL_ABS,CORP_ASSUM_BS,Absolute,21,1,1311,1309,488,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_OCL)
+",,
+CORP_ASUM_OCL_ATS,CORP_ASSUM_BS,%AddtoSales,21,2,1729,1309,836,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Other Current Liabilities,21,21,1309,,,11,,,
+CORP_ASUM_LTD,CORP_ASSUM_BS,Long Term Debts,22,22,1312,,489,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_LTD)
+",,
+CORP_ASUM_LTD_DDWN,CORP_ASSUM_BS,Drawdowns/New Loans (+),23,23,1313,,490,11,,,
+CORP_ASUM_LTD_RPYM,CORP_ASSUM_BS,Repayments (-),24,24,1314,,491,11,,,
+CORP_ASUM_LTD_TFCPLTD,CORP_ASSUM_BS,Transfer to CPLTD (-),25,25,1315,,492,11,"Case Name: 
+   Condition: true
+   Formula: - YB1.CORP_BS_CPLTD 
+",,
+CORP_ASUM_SDOCB,CORP_ASSUM_BS,Subordinated Debts (to OCBC),26,26,1709,,712,11,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_SDOCB 
+",,
+CORP_ASUM_SDOCB_DPAID,CORP_ASSUM_BS,Debt paid during year (-),27,27,1316,,493,11,,,
+CORP_ASUM_SDOCB_FDG,CORP_ASSUM_BS,Further debt granted during year (+),28,28,1317,,494,11,,,
+CORP_ASUM_DIT,CORP_ASSUM_BS,Deferred Tax,29,29,1318,,495,11,"Case Name: 
+   Condition: true
+   Formula:  YB1.CORP_BS_DIT 
+",,
+CORP_ASUM_ONCL_PERSR,CORP_ASSUM_BS,%Sales,30,0,1320,1319,496,11,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_BS_ONCL) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(YB1.CORP_BS_ONCL, Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(YBN.CORP_BS_ONCL, Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_ONCL_ABS,CORP_ASSUM_BS,Absolute,30,1,1321,1319,497,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_ONCL)
+",,
+CORP_ASUM_ONCL_ATS,CORP_ASSUM_BS,%AddtoSales,30,2,1730,1319,837,11,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_BS,Other Non Current Liabilities,30,30,1319,,,11,,,
+CORP_ASUM_OS,CORP_ASSUM_BS,Ordinary Shares,31,31,1322,,498,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_OS)
+",,
+CORP_ASUM_PS,CORP_ASSUM_BS,Preference Shares,32,32,1323,,499,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_PS)
+",,
+CORP_ASUM_SP_ABS,CORP_ASSUM_BS,Share Premium,33,33,1513,,656,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_SP)
+",,
+CORP_ASUM_RR_ABS,CORP_ASSUM_BS,Revaluation Reserves,34,34,1512,,657,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_RR)
+",,
+CORP_ASUM_GR_ABS,CORP_ASSUM_BS,General Reserves,35,35,1511,,658,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_GR)
+",,
+CORP_ASUM_FXGLR,CORP_ASSUM_BS,FX Gains & Losses Reserves,36,36,1324,,500,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_FXGLR)
+",,
+CORP_ASUM_SDQU,CORP_ASSUM_BS,Quasi Capital,37,37,1571,,696,11,"Case Name: 
+   Condition: true
+   Formula: (YB1.CORP_BS_SDQU) 
+",,
+CORP_ASUM_MI,CORP_ASSUM_BS,Minority Interest,38,38,1325,,501,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_MI)
+",,
+CORP_ASUM_COL_ABS,CORP_ASSUM_BS,Contingent Liabilities,39,39,1680,,710,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_COL)
+",,
+CORP_ASUM_COMT_ABS,CORP_ASSUM_BS,Commitments,40,40,1679,,711,11,"Case Name: 
+   Condition: true
+   Formula: (YB1.CORP_BS_COMT)
+",,
+,CORP_ASSUM_BS,<Empty Line>,41,41,1681,,,11,,,
+,CORP_ASSUM_BS,Applicable to Corporate Real Estate Obligors,42,42,1678,,,11,,,
+CORP_ASUM_CCLO_ABS,CORP_ASSUM_BS,Current Capitalised Lease Obligations,43,43,1668,,702,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_CCLO)
+",,
+CORP_ASUM_CLO_ABS,CORP_ASSUM_BS,Capitalised Lease Obligations,44,44,1667,,703,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_CLO)
+",,
+CORP_ASUM_TOBSD_ABS,CORP_ASSUM_BS,Total Off-Balance-Sheet Debt,45,45,1671,,704,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_TOBSD)
+",,
+CORP_ASUM_IOBSD_ABS,CORP_ASSUM_BS,Interest on Off-Balance-Sheet Debt,46,46,1669,,705,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_IOBSD)
+",,
+CORP_ASUM_VIRD_ABS,CORP_ASSUM_BS,Variable Interest Rate Debt,47,47,1670,,706,11,"Case Name: 
+   Condition: true
+   Formula:  (YB1.CORP_BS_VIRD)
+",,
+,CORP_ASSUM_IS,Sales Revenue,0,0,1412,,,12,,,
+CORP_ASUM_SR_Grw,CORP_ASSUM_IS,Sales Growth,0,0,1414,1412,425,12,"Case Name: 
+   Condition: Y0.CONST_LastPeriod == true
+   Formula: ( Math.StandardizePeriod ( YB1.CORP_RC_RG_SALGRW , Y0.CONST_ProjectionInterval , YB1.CONST_NumOfMonths ) )
+Case Name: 
+   Condition: Math.CountArray( YBN.CORP_RC_RG_SALGRW ) == 3
+   Formula: (Math.Sum(Math.StandardizePeriod(YBN.CORP_RC_RG_SALGRW, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths)) - Math.First(Math.StandardizePeriod(YBN.CORP_RC_RG_SALGRW, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))) /2
+Case Name: 
+   Condition: Math.CountArray( YBN.CORP_RC_RG_SALGRW ) == 2
+   Formula: Math.Avg(Math.StandardizePeriod(YB1.CORP_RC_RG_SALGRW, Y0.CONST_ProjectionInterval, YB1.CONST_NumOfMonths))
+",,
+CORP_ASUM_SR_ABS,CORP_ASSUM_IS,Absolute,0,1,1413,1412,426,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_SR  , YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_SR_PERSALGRW,CORP_ASSUM_IS,%AddToSaleGrowth,0,2,1721,1412,828,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+CORP_ASUM_COGS_PERSR,CORP_ASSUM_IS,%Sales,1,0,1297,1296,427,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_COGS) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_COGS, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_COGS, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+,CORP_ASSUM_IS,Cost of Goods Sold,1,1,1296,,,12,,,
+CORP_ASUM_COGS_ABS,CORP_ASSUM_IS,Absolute,1,1,1298,1296,428,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_COGS , YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_COGS_ATS,CORP_ASSUM_IS,%AddtoSales,1,2,1737,1296,844,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+CORP_ASUM_SAE_PERSR,CORP_ASSUM_IS,%Sales,2,0,1301,1299,429,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_SAE) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_SAE, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_SAE, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_SAE_ABS,CORP_ASSUM_IS,Absolute,2,1,1300,1299,430,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_SAE , YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+,CORP_ASSUM_IS,"Selling, General & Admin Expenses",2,2,1299,,,12,,,
+CORP_ASUM_SAE_ATS,CORP_ASSUM_IS,%AddtoSales,2,2,1738,1299,845,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+CORP_ASUM_DRML_PERSR,CORP_ASSUM_IS,%Sales,3,0,1136,1135,431,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_DRML) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_DRML, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_DRML, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_DRML_ABS,CORP_ASSUM_IS,Absolute,3,1,1137,1135,432,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_DRML , YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_DRML_ATS,CORP_ASSUM_IS,%AddtoSales,3,2,1739,1135,846,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,Directors remun./fees (ML),3,3,1135,,,12,,,
+CORP_ASUM_DRO_PERSR,CORP_ASSUM_IS,%Sales,4,0,1139,1138,433,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_DRO) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_DRO, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_DRO, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_DRO_ABS,CORP_ASSUM_IS,Absolute,4,1,1140,1138,434,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_DRO, YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_DRO_ATS,CORP_ASSUM_IS,%AddtoSales,4,2,1740,1138,847,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,Directors remun./fees (Others),4,4,1138,,,12,,,
+CORP_ASUM_DEP_PERSR,CORP_ASSUM_IS,%Sales,5,0,1142,1141,435,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_DEP) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_DEP, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_DEP, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_DEP_PERFA,CORP_ASSUM_IS,%Fixed Assets,5,1,1143,1141,436,12,"Case Name: 
+   Condition: Math.Nth(1, YBN.CORP_BS_NFA) == null || Math.Nth(1, YBN.CORP_BS_NFA) == 0
+   Formula: Math.Abs(Math.Divide( Math.StandardizePeriod(YB1.CORP_IS_DEP, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), YB1.CORP_BS_NFA))
+Case Name: 
+   Condition: true 
+   Formula: Math.Abs(Math.Divide( Math.StandardizePeriod(YB1.CORP_IS_DEP, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.Nth(1, YBN.CORP_BS_NFA)))
+",,
+CORP_ASUM_DEP_ABS,CORP_ASSUM_IS,Absolute,5,2,1144,1141,437,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_DEP, YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_DEP_ATS,CORP_ASSUM_IS,%AddtoSales,5,3,1741,1141,848,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,Depreciation,5,5,1141,,,12,,,
+CORP_ASUM_AMORT_PERINTG,CORP_ASSUM_IS,%Intangible,6,0,1146,1145,438,12,"Case Name: 
+   Condition: true
+   Formula: Math.Abs (Math.StandardizePeriod ((Math.Divide (YB1.CORP_IS_AMORT, YB1.CORP_BS_INT )), Y0.CONST_ProjectionInterval, YB1.CONST_NumOfMonths))
+",,
+CORP_ASUM_AMORT_ABS,CORP_ASSUM_IS,Absolute,6,1,1147,1145,439,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_AMORT , YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_AMORT_ATS,CORP_ASSUM_IS,%AddtoSales,6,2,1742,1145,849,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,Amortisation,6,6,1145,,,12,,,
+CORP_ASUM_FXGL_PERSR,CORP_ASSUM_IS,%Sales,7,0,1224,1148,440,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_FXGL) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_FXGL, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_FXGL, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_FXGL_ABS,CORP_ASSUM_IS,Absolute,7,1,1225,1148,441,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_FXGL , YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_FXGL_ATS,CORP_ASSUM_IS,%AddtoSales,7,2,1743,1148,850,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,FX Gains (Losses),7,7,1148,,,12,,,
+CORP_ASUM_OE_PERSR,CORP_ASSUM_IS,%Sales,8,0,1233,1232,446,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_OE) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_OE, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_OE, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_OE_ABS,CORP_ASSUM_IS,Absolute,8,1,1234,1232,447,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_OE, YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_OE_ATS,CORP_ASSUM_IS,%AddtoSales,8,2,1744,1232,851,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,Other Operating Expenses,8,8,1232,,,12,,,
+CORP_ASUM_SACPL_PERSR,CORP_ASSUM_IS,%Sales,9,0,1227,1226,442,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_SACPL) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_SACPL, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_SACPL, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_SACPL_ABS,CORP_ASSUM_IS,Absolute,9,1,1228,1226,443,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_SACPL, YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_SACPL_ATS,CORP_ASSUM_IS,%AddtoSales,9,2,1745,1226,852,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,Share of Profits (Losses) of Associated Cos,9,9,1226,,,12,,,
+CORP_ASUM_OI_PERSR,CORP_ASSUM_IS,%Sales,10,0,1230,1229,444,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_OI) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_OI, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_OI, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_OI_ABS,CORP_ASSUM_IS,Absolute,10,1,1231,1229,445,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_OI, YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_OI_ATS,CORP_ASSUM_IS,%AddtoSales,10,2,1746,1229,853,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,Other Non-operating Income,10,10,1229,,,12,,,
+CORP_ASUM_NONOPINEXP_PERSR,CORP_ASSUM_IS,% Sales,11,0,1560,1559,686,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_NONOPINEXP) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_NONOPINEXP, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_NONOPINEXP, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_NONOPINEXP_ABS,CORP_ASSUM_IS,Absolute,11,1,1561,1559,685,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_NONOPINEXP , YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_NONOPINEXP_ATS,CORP_ASSUM_IS,%AddtoSales,11,2,1747,1559,854,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,Other Non-operating Expenses,11,11,1559,,,12,,,
+CORP_ASUM_GLSFA_PERFA,CORP_ASSUM_IS,%Fixed Assets,12,0,1563,1235,688,12,"Case Name: 
+   Condition: Math.Nth(1, YBN.CORP_BS_NFA) == null || Math.Nth(1, YBN.CORP_BS_NFA) == 0
+   Formula: Math.Abs(Math.Divide( Math.StandardizePeriod(YB1.CORP_IS_GLSFA, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), YB1.CORP_BS_NFA))
+Case Name: 
+   Condition: true 
+   Formula: Math.Abs(Math.Divide( Math.StandardizePeriod(YB1.CORP_IS_GLSFA, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.Nth(1, YBN.CORP_BS_NFA)))
+",,
+CORP_ASUM_GLSFA_ABS,CORP_ASSUM_IS,Absolute,12,1,1236,1235,448,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_GLSFA, YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+,CORP_ASSUM_IS,Gains (Losses) on Sale of Fixed Assets,12,12,1235,,,12,,,
+CORP_ASUM_GLSOA_PERSR,CORP_ASSUM_IS,%Sales,13,0,1238,1237,449,12,"Case Name: 
+   Condition: Math.HasAnyNullOrZero(YBN.CORP_IS_GLSOA) || Math.HasAnyNullOrZero(YBN.CORP_IS_SR)
+   Formula: Math.Abs(Math.Divide(Math.StandardizePeriod(YB1.CORP_IS_GLSOA, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths), Math.StandardizePeriod(YB1.CORP_IS_SR, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)))
+Case Name: 
+   Condition: true
+   Formula: Math.Abs(Math.AvgIfNotNull(Math.Divide(Math.StandardizePeriod(YBN.CORP_IS_GLSOA, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths), Math.StandardizePeriod(YBN.CORP_IS_SR, Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths))))
+",,
+CORP_ASUM_GLSOA_ABS,CORP_ASSUM_IS,Absolute,13,1,1239,1237,450,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_GLSOA, YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+CORP_ASUM_GLSOA_ATS,CORP_ASSUM_IS,%AddtoSales,13,2,1748,1237,855,12,"Case Name: 
+   Condition: true
+   Formula: null 
+",,
+,CORP_ASSUM_IS,Gains (Losses) from Non-Operating Activities,13,13,1237,,,12,,,
+CORP_ASUM_ITE_PERR,CORP_ASSUM_IS,Tax Rate,14,0,1367,1240,451,12,"Case Name: 
+   Condition: Y0.CORP_IS_NPBT < 0
+   Formula: 0
+Case Name: 
+   Condition: true
+   Formula: Math.Abs (Math.Avg (Math.StandardizePeriod ((Math.Divide (YBN.CORP_IS_ITE, YBN.CORP_IS_NPBT)), Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths)))
+",,
+,CORP_ASSUM_IS,Income Tax Expense,14,14,1240,,,12,,,
+CORP_ASUM_MISPL_ABS,CORP_ASSUM_IS,Absolute,15,0,1366,1365,452,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_MISPL , YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+,CORP_ASSUM_IS,Minority Interest Share of P/L,15,15,1365,,,12,,,
+CORP_ASUM_EIC,CORP_ASSUM_IS,Extraordinary Items (Cash),16,16,1364,,453,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod (YB1.CORP_IS_EIC, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths))
+",,
+CORP_ASUM_EINC,CORP_ASSUM_IS,Extraordinary Items (Non-cash),17,17,1363,,454,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod (YB1.CORP_IS_EINC, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths))
+",,
+CORP_ASUM_DML_PERNPATM,CORP_ASSUM_IS,"%Net Profit After Tax, MI & EI",18,0,1362,1360,455,12,"Case Name: 
+   Condition: true
+   Formula: Math.Abs (Math.Avg (Math.StandardizePeriod ((Math.Divide (YBN.CORP_IS_DML, YBN.CORP_IS_NPATM)), Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths)))
+",,
+CORP_ASUM_DML_ABS,CORP_ASSUM_IS,Absolute,18,1,1361,1360,456,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_DML , YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+,CORP_ASSUM_IS,Dividends (Mainboard Listed),18,18,1360,,,12,,,
+CORP_ASUM_DO_PERNPATM,CORP_ASSUM_IS,"%Net Profit After Tax, MI & EI",19,0,1359,1357,457,12,"Case Name: 
+   Condition: true
+   Formula: Math.Abs (Math.Avg (Math.StandardizePeriod ((Math.Divide (YBN.CORP_IS_DO, YBN.CORP_IS_NPATM)), Y0.CONST_ProjectionInterval, YBN.CONST_NumOfMonths)))
+",,
+CORP_ASUM_DO_ABS,CORP_ASSUM_IS,Absolute,19,1,1358,1357,458,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod ( YB1.CORP_IS_DO, YB1.CONST_ProjectionInterval ,  YB1.CONST_NumOfMonths ))
+",,
+,CORP_ASSUM_IS,Dividends (Others),19,19,1357,,,12,,,
+,CORP_ASSUM_IS,<Empty Line>,20,20,1682,,,12,,,
+,CORP_ASSUM_IS,Applicable to Corporate Real Estate Obligors,21,21,1677,,,12,,,
+CORP_ASUM_LC_ABS,CORP_ASSUM_IS,Lease Charges,22,22,1673,,707,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod (YB1.CORP_IS_LC, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths))
+",,
+CORP_ASUM_PDEP_ABS,CORP_ASSUM_IS,Preference Dividends Payout,23,23,1674,,708,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod (YB1.CORP_IS_PDEP, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths))
+",,
+CORP_ASUM_II_ABS,CORP_ASSUM_IS,Interest Income,24,24,1672,,709,12,"Case Name: 
+   Condition: true
+   Formula: Math.Avg (Math.StandardizePeriod (YB1.CORP_IS_II, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths))
+",,
+CORP_BS_CFD,CORP_BS,Cash,0,0,1260,,252,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_CFD
+",
+CORP_BS_CASH,CORP_BS,Cash,0,0,1490,1260,335,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CASH 
+"
+CORP_BS_FD,CORP_BS,Fixed Deposit,0,1,1261,1260,336,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_FD 
+"
+CORP_BS_GS,CORP_BS,Government Securities,1,1,1258,,253,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_GS_ABS != null
+   Formula: Y0.CORP_ASUM_GS_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_GS_PERSR != null
+   Formula:  Math.Round (Y0.CORP_ASUM_GS_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_GS_ATS != null &&  Y0.CORP_ASUM_GS_ATS != 0
+   Formula: (( YB1.CORP_BS_GS / YB1.CORP_IS_SR )+ Y0.CORP_ASUM_GS_ATS )* Y0.CORP_IS_SR 
+",
+CORP_BS_GOVSC,CORP_BS,Government Securities,1,0,1259,1258,337,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_GOVSC 
+"
+CORP_BS_MS,CORP_BS,Marketable Securities,2,2,1256,,276,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_MS_ABS != null
+   Formula: Y0.CORP_ASUM_MS_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_MS_PERSR != null
+   Formula:  Math.Round (Y0.CORP_ASUM_MS_PERSR, 4) * Y0.CORP_IS_SR
+Case Name: 
+   Condition: Y0.CORP_ASUM_MS_ATS != null && Y0.CORP_ASUM_MS_ATS != 0
+   Formula: (( YB1.CORP_BS_MS / YB1.CORP_IS_SR )+ Y0.CORP_ASUM_MS_ATS )* Y0.CORP_IS_SR 
+",
+CORP_BS_MKTSC,CORP_BS,Marketable Securities,2,0,1257,1256,338,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_MKTSC 
+"
+CORP_BS_GTRREC,CORP_BS,A/C Receivables (Non-Related Parties),3,0,1255,1254,698,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_GTRREC 
+"
+CORP_BS_GAR,CORP_BS,A/C Receivables (Non-Related Parties),3,3,1254,,699,5,,"Case Name: 
+   Condition: true
+   Formula: null 
+",
+CORP_BS_PDD,CORP_BS,Provision for Doubtful Debts,4,4,1252,,288,5,,"Case Name: 
+   Condition: true
+   Formula: null 
+",
+CORP_BS_PROBD,CORP_BS,Less : Provision,4,0,1253,1252,339,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_PROBD 
+"
+CORP_BS_NAR,CORP_BS,Net A/C Receivables (Non-Related Parties),5,5,1251,,277,5,,"Case Name: 
+   Condition:  Y0.CORP_ASUM_NAR_ABS != null
+   Formula: Y0.CORP_ASUM_NAR_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_NAR_ARDOH != null
+   Formula:  ( Y0.CORP_ASUM_NAR_ARDOH/365) *  ( Y0.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 )  
+Case Name: 
+   Condition: Y0.CORP_ASUM_NAR_PERARDOH != null
+   Formula: ( ( YB1.CORP_BS_NAR / ( YB1.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 )  * 365 ) * ( 1 + Y0.CORP_ASUM_NAR_PERARDOH ) ) / 365 *  ( Y0.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_GAR + YB1.CORP_BS_PDD
+"
+CORP_BS_NARRP,CORP_BS,Net A/C Receivables (Related Parties),6,6,1249,,278,5,,"Case Name: 
+   Condition:  Y0.CORP_ASUM_NARRP_ABS  != null 
+   Formula:  Y0.CORP_ASUM_NARRP_ABS 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_NARRP_ARDOH != null 
+   Formula: ( Y0.CORP_ASUM_NARRP_ARDOH/365)  *  ( Y0.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 ) 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_NARRP_PERARDOH != null 
+   Formula: ( ( YB1.CORP_BS_NARRP / ( YB1.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 ) * 365 ) * ( 1 + Y0.CORP_ASUM_NARRP_PERARDOH ) ) / 365 *  ( Y0.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 ) 
+",
+CORP_BS_TRRECDUEFRREPT,CORP_BS,Net A/C Receivables (Related Parties),6,0,1250,1249,340,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_TRRECDUEFRREPT
+"
+CORP_BS_INV,CORP_BS,Inventory,7,7,1245,,269,5,,"Case Name: 
+   Condition:  Y0.CORP_ASUM_INV_ABS  != null 
+   Formula:  Y0.CORP_ASUM_INV_ABS 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_INV_DOSR  != null 
+   Formula: ( Y0.CORP_ASUM_INV_DOSR / 365 )  * ( Y0.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 ) 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_INV_DOCOGS != null 
+   Formula:  ( Y0.CORP_ASUM_INV_DOCOGS / 365 )  * ( -Y0.CORP_IS_COGS  / Y0.CONST_NumOfMonths  * 12 )
+Case Name: 
+   Condition:  Y0.CORP_ASUM_INV_PERDOSR != null 
+   Formula:   ( ( YB1.CORP_BS_INV/  ( YB1.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 )  * 365 ) * ( 1 + Y0.CORP_ASUM_INV_PERDOSR ) ) / 365 *  ( Y0.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 )  
+Case Name: 
+   Condition:  Y0.CORP_ASUM_INV_PERDOCOGS != null 
+   Formula:  ( ( YB1.CORP_BS_INV / ( -YB1.CORP_IS_COGS  / Y0.CONST_NumOfMonths  * 12 ) * 365 ) * ( 1 + Y0.CORP_ASUM_INV_PERDOCOGS ) ) / 365 *  ( -Y0.CORP_IS_COGS  / Y0.CONST_NumOfMonths  * 12 ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_INV 
+"
+CORP_BS_INV_RAWMAT,CORP_BS,Inventory - Raw Materials,7,0,1248,1245,341,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_INV_RAWMAT 
+"
+CORP_BS_INV_WIP,CORP_BS,Inventory - Work in Progress,7,1,1247,1245,342,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_INV_WIP 
+"
+CORP_BS_INV_FINGD,CORP_BS,Inventory - Finished Goods,7,2,1246,1245,343,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_INV_FINGD 
+"
+CORP_BS_PE,CORP_BS,Prepaid Expenses,8,8,1243,,289,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_PE_ABS != 0 && Y0.CORP_ASUM_PE_ABS != null 
+   Formula: Y0.CORP_ASUM_PE_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_PE_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_PE_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_PE_ATS != null && Y0.CORP_ASUM_PE_ATS != 0
+   Formula: (( YB1.CORP_BS_PE / YB1.CORP_IS_SR )+ Y0.CORP_ASUM_PE_ATS )* Y0.CORP_IS_SR 
+",
+CORP_BS_PREEXP,CORP_BS,Prepaid Expenses,8,0,1244,1243,344,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_PREEXP 
+"
+CORP_BS_OCA,CORP_BS,Other Current Assets,9,9,1241,,283,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_OCA_ABS != 0 && Y0.CORP_ASUM_OCA_ABS != null 
+   Formula: Y0.CORP_ASUM_OCA_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_OCA_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_OCA_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_OCA_ATS != null &&  Y0.CORP_ASUM_OCA_ATS != 0
+   Formula: (( YB1.CORP_BS_OCA / YB1.CORP_IS_SR )+ Y0.CORP_ASUM_OCA_ATS )* Y0.CORP_IS_SR 
+",
+CORP_BS_OTHCURASS,CORP_BS,Other Current Assets,9,0,1242,1241,345,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_OTHCURASS 
+"
+,CORP_BS,<Empty Line>,10,10,1494,,,5,,,
+CORP_BS_CA,CORP_BS,CURRENT ASSETS,11,11,1134,,251,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_CFD + Y0.CORP_BS_GS + Y0.CORP_BS_MS + Y0.CORP_BS_NAR + Y0.CORP_BS_NARRP + Y0.CORP_BS_INV + Y0.CORP_BS_PE + Y0.CORP_BS_OCA 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CFD + YB1.CORP_BS_GS + YB1.CORP_BS_MS + YB1.CORP_BS_NAR + YB1.CORP_BS_NARRP + YB1.CORP_BS_INV + Y0.CORP_BS_PE + YB1.CORP_BS_OCA 
+"
+,CORP_BS,<Empty Line>,12,12,1655,,,5,,,
+CORP_BS_FA,CORP_BS,Fixed Assets,13,13,1129,,264,5,,"Case Name: 
+   Condition: true
+   Formula: null 
+",
+CORP_BS_LANDnBUIL,CORP_BS,Land & Buildings,13,0,1133,1129,346,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_LANDnBUIL
+"
+CORP_BS_MACnEQUIP,CORP_BS,Machinery & Equipment,13,1,1132,1129,347,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_MACnEQUIP
+"
+CORP_BS_CONTnWIP,CORP_BS,Construction & Work in Progress,13,2,1131,1129,348,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CONTnWIP
+"
+CORP_BS_OTHFIXASS,CORP_BS,Other Fixed Assets,13,3,1130,1129,350,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_OTHFIXASS
+"
+CORP_BS_CI,CORP_BS,Capitalised Interest,14,14,1127,,255,5,,"Case Name: 
+   Condition: true
+   Formula: null 
+",
+CORP_BS_CAPINT,CORP_BS,Capitalised Interest,14,0,1128,1127,349,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CAPINT
+"
+CORP_BS_ADEP,CORP_BS,Accumulated Depreciation,15,15,1125,,246,5,,"Case Name: 
+   Condition: true
+   Formula: null 
+",
+CORP_BS_ACCDEPR,CORP_BS,Less : Accumulated Depreciation,15,0,1126,1125,351,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_ACCDEPR  
+"
+,CORP_BS,,16,16,1496,,,5,,,
+CORP_BS_NFA,CORP_BS,NET FIXED ASSETS,17,17,1124,,280,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_FA_ABS != 0 && Y0.CORP_ASUM_FA_ABS != null 
+   Formula: Y0.CORP_ASUM_FA_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_FA_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_FA_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_NFA_ATS != null  && Y0.CORP_ASUM_NFA_ATS != 0
+   Formula: (( YB1.CORP_BS_NFA / YB1.CORP_IS_SR )+ Y0.CORP_ASUM_NFA_ATS )* Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_FA + YB1.CORP_BS_CI + YB1.CORP_BS_ADEP 
+"
+,CORP_BS,,18,18,1495,,,5,,,
+CORP_BS_INS,CORP_BS,Investments,19,19,1121,,267,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_INS_ABS != null 
+   Formula: Y0.CORP_ASUM_INS_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_INS_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_INS_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_INS_ATS != null &&  Y0.CORP_ASUM_INS_ATS != 0
+   Formula: (( YB1.CORP_BS_INS / YB1.CORP_IS_SR )+ Y0.CORP_ASUM_INS_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_BS_INSINSUBSI,CORP_BS,Investments in Subsidiaries / Associates,19,0,1123,1121,352,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_INSINSUBSI 
+"
+CORP_BS_OTHINS,CORP_BS,Other Investments (Quoted),19,1,1122,1121,356,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_OTHINS
+"
+CORP_BS_RPA,CORP_BS,Related Parties Assets,20,20,1117,,292,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_RPA_ABS  != 0 && Y0.CORP_ASUM_RPA_ABS  != null 
+   Formula: Y0.CORP_ASUM_RPA_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_REPRY_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_REPRY_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_RPA_ATS != null &&  Y0.CORP_ASUM_RPA_ATS != 0
+   Formula: (( YB1.CORP_BS_RPA / YB1.CORP_IS_SR )+ Y0.CORP_ASUM_RPA_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_BS_DUEFRPARENT,CORP_BS,Due from Parent / Subsidiaries,20,0,1120,1117,353,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DUEFRPARENT
+"
+CORP_BS_DUEFRASSCOTHREPTY,CORP_BS,Due from Associates / Other Related Parties,20,1,1119,1117,354,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DUEFRASSCOTHREPTY
+"
+CORP_BS_DUEFRSHnDIR,CORP_BS,Due from Shareholders (individuals) / Directors,20,2,1118,1117,355,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DUEFRSHnDIR 
+"
+CORP_BS_ONCA,CORP_BS,Other Non Current Assets,21,21,1149,,285,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_ONCA_ABS != 0 && Y0.CORP_ASUM_ONCA_ABS != null 
+   Formula: Y0.CORP_ASUM_ONCA_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_ONCA_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_ONCA_PERSR, 4) * Y0.CORP_IS_SR
+Case Name: 
+   Condition: Y0.CORP_ASUM_ONCA_ATS != null &&  Y0.CORP_ASUM_ONCA_ATS != 0
+   Formula: (( YB1.CORP_BS_ONCA/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_ONCA_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_BS_DEFEXP,CORP_BS,Deferred Expenses,21,0,1150,1149,357,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DEFEXP
+"
+CORP_BS_OTHNONCURRASS,CORP_BS,Other Non-current Assets,21,1,1151,1149,359,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_OTHNONCURRASS
+"
+CORP_BS_INT,CORP_BS,Intangibles,22,22,1152,,268,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_INT > 0
+   Formula: Y0.CORP_ASUM_INT 
+Case Name: 
+   Condition: Y0.CORP_ASUM_INT == null || Y0.CORP_ASUM_INT == 0
+   Formula: YB1.CORP_BS_INT + Y0.CORP_IS_AMORT 
+",
+CORP_BS_INTG,CORP_BS,Intangibles,22,0,1153,1152,358,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_INTG
+"
+,CORP_BS,,23,23,1497,,,5,,,
+CORP_BS_OA,CORP_BS,OTHER ASSETS,24,24,1154,,282,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_INS + Y0.CORP_BS_RPA + Y0.CORP_BS_ONCA +Y0.CORP_BS_INT
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_INS + YB1.CORP_BS_RPA + YB1.CORP_BS_ONCA +YB1.CORP_BS_INT
+"
+CORP_BS_NCA,CORP_BS,NON-CURRENT ASSETS,25,25,1155,,279,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_NFA + Y0.CORP_BS_OA
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_NFA + YB1.CORP_BS_OA
+"
+CORP_BS_TA,CORP_BS,TOTAL ASSETS,26,26,1156,,299,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_NCA + Y0.CORP_BS_CA
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_NCA + YB1.CORP_BS_CA
+"
+,CORP_BS,,27,27,1491,,,5,,,
+CORP_BS_AP,CORP_BS,A/C Payables (Non-Related Parties),28,28,1157,,248,5,,"Case Name: 
+   Condition:  Y0.CORP_ASUM_AP_ABS != null 
+   Formula:  Y0.CORP_ASUM_AP_ABS 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_AP_DOSR != null 
+   Formula:  ( Y0.CORP_ASUM_AP_DOSR / 365 )  * Y0.CORP_IS_SR 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_AP_DOCOGS != null 
+   Formula:  ( -Y0.CORP_ASUM_AP_DOCOGS / 365 )  * ( Y0.CORP_IS_COGS) 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_AP_PERDOSR != null 
+   Formula:  ( ( YB1.CORP_BS_AP / ( YB1.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 ) * 365 ) * ( 1 + Y0.CORP_ASUM_AP_PERDOSR ) ) / 365 *  ( Y0.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 ) 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_AP_PERDOCOGS != null 
+   Formula:   ( ( YB1.CORP_BS_AP /( -YB1.CORP_IS_COGS  / Y0.CONST_NumOfMonths  * 12 ) * 365 ) * ( 1 + Y0.CORP_ASUM_AP_PERDOCOGS ) ) / 365 *  ( -Y0.CORP_IS_COGS  / Y0.CONST_NumOfMonths  * 12 ) 
+",
+CORP_BS_TRPAYB,CORP_BS,A/C Payables (Non-Related Parties),28,0,1158,1157,360,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_TRPAYB 
+"
+CORP_BS_APRP,CORP_BS,A/C Payables (Related Parties),29,29,1159,,249,5,,"Case Name: 
+   Condition:  Y0.CORP_ASUM_APRP_ABS != null  
+   Formula:  Y0.CORP_ASUM_APRP_ABS 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_APRP_DOSR != null  
+   Formula:  ( Y0.CORP_ASUM_APRP_DOSR / 365 ) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_APRP_DOCOGS != null  
+   Formula:  ( -Y0.CORP_ASUM_APRP_DOCOGS / 365 )  * ( Y0.CORP_IS_COGS ) 
+Case Name: 
+   Condition:  Y0.CORP_ASUM_APRP_PERDOSR != null  
+   Formula:  ( ( YB1.CORP_BS_APRP / ( YB1.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 ) * 365 ) * ( 1 + Y0.CORP_ASUM_APRP_PERDOSR ) ) / 365 *  ( Y0.CORP_IS_SR / Y0.CONST_NumOfMonths * 12 )  
+Case Name: 
+   Condition:  Y0.CORP_ASUM_APRP_PERDOCOGS != null  
+   Formula:   ( ( YB1.CORP_BS_APRP /( -YB1.CORP_IS_COGS  / Y0.CONST_NumOfMonths  * 12 ) * 365 ) * ( 1 + Y0.CORP_ASUM_APRP_PERDOCOGS ) ) / 365 *  ( -Y0.CORP_IS_COGS  / Y0.CONST_NumOfMonths  * 12 )  
+",
+CORP_BS_TRPAYBDUETOREPTY,CORP_BS,A/C Payables (Related Parties),29,0,1160,1159,361,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_TRPAYBDUETOREPTY
+"
+CORP_BS_BP,CORP_BS,Bills Payables,30,30,1161,,250,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_BP_ABS != 0 &&  Y0.CORP_ASUM_BP_ABS != null 
+   Formula: Y0.CORP_ASUM_BP_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_BP_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_BP_PERSR, 4) * Y0.CORP_IS_SR
+Case Name: 
+   Condition: Y0.CORP_ASUM_BP_ATS != null &&  Y0.CORP_ASUM_BP_ATS != 0
+   Formula: (( YB1.CORP_BS_BP/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_BP_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_BS_BILPAYBS,CORP_BS,Bills Payables (Secured),30,0,1162,1161,362,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_BILPAYBS
+"
+CORP_BS_BILPAYBUNS,CORP_BS,Bills Payables (Unsecured),30,1,1163,1161,363,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_BILPAYBUNS
+"
+CORP_BS_STD,CORP_BS,Short Term Debts,31,31,1164,,298,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_STD
+",
+CORP_BS_STBKDEBTS,CORP_BS,Bank Debts (Secured) - Short Term ,31,0,1165,1164,364,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_STBKDEBTS
+"
+CORP_BS_STBKDEBTUNS,CORP_BS,Bank Debts (Unsecured) - Short Term ,31,1,1166,1164,365,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_STBKDEBTUNS
+"
+CORP_BS_CPLTD,CORP_BS,Current Portion of Long Term Debts,32,32,1167,,260,5,,"Case Name: 
+   Condition: true
+   Formula:  - Y0.CORP_ASUM_LTD_TFCPLTD 
+",
+CORP_BS_CPLTDS,CORP_BS,Current Portion of Long-term Debts (Secured),32,0,1168,1167,366,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CPLTDS 
+"
+CORP_BS_CPLTDUNS,CORP_BS,Current Portion of Long-term Debts (Unsecured),32,1,1169,1167,367,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CPLTDUNS
+"
+CORP_BS_ITP,CORP_BS,Taxes Payable,33,33,1170,,272,5,,"Case Name: 
+   Condition: Y0.CORP_IS_NPBT < 0
+   Formula: 0
+Case Name: 
+   Condition: Y0.CORP_IS_ITE != null 
+   Formula: Math.Abs (Y0.CORP_IS_ITE)
+",
+CORP_BS_TAXPAYB,CORP_BS,Taxes Payable,33,0,1171,1170,368,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_TAXPAYB
+"
+CORP_BS_IP,CORP_BS,Interest Payable,34,34,1172,,271,5,,,
+CORP_BS_INTPAYB,CORP_BS,Interest Payable,34,0,1173,1172,369,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_INTPAYB
+"
+CORP_BS_DIVPM,CORP_BS,Dividends Payable (Mainboard Listed),35,35,1174,,262,5,,"Case Name: 
+   Condition: Y0.CORP_IS_NPATM < 0
+   Formula: 0
+Case Name: 
+   Condition: Y0.CORP_ASUM_DML_ABS != 0 && Y0.CORP_ASUM_DML_ABS != null
+   Formula: Math.Abs ( Y0.CORP_ASUM_DML_ABS )
+Case Name: 
+   Condition: Y0.CORP_ASUM_DML_PERNPATM != null
+   Formula: (Math.Round (Y0.CORP_ASUM_DML_PERNPATM, 4) * Y0.CORP_IS_NPATM)
+",
+CORP_BS_DIVPAYBM,CORP_BS,Dividends Payable (Mainboard Listed),35,0,1175,1174,370,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DIVPAYBM 
+"
+CORP_BS_DIVPOTH,CORP_BS,Dividends Payable (Others),36,36,1176,,263,5,,"Case Name: 
+   Condition: Y0.CORP_IS_NPATM < 0
+   Formula: 0
+Case Name: 
+   Condition: Y0.CORP_ASUM_DO_ABS != 0 && Y0.CORP_ASUM_DO_ABS != null
+   Formula: Math.Abs ( Y0.CORP_ASUM_DO_ABS )
+Case Name: 
+   Condition: Y0.CORP_ASUM_DO_PERNPATM != null
+   Formula: (Math.Round (Y0.CORP_ASUM_DO_PERNPATM, 4) * Y0.CORP_IS_NPATM)
+",
+CORP_BS_DIVPAYBOTH,CORP_BS,Dividends Payable (Others),36,0,1177,1176,371,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DIVPAYBOTH
+"
+CORP_BS_AE,CORP_BS,Accrued Expenses,37,37,1178,,247,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_AE_ABS != 0 && Y0.CORP_ASUM_AE_ABS != null 
+   Formula: Y0.CORP_ASUM_AE_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_AE_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_AE_PERSR, 4) * Y0.CORP_IS_SR
+Case Name: 
+   Condition: Y0.CORP_ASUM_AE_ATS != null &&  Y0.CORP_ASUM_AE_ATS != 0
+   Formula: (( YB1.CORP_BS_AE/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_AE_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_BS_ACCEXP,CORP_BS,Accrued Expenses,37,0,1179,1178,372,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_ACCEXP 
+"
+CORP_BS_RPL,CORP_BS,Related Parties Liabilities,38,38,1180,,293,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_RPL_ABS  != 0 && Y0.CORP_ASUM_RPL_ABS  != null 
+   Formula: Y0.CORP_ASUM_RPL_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_RPL_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_RPL_PERSR, 4) * Y0.CORP_IS_SR
+Case Name: 
+   Condition: Y0.CORP_ASUM_RPL_ATS != null &&  Y0.CORP_ASUM_RPL_ATS != 0
+   Formula: (( YB1.CORP_BS_RPL/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_RPL_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_BS_DUETOPARENToSUBSI,CORP_BS,Due to Parent / Subsidiaries,38,0,1181,1180,373,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DUETOPARENToSUBSI
+"
+CORP_BS_DUETOASCOTHREPTY,CORP_BS,Due to Associates / Other Related Parties,38,1,1182,1180,374,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DUETOASCOTHREPTY
+"
+CORP_BS_DUETOINDSHDIR,CORP_BS,Due to Shareholders (individuals) / Directors,38,2,1183,1180,375,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DUETOINDSHDIR 
+"
+CORP_BS_OCL,CORP_BS,Other Current Liabilities,39,39,1184,,284,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_OCL_ABS != 0 && Y0.CORP_ASUM_OCL_ABS != null 
+   Formula: Y0.CORP_ASUM_OCL_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_OCL_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_OCL_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_OCL_ATS != null &&  Y0.CORP_ASUM_OCL_ATS != 0
+   Formula: (( YB1.CORP_BS_OCL/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_OCL_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_BS_OTHCURRLIAB,CORP_BS,Other Current Liabilities,39,0,1185,1184,376,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_OTHCURRLIAB 
+"
+,CORP_BS,,40,40,1498,,,5,,,
+CORP_BS_CL,CORP_BS,CURRENT LIABILITIES,41,41,1186,,256,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_AP + Y0.CORP_BS_APRP + Y0.CORP_BS_BP + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_ITP + Y0.CORP_BS_IP + Y0.CORP_BS_DIVPM + Y0.CORP_BS_DIVPOTH + Y0.CORP_BS_AE + Y0.CORP_BS_RPL + Y0.CORP_BS_OCL 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_AP + YB1.CORP_BS_APRP + YB1.CORP_BS_BP + YB1.CORP_BS_STD + YB1.CORP_BS_CPLTD + YB1.CORP_BS_ITP + YB1.CORP_BS_IP + YB1.CORP_BS_DIVPM + YB1.CORP_BS_DIVPOTH + YB1.CORP_BS_AE + YB1.CORP_BS_RPL + YB1.CORP_BS_OCL 
+"
+,CORP_BS,,42,42,1492,,,5,,,
+CORP_BS_LTD,CORP_BS,Long Term Debts,43,43,1187,,273,5,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_LTD + Y0.CORP_ASUM_LTD_DDWN + Y0.CORP_ASUM_LTD_RPYM + Y0.CORP_ASUM_LTD_TFCPLTD
+",
+CORP_BS_LTBKDEBTS,CORP_BS,Bank Debts (Secured) - Long Term ,43,0,1188,1187,377,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_LTBKDEBTS
+"
+CORP_BS_LTBKDEBTUNS,CORP_BS,Bank Debts (Unsecured) - Long Term ,43,1,1189,1187,378,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_LTBKDEBTUNS
+"
+CORP_BS_LTOTHDEBTS,CORP_BS,Other Debts (Secured),43,2,1190,1187,379,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_LTOTHDEBTS
+"
+CORP_BS_LTOTHDEBTUNS,CORP_BS,Other Debts (Unsecured),43,3,1191,1187,380,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_LTOTHDEBTUNS
+"
+CORP_BS_CONVDEBTS,CORP_BS,Convertible Debts,43,4,1192,1187,382,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CONVDEBTS
+"
+CORP_BS_SDOCB,CORP_BS,Subordinated Debts (to OCBC),44,44,1193,,295,5,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_SDOCB + Y0.CORP_ASUM_SDOCB_DPAID + Y0.CORP_ASUM_SDOCB_FDG 
+",
+CORP_BS_SUBDEBTS,CORP_BS,Subordinated Debts (to OCBC),44,0,1194,1193,381,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_SUBDEBTS  
+"
+CORP_BS_DIT,CORP_BS,Deferred Tax,45,45,1205,,261,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_DIT != null && Y0.CORP_ASUM_DIT != 0
+   Formula: Y0.CORP_ASUM_DIT
+",
+CORP_BS_DEFTAX,CORP_BS,Deferred Tax,45,0,1206,1205,383,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_DEFTAX
+"
+CORP_BS_ONCL,CORP_BS,Other Non Current Liabilities,46,46,1207,,286,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_ONCL_ABS != 0 && Y0.CORP_ASUM_ONCL_ABS != null 
+   Formula: Y0.CORP_ASUM_ONCL_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_ONCL_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_ONCL_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_ONCL_ATS != null &&  Y0.CORP_ASUM_ONCL_ATS != 0
+   Formula: (( YB1.CORP_BS_ONCL/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_ONCL_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_BS_OTHNONCURRLIAB,CORP_BS,Other Non-current Liabilities,46,0,1208,1207,384,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_OTHNONCURRLIAB
+"
+,CORP_BS,,47,47,1499,,,5,,,
+CORP_BS_LTL,CORP_BS,LONG TERM LIABILITIES,48,48,1209,,274,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_LTD + Y0.CORP_BS_SDOCB + Y0.CORP_BS_DIT + Y0.CORP_BS_ONCL 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_LTD + YB1.CORP_BS_SDOCB + YB1.CORP_BS_DIT + YB1.CORP_BS_ONCL 
+"
+CORP_BS_TL,CORP_BS,TOTAL LIABILITIES,49,49,1210,,300,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_CL + Y0.CORP_BS_LTL 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CL + YB1.CORP_BS_LTL 
+"
+,CORP_BS,,50,50,1493,,,5,,,
+CORP_BS_OS,CORP_BS,Ordinary Shares,51,51,1211,,287,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_OS == 0 && Y0.CORP_ASUM_OS == null 
+   Formula: YB1.CORP_BS_OS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_OS != null 
+   Formula: Y0.CORP_ASUM_OS 
+",
+CORP_BS_PAIDUPCAP,CORP_BS,Paid-up Capital,51,0,1212,1211,385,5,,"Case Name: 
+   Condition: true
+   Formula: 0
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_PAIDUPCAP 
+"
+CORP_BS_PS,CORP_BS,Preference Shares,52,52,1213,,290,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_PS == 0 && Y0.CORP_ASUM_PS == null 
+   Formula: YB1.CORP_BS_PS 
+Case Name: 
+   Condition: true
+   Formula: Y0.CORP_ASUM_PS 
+",
+CORP_BS_PREFSH,CORP_BS,Preference Shares,52,0,1214,1213,386,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_PREFSH 
+"
+CORP_BS_SP,CORP_BS,Share Premium,53,53,1222,,297,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_SP_ABS == 0 && Y0.CORP_ASUM_SP_ABS == null 
+   Formula: YB1.CORP_BS_SP 
+Case Name: 
+   Condition: Y0.CORP_ASUM_SP_ABS != null 
+   Formula: Y0.CORP_ASUM_SP_ABS
+",
+CORP_BS_SHPREMRESV,CORP_BS,Share Premium,53,0,1223,1222,387,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_SHPREMRESV
+"
+CORP_BS_RR,CORP_BS,Revaluation Reserves,54,54,1220,,294,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_RR_ABS == 0 &&  Y0.CORP_ASUM_RR_ABS ==  null 
+   Formula: YB1.CORP_BS_RR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_RR_ABS != null 
+   Formula: Y0.CORP_ASUM_RR_ABS 
+",
+CORP_BS_REVARESV,CORP_BS,Revaluation Reserves,54,0,1221,1220,388,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_REVARESV 
+"
+CORP_BS_GR,CORP_BS,General Reserves,55,55,1218,,266,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_GR_ABS == 0 && Y0.CORP_ASUM_GR_ABS == null 
+   Formula: YB1.CORP_BS_GR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_GR_ABS != null 
+   Formula: Y0.CORP_ASUM_GR_ABS 
+",
+CORP_BS_GENRESV,CORP_BS,General Reserves,55,0,1219,1218,389,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_GENRESV 
+"
+CORP_BS_FXGLR,CORP_BS,FX Gains & Losses Reserves,56,56,1216,,265,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_FXGLR == 0 && Y0.CORP_ASUM_FXGLR == null 
+   Formula: YB1.CORP_BS_FXGLR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_FXGLR != null 
+   Formula: Y0.CORP_ASUM_FXGLR 
+",
+CORP_BS_TLSGAINLOSS,CORP_BS,FX Gains & Losses Reserves,56,0,1217,1216,390,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_TLSGAINLOSS 
+"
+CORP_BS_REAL,CORP_BS,Retained Earnings (Accumulated Losses),57,57,1215,,291,5,,"Case Name: 
+   Condition: True
+   Formula: Y0.CORP_CE_CLRETERNPIS 
+",
+CORP_BS_RETEARNG,CORP_BS,Retained Earnings (Accumulated Losses),57,0,1262,1215,391,5,,,"Case Name: 
+   Condition: true
+   Formula:  YB1.CORP_BS_RETEARNG 
+"
+CORP_BS_SDQU,CORP_BS,Quasi Capital,58,58,1263,,296,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_SDQU  == 0 && Y0.CORP_ASUM_SDQU  == null 
+   Formula: YB1.CORP_BS_SDQU 
+Case Name: 
+   Condition: Y0.CORP_ASUM_SDQU  != null 
+   Formula: Y0.CORP_ASUM_SDQU 
+",
+CORP_BS_SUBDEBTQCAP,CORP_BS,Quasi Capital,58,0,1264,1263,392,5,,,"Case Name: 
+   Condition: true
+   Formula:  YB1.CORP_BS_SUBDEBTQCAP 
+"
+,CORP_BS,,59,59,1500,,,5,,,
+CORP_BS_NW,CORP_BS,NET WORTH,60,60,1265,,281,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_OS + Y0.CORP_BS_PS + Y0.CORP_BS_SP + Y0.CORP_BS_RR + Y0.CORP_BS_GR + Y0.CORP_BS_FXGLR + Y0.CORP_BS_REAL + Y0.CORP_BS_SDQU 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_OS + YB1.CORP_BS_PS + YB1.CORP_BS_SP + YB1.CORP_BS_RR + YB1.CORP_BS_GR + YB1.CORP_BS_FXGLR + YB1.CORP_BS_REAL + YB1.CORP_BS_SDQU 
+"
+,CORP_BS,<Empty Line>,61,61,1501,,,5,,,
+CORP_BS_MI,CORP_BS,Minority Interest,62,62,1266,,275,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_MI == 0 && Y0.CORP_ASUM_MI == null 
+   Formula: YB1.CORP_BS_MI 
+Case Name: 
+   Condition: Y0.CORP_ASUM_MI != null 
+   Formula: Y0.CORP_ASUM_MI 
+",
+CORP_BS_MINT,CORP_BS,Minority Interests,62,0,1267,1266,393,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_MINT
+"
+,CORP_BS,<Empty Line>,63,63,1502,,,5,,,
+CORP_BS_TLNW,CORP_BS,"TOTAL LIABILITIES, NET WORTH & M.I.",64,64,1268,,301,5,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_TL + Y0.CORP_BS_NW + Y0.CORP_BS_MI 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_TL + YB1.CORP_BS_NW + YB1.CORP_BS_MI 
+"
+,CORP_BS,<Empty Line>,65,65,1656,,,5,,,
+CORP_BS_COL,CORP_BS,Contingent Liabilities,66,66,1269,,258,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_COL_ABS != null 
+   Formula: Y0.CORP_ASUM_COL_ABS
+",
+CORP_BS_CONTILIAB,CORP_BS,Contingent Liabilities,66,0,1270,1269,394,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CONTILIAB 
+"
+CORP_BS_COMT,CORP_BS,Commitments,67,67,1271,,259,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_COMT_ABS != null 
+   Formula: Y0.CORP_ASUM_COMT_ABS 
+",
+CORP_BS_COMMIT,CORP_BS,Commitments,67,0,1272,1271,395,5,,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_COMMIT 
+"
+,CORP_BS,<Empty Line>,68,68,1652,,,5,,,
+,CORP_BS,Applicable to Corporate Real Estate Obligors,69,69,1659,,,5,,,
+CORP_BS_CCLO,CORP_BS,Current Capitalised Lease Obligations,70,70,1204,,254,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_CCLO_ABS == 0 && Y0.CORP_ASUM_CCLO_ABS == null 
+   Formula: YB1.CORP_BS_CCLO 
+Case Name: 
+   Condition: Y0.CORP_ASUM_CCLO_ABS != null 
+   Formula: Y0.CORP_ASUM_CCLO_ABS 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CCLO
+"
+CORP_BS_CLO,CORP_BS,Capitalised Lease Obligations,71,71,1203,,257,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_CLO_ABS == 0 && Y0.CORP_ASUM_CLO_ABS == null 
+   Formula: YB1.CORP_BS_CLO 
+Case Name: 
+   Condition: Y0.CORP_ASUM_CLO_ABS != null 
+   Formula: Y0.CORP_ASUM_CLO_ABS 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_CLO
+"
+CORP_BS_TOBSD,CORP_BS,Total Off-Balance-Sheet Debt,72,72,1202,,302,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_TOBSD_ABS == 0 && Y0.CORP_ASUM_TOBSD_ABS == null 
+   Formula: YB1.CORP_BS_TOBSD 
+Case Name: 
+   Condition: Y0.CORP_ASUM_TOBSD_ABS != null 
+   Formula: Y0.CORP_ASUM_TOBSD_ABS 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_TOBSD
+"
+CORP_BS_IOBSD,CORP_BS,Interest on Off-Balance-Sheet Debt,73,73,1201,,270,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_IOBSD_ABS == 0 && Y0.CORP_ASUM_IOBSD_ABS == null 
+   Formula: YB1.CORP_BS_IOBSD 
+Case Name: 
+   Condition: Y0.CORP_ASUM_IOBSD_ABS != null 
+   Formula: Y0.CORP_ASUM_IOBSD_ABS 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_IOBSD
+"
+CORP_BS_VIRD,CORP_BS,Variable Interest Rate Debt,74,74,1200,,303,5,,"Case Name: 
+   Condition: Y0.CORP_ASUM_VIRD_ABS == 0 && Y0.CORP_ASUM_VIRD_ABS == null 
+   Formula: YB1.CORP_BS_VIRD 
+Case Name: 
+   Condition: Y0.CORP_ASUM_VIRD_ABS != null 
+   Formula: Y0.CORP_ASUM_VIRD_ABS 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_VIRD
+"
+CORP_CF_SREV,CORP_CF,Sales Revenue,0,0,1328,,504,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_SREV
+"
+CORP_CF_TRREC,CORP_CF,^ A/C Receivables (Non-Related Parties),1,1,1329,,697,9,,"Case Name: 
+   Condition: YB1.CORP_BS_NAR != null
+   Formula: ( Y0.CORP_BS_NAR  - YB1.CORP_BS_NAR  ) * ( -1 ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_TRREC
+"
+CORP_CF_TRRECREPRT,CORP_CF,^ A/C Receivables (Related Parties),2,2,1330,,505,9,,"Case Name: 
+   Condition: YB1.CONST_HasData == true 
+   Formula: ( Y0.CORP_BS_NARRP - YB1.CORP_BS_NARRP ) * ( -1 )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_TRRECREPRT
+"
+CORP_CF_CFS,CORP_CF,Cash from sales,3,3,1331,,506,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_SREV + Y0.CORP_CF_TRREC + Y0.CORP_CF_TRRECREPRT
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CFS
+"
+,CORP_CF,<Empty Line>,4,4,1640,,,9,,,
+CORP_CF_COGS,CORP_CF,Cost of Goods Sold (less Non-cash COGS),5,5,1332,,507,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_COGS
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_COGS
+"
+CORP_CF_INV,CORP_CF,^ Inventory,6,6,1333,,508,9,,"Case Name: 
+   Condition: YB1.CORP_BS_INV != null 
+   Formula: (Y0.CORP_BS_INV - YB1.CORP_BS_INV) * ( -1)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_INV
+"
+CORP_CF_TPAYB,CORP_CF,^ A/C Payables (Non-Related Parties),7,7,1334,,509,9,,"Case Name: 
+   Condition: YB1.CORP_BS_AP != null 
+   Formula: Y0.CORP_BS_AP - YB1.CORP_BS_AP
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_TPAYB
+"
+CORP_CF_TRPAYBREPTY,CORP_CF,^ A/C Payables (Related Parties),8,8,1335,,510,9,,"Case Name: 
+   Condition: YB1.CORP_BS_APRP != null 
+   Formula: Y0.CORP_BS_APRP - YB1.CORP_BS_APRP
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_TRPAYBREPTY
+"
+CORP_CF_CPP,CORP_CF,Cash paid for production,9,9,1336,,511,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_COGS + Y0.CORP_CF_INV + Y0.CORP_CF_TPAYB + Y0.CORP_CF_TRPAYBREPTY
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CPP
+"
+CORP_CF_CTA,CORP_CF,Cash from trading activities,10,10,1337,,512,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_CFS + Y0.CORP_CF_CPP
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CTA
+"
+,CORP_CF,<Empty Line>,11,11,1641,,,9,,,
+CORP_CF_CGnA,CORP_CF,"Selling, General & Admin Expenses",12,12,1338,,513,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_SAE
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CGnA
+"
+CORP_CF_DIRRE,CORP_CF,Directors Remuneration/Fees (Mainboard-listed),13,13,1339,,514,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_DRML
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_DIRRE
+"
+CORP_CF_PREXP,CORP_CF,^ Prepaid Expenses,14,14,1417,,515,9,,"Case Name: 
+   Condition: YB1.CORP_BS_PE != null 
+   Formula: (Y0.CORP_BS_PE - YB1.CORP_BS_PE) * ( -1 ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_PREXP
+"
+CORP_CF_ACCEX,CORP_CF,^ Accrued Expenses,15,15,1418,,516,9,,"Case Name: 
+   Condition: YB1.CORP_BS_AE != null 
+   Formula: Y0.CORP_BS_AE - YB1.CORP_BS_AE
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_ACCEX
+"
+CORP_CF_CPOC,CORP_CF, Cash paid for operating costs,16,16,1419,,517,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_CGnA  + Y0.CORP_CF_DIRRE + Y0.CORP_CF_PREXP + Y0.CORP_CF_ACCEX 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CPOC 
+"
+CORP_CF_CAOP,CORP_CF,Cash after operations,17,17,1420,,518,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_CTA +Y0.CORP_CF_CPOC
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CAOP
+"
+,CORP_CF,<Empty Line>,18,18,1639,,,9,,,
+CORP_CF_OTINC,CORP_CF,Other Income (Expense),19,19,1421,,519,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_OI + Y0.CORP_IS_OE + Y0.CORP_IS_NONOPINEXP
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_OTINC
+"
+CORP_CF_GLFASS,CORP_CF,Gains (Losses) on Sale of Fixed Assets,20,20,1422,,520,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_GLSFA 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_GLFASS
+"
+CORP_CF_GLOTASS,CORP_CF,Gains (Losses) from Non-Operating Activities,21,21,1423,,521,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_GLSOA
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_GLOTASS
+"
+CORP_CF_GLFX,CORP_CF,FX Gains (Losses),22,22,1424,,522,9,,"Case Name: 
+   Condition: YB1.CORP_BS_FXGLR != null 
+   Formula: (Y0.CORP_BS_FXGLR - YB1.CORP_BS_FXGLR) + Y0.CORP_IS_FXGL
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_GLFX
+"
+CORP_CF_OTCURASS,CORP_CF,^ Other Current Asset accounts,23,23,1425,,523,9,,"Case Name: 
+   Condition: YB1.CORP_BS_OCA != null 
+   Formula: ((Y0.CORP_BS_OCA - YB1.CORP_BS_OCA) + (Y0.CORP_BS_MS - YB1.CORP_BS_MS)) * (-1 ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_OTCURASS
+"
+CORP_CF_OTNCURASS,CORP_CF,^ Other Non-current Asset accounts,24,24,1426,,524,9,,"Case Name: 
+   Condition: YB1.CORP_BS_ONCA != null 
+   Formula: ( Y0.CORP_BS_ONCA - YB1.CORP_BS_ONCA ) * ( - 1 ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_OTNCURASS 
+"
+CORP_CF_OTCURLIA,CORP_CF,^ Other Current Liabilities accounts,25,25,1427,,525,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_OCL - YB1.CORP_BS_OCL
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_OTCURLIA
+"
+CORP_CF_OTNCURLIA,CORP_CF,^ Other Non-current Liabilities accounts,26,26,1428,,526,9,,"Case Name: 
+   Condition: YB1.CORP_BS_ONCL != null 
+   Formula: Y0.CORP_BS_ONCL - YB1.CORP_BS_ONCL
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_OTNCURLIA
+"
+CORP_CF_INCTAXEXP,CORP_CF,Income Tax Expense,27,27,1429,,527,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_ITE
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_INCTAXEXP
+"
+CORP_CF_DEFTAXPAY,CORP_CF,^ Deferred Tax,28,28,1430,,528,9,,"Case Name: 
+   Condition: YB1.CORP_BS_DIT != null 
+   Formula: Y0.CORP_BS_DIT - YB1.CORP_BS_DIT
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_DEFTAXPAY 
+"
+CORP_CF_INCTAXPAYB,CORP_CF,^ Taxes Payable,29,29,1431,,529,9,,"Case Name: 
+   Condition: YB1.CORP_BS_ITP != null 
+   Formula: Y0.CORP_BS_ITP - YB1.CORP_BS_ITP
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_INCTAXPAYB
+"
+CORP_CF_TAXPDNOTINC,CORP_CF,Taxes paid and other income (expense),30,30,1432,,530,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_OTINC+ Y0.CORP_CF_GLFASS+ Y0.CORP_CF_GLOTASS+ Y0.CORP_CF_GLFX+ Y0.CORP_CF_OTCURASS+ Y0.CORP_CF_OTNCURASS+ Y0.CORP_CF_OTCURLIA+ Y0.CORP_CF_OTNCURLIA+ Y0.CORP_CF_INCTAXEXP+ Y0.CORP_CF_DEFTAXPAY+ Y0.CORP_CF_INCTAXPAYB
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_TAXPDNOTINC
+"
+CORP_CF_NCAOP,CORP_CF,Net cash after operations,31,31,1433,,531,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_CAOP + Y0.CORP_CF_TAXPDNOTINC
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_NCAOP
+"
+,CORP_CF,<Empty Line>,32,32,1638,,,9,,,
+CORP_CF_INTEXP,CORP_CF,Interest Expense,33,33,1434,,532,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_IE
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_INTEXP
+"
+CORP_CF_INTPAYB,CORP_CF,^ Interest Payable,34,34,1435,,533,9,,"Case Name: 
+   Condition: YB1.CORP_BS_IP != null 
+   Formula: Y0.CORP_BS_IP - YB1.CORP_BS_IP
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_INTPAYB
+"
+CORP_CF_DIVDEC,CORP_CF,Dividends Declared (Mainboard Listed),35,35,1436,,534,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_DML
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_DIVDEC
+"
+CORP_CF_DIVPAYB,CORP_CF,^ Dividends Payable (Mainboard Listed),36,36,1437,,535,9,,"Case Name: 
+   Condition: YB1.CORP_BS_DIVPM != null 
+   Formula: Y0.CORP_BS_DIVPM - YB1.CORP_BS_DIVPM
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_DIVPAYB 
+"
+CORP_CF_CPAYDIVINT,CORP_CF,Cash paid for dividends and interest,37,37,1438,,536,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_INTEXP+ Y0.CORP_CF_INTPAYB+ Y0.CORP_CF_DIVDEC+ Y0.CORP_CF_DIVPAYB
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CPAYDIVINT
+"
+CORP_CF_CAFC,CORP_CF,Cash after financing costs,38,38,1439,,537,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_NCAOP + Y0.CORP_CF_CPAYDIVINT
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CAFC
+"
+,CORP_CF,<Empty Line>,39,39,1635,,,9,,,
+CORP_CF_CPLTD,CORP_CF,Current Portion of Long Term Debts (prior year),40,40,1440,,538,9,,"Case Name: 
+   Condition: YB1.CORP_BS_CPLTD != null 
+   Formula: -YB1.CORP_BS_CPLTD
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CPLTD
+"
+CORP_CF_CADBAMOR,CORP_CF,Cash after debt amortisation,41,41,1441,,539,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_CAFC + Y0.CORP_CF_CPLTD
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CADBAMOR
+"
+,CORP_CF,<Empty Line>,42,42,1636,,,9,,,
+CORP_CF_FA,CORP_CF,^ Fixed Assets,43,43,1442,,540,9,,"Case Name: 
+   Condition: true 
+   Formula: -((Y0.CORP_BS_NFA) - ( YB1.CORP_BS_NFA))+(Y0.CORP_IS_DEP) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_FA
+"
+CORP_CF_CAPINT,CORP_CF,^ Capitalised Interest,44,44,1443,,541,9,,"Case Name: 
+   Condition: YB1.CORP_BS_CI != null 
+   Formula: (YB1.CORP_BS_CI - Y0.CORP_BS_CI)*(1)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CAPINT
+"
+CORP_CF_INS,CORP_CF,^ Investments,45,45,1444,,542,9,,"Case Name: 
+   Condition: YB1.CORP_BS_INS != null 
+   Formula: (YB1.CORP_BS_INS - Y0.CORP_BS_INS) + Y0.CORP_IS_SACPL
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_INS
+"
+CORP_CF_INTG,CORP_CF,^ Intangibles,46,46,1445,,543,9,,"Case Name: 
+   Condition: YB1.CORP_BS_INT != null 
+   Formula: (YB1.CORP_BS_INT - Y0.CORP_BS_INT ) + Y0.CORP_IS_AMORT
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_INTG
+"
+CORP_CF_CPAYPLINS,CORP_CF,Cash paid for plant and investments,47,47,1446,,544,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_FA+ Y0.CORP_CF_CAPINT+ Y0.CORP_CF_INS+ Y0.CORP_CF_INTG
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CPAYPLINS  
+"
+CORP_CF_CACAPINSEXP,CORP_CF,Cash after capital & investment expenditure,48,48,1447,,545,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_CADBAMOR + Y0.CORP_CF_CPAYPLINS
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CACAPINSEXP
+"
+,CORP_CF,<Empty Line>,49,49,1634,,,9,,,
+CORP_CF_EXTROC,CORP_CF,Extraordinary Items (Cash),50,50,1448,,546,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_EIC
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_EXTROC
+"
+CORP_CF_EXTRONC,CORP_CF,Extraordinary Items (Non-cash),51,51,1449,,547,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_EINC
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_EXTRONC
+"
+CORP_CF_CAEXTROITM,CORP_CF,Cash after extraordinary items,52,52,1450,,548,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_CACAPINSEXP+ Y0.CORP_CF_EXTROC+ Y0.CORP_CF_EXTRONC
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_CAEXTROITM
+"
+,CORP_CF,<Empty Line>,53,53,1637,,,9,,,
+CORP_CF_DIRREOTH,CORP_CF,Directors Remuneration / Fee (Others),54,54,1451,,549,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_DRO
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_DIRREOTH
+"
+CORP_CF_DIVDECOTH,CORP_CF,Dividend declared / Owners withdrawal (Others),55,55,1452,,550,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_DO
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_DIVDECOTH
+"
+CORP_CF_DIVPAYBOTH,CORP_CF,^ Dividends Payable (Others),56,56,1453,,551,9,,"Case Name: 
+   Condition: YB1.CORP_BS_DIVPOTH != null 
+   Formula: Y0.CORP_BS_DIVPOTH - YB1.CORP_BS_DIVPOTH
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_DIVPAYBOTH
+"
+CORP_CF_REPRTASS,CORP_CF,^ Related Parties Assets,57,57,1454,,552,9,,"Case Name: 
+   Condition: YB1.CORP_BS_RPA != null 
+   Formula: (Y0.CORP_BS_RPA - YB1.CORP_BS_RPA)*(-1)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_REPRTASS
+"
+CORP_CF_REPRTLIA,CORP_CF,^ Related Parties Liabilities,58,58,1455,,553,9,,"Case Name: 
+   Condition: YB1.CORP_BS_RPL != null 
+   Formula: Y0.CORP_BS_RPL - YB1.CORP_BS_RPL
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_REPRTLIA
+"
+CORP_CF_SUBDEBT,CORP_CF,^ Subordinated Debts (to OCBC),59,59,1456,,554,9,,"Case Name: 
+   Condition: YB1.CORP_BS_SDOCB != null 
+   Formula: Y0.CORP_BS_SDOCB - YB1.CORP_BS_SDOCB
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_SUBDEBT
+"
+CORP_CF_ORDSH,CORP_CF,^ Ordinary Shares,60,60,1457,,555,9,,"Case Name: 
+   Condition: YB1.CORP_BS_OS != null 
+   Formula: (Y0.CORP_BS_OS - YB1.CORP_BS_OS) + Y0.CORP_IS_TPUCB
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_ORDSH
+"
+CORP_CF_PRESH,CORP_CF,^ Preference Shares,61,61,1458,,556,9,,"Case Name: 
+   Condition: YB1.CORP_BS_PS != null 
+   Formula: Y0.CORP_BS_PS - YB1.CORP_BS_PS
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_PRESH
+"
+CORP_CF_OTHCAP,CORP_CF,^ Other Capital,62,62,1459,,557,9,,"Case Name: 
+   Condition: YB1.CORP_BS_SDQU != null 
+   Formula: (Y0.CORP_BS_SP - YB1.CORP_BS_SP )+ (Y0.CORP_BS_RR - YB1.CORP_BS_RR )+ (Y0.CORP_BS_GR - YB1.CORP_BS_GR )+ (Y0.CORP_BS_SDQU - YB1.CORP_BS_SDQU )+ Y0.CORP_IS_TGR+ Y0.CORP_IS_TRR","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_OTHCAP
+"
+CORP_CF_MI,CORP_CF,^ Minority Interest,63,63,1594,,558,9,,"Case Name: 
+   Condition: YB1.CORP_BS_MI != null 
+   Formula: (Y0.CORP_BS_MI - YB1.CORP_BS_MI) + Y0.CORP_IS_MISPL
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_MI
+"
+CORP_CF_TINTFIN,CORP_CF,Total internal financing,64,64,1593,,559,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_DIRREOTH + Y0.CORP_CF_DIVDECOTH+ Y0.CORP_CF_DIVPAYBOTH+ Y0.CORP_CF_REPRTASS+ Y0.CORP_CF_REPRTLIA+ Y0.CORP_CF_SUBDEBT+ Y0.CORP_CF_ORDSH+ Y0.CORP_CF_PRESH+ Y0.CORP_CF_OTHCAP+ Y0.CORP_CF_MI
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_TINTFIN
+"
+CORP_CF_FINSURP,CORP_CF,Financing surplus (requirement),65,65,1592,,560,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_CAEXTROITM + Y0.CORP_CF_TINTFIN
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_FINSURP
+"
+,CORP_CF,<Empty Line>,66,66,1633,,,9,,,
+CORP_CF_BILLPAYB,CORP_CF,^ Bills Payables,67,67,1591,,561,9,,"Case Name: 
+   Condition: YB1.CORP_BS_BP != null 
+   Formula: Y0.CORP_BS_BP - YB1.CORP_BS_BP
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_BILLPAYB
+"
+CORP_CF_SHTTEMDEBT,CORP_CF,^ Short Term Debts,68,68,1460,,562,9,,"Case Name: 
+   Condition: YB1.CORP_BS_STD != null 
+   Formula: Y0.CORP_BS_STD - YB1.CORP_BS_STD
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_SHTTEMDEBT
+"
+CORP_CF_LNGTEMDEBT,CORP_CF,^ Long Term Debts,69,69,1461,,563,9,,"Case Name: 
+   Condition: YB1.CORP_BS_LTD != null 
+   Formula: (Y0.CORP_BS_LTD - YB1.CORP_BS_LTD ) + Y0.CORP_BS_CPLTD
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_LNGTEMDEBT
+"
+CORP_CF_TEXTFIN,CORP_CF,Total external financing,70,70,1462,,564,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_BILLPAYB+ Y0.CORP_CF_SHTTEMDEBT+ Y0.CORP_CF_LNGTEMDEBT
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_TEXTFIN
+"
+CORP_CF_NCAFIN,CORP_CF,Net cash after financing,71,71,1463,,565,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_FINSURP + Y0.CORP_CF_TEXTFIN
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_NCAFIN
+"
+,CORP_CF,<Empty Line>,72,72,1632,,,9,,,
+CORP_CF_PROOF,CORP_CF,"PROOF:  Cash, FD and govt securities",73,73,1464,,566,9,,"Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_BS_CFD +Y0.CORP_BS_GS) - (YB1.CORP_BS_CFD + YB1.CORP_BS_GS)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_PROOF
+"
+CORP_CF_DIFF,CORP_CF,Difference,74,74,1590,,567,9,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CF_NCAFIN - Y0.CORP_CF_PROOF
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CF_DIFF
+"
+CORP_CS_SR,CORP_CS,Sales Revenue,0,0,1660,,682,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_SR/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_SR
+"
+CORP_CS_COGS,CORP_CS,Cost of Goods Sold,1,1,1507,,648,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_COGS/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_COGS
+"
+CORP_CS_GPL,CORP_CS,Gross Profit (Loss),2,2,1661,,681,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_GPL/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_GPL
+"
+CORP_CS_SAE,CORP_CS,"Selling, General & Admin Expenses",3,3,1556,,680,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_SAE/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_SAE
+"
+CORP_CS_DRML,CORP_CS,Directors Remuneration (Mainboard Listed),4,4,1555,,679,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_DRML/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_DRML
+"
+CORP_CS_DRO,CORP_CS,Directors Remuneration (Others),5,5,1554,,678,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_DRO/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_DRO
+"
+CORP_CS_IE,CORP_CS,Interest Expense,6,6,1553,,677,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_IE/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_IE
+"
+CORP_CS_DEP,CORP_CS,Depreciation,7,7,1552,,676,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_DEP/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_DEP
+"
+CORP_CS_AMORT,CORP_CS,Amortisation,8,8,1551,,675,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_AMORT/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_AMORT
+"
+CORP_CS_FXGL,CORP_CS,FX Gains (Losses),9,9,1550,,674,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_FXGL/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_FXGL
+"
+CORP_CS_OE,CORP_CS,Other Operating Expenses,10,10,1549,,673,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_OE/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_OE
+"
+CORP_CS_OPL,CORP_CS,Operating Profit (Loss),11,11,1548,,672,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_OPL/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_OPL
+"
+CORP_CS_SACPL,CORP_CS,Share of Profits (Losses) of Associated Cos,12,12,1547,,671,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_SACPL/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_SACPL
+"
+CORP_CS_OI,CORP_CS,Other Non-operating Income,13,13,1546,,670,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_OI/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_OI
+"
+CORP_CS_NONOPINEXP,CORP_CS,Other Non-operating Expenses,14,14,1545,,669,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_NONOPINEXP/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_NONOPINEXP
+"
+CORP_CS_GLSFA,CORP_CS,Gains (Losses) on Sale of Fixed Assets,15,15,1544,,668,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_GLSFA/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_GLSFA
+"
+CORP_CS_GLSOA,CORP_CS,Gains (Losses) from Non-Operating Activities,16,16,1543,,667,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_GLSOA/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_GLSOA
+"
+CORP_CS_NPBT,CORP_CS,Net Profit (Loss) Before Tax,17,17,1542,,666,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_NPBT/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_NPBT
+"
+CORP_CS_ITE,CORP_CS,Income Tax Expense,18,18,1541,,665,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_ITE/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_ITE
+"
+CORP_CS_NPAT,CORP_CS,Net Profit (Loss) After Tax,19,19,1540,,664,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_NPAT/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_NPAT
+"
+CORP_CS_MISPL,CORP_CS,Minority Interest Share of P/L,20,20,1665,,663,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_MISPL/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_MISPL
+"
+CORP_CS_EIC,CORP_CS,Extraordinary Items (Cash),21,21,1664,,662,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_EIC/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_EIC
+"
+CORP_CS_EINC,CORP_CS,Extraordinary Items (Non-cash),22,22,1663,,661,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_EINC/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_EINC
+"
+CORP_CS_NPATM,CORP_CS,"Net Profit (Loss) After Tax, M.I & E.I.",23,23,1662,,660,8,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_NPATM/ Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CS_NPATM
+"
+CORP_IS_SR,CORP_IS,Sales Revenue,0,0,1198,,331,6,,"Case Name: 
+   Condition:  Y0.CORP_ASUM_SR_ABS != null 
+   Formula:  Y0.CORP_ASUM_SR_ABS 
+Case Name: 
+   Condition:   Y0.CORP_ASUM_SR_Grw != null 
+   Formula: (YB1.CORP_IS_SR) * (1 + Math.Round(Y0.CORP_ASUM_SR_Grw, 4))
+Case Name: 
+   Condition:   Y0.CORP_ASUM_SR_PERSALGRW != null 
+   Formula: (YB1.CORP_IS_SR) * (1 + ( YB1.CORP_RC_RG_SALGRW + (Math.Round(Y0.CORP_ASUM_SR_PERSALGRW, 4) ) ) ) 
+",
+CORP_IS_NETSALES,CORP_IS,Net Sales,0,0,1199,1198,396,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_NETSALES , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths ) 
+"
+CORP_IS_COGS,CORP_IS,Cost of Goods Sold,1,1,1196,,305,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_COGS_ABS != null && Y0.CORP_ASUM_COGS_ABS != 0
+   Formula: Y0.CORP_ASUM_COGS_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_COGS_PERSR != null
+   Formula: (Math.round(-Y0.CORP_ASUM_COGS_PERSR, 4) * Y0.CORP_IS_SR)
+Case Name: 
+   Condition: Y0.CORP_ASUM_COGS_ATS != null &&  Y0.CORP_ASUM_COGS_ATS != 0
+   Formula: (( YB1.CORP_IS_COGS/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_COGS_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_COGSD,CORP_IS,Cost of Goods Sold,1,0,1197,1196,397,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_COGSD  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths ) 
+"
+CORP_IS_GPL,CORP_IS,Gross Profit (Loss),2,2,1195,,316,6,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_SR + Y0.CORP_IS_COGS
+","Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_GPL , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths ) 
+"
+,CORP_IS,<Empty Line>,3,3,1503,,,6,,,
+CORP_IS_SAE,CORP_IS,"Selling, General & Admin Expenses",4,4,1273,,330,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_SAE_ABS != 0 && Y0.CORP_ASUM_SAE_ABS != null 
+   Formula: (Y0.CORP_ASUM_SAE_ABS)
+Case Name: 
+   Condition: Y0.CORP_ASUM_SAE_PERSR != null
+   Formula: (Math.round (-Y0.CORP_ASUM_SAE_PERSR, 4) * Y0.CORP_IS_SR)
+Case Name: 
+   Condition: Y0.CORP_ASUM_SAE_ATS != null &&  Y0.CORP_ASUM_SAE_ATS != 0
+   Formula: (( YB1.CORP_IS_SAE/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_SAE_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_SNAEXPEXCDEPRAMOR,CORP_IS,SG & A Expenses (exc. Depreciation & Amortisation),4,0,1274,1273,398,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_SNAEXPEXCDEPRAMOR   , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths ) 
+"
+CORP_IS_SNAPROBD,CORP_IS,Provision for Doubtful Debts,4,1,1275,1273,404,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_SNAPROBD  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths ) 
+"
+CORP_IS_DRML,CORP_IS,Directors Remuneration (Mainboard Listed),5,5,1276,,309,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_DRML_ABS != 0 && Y0.CORP_ASUM_DRML_ABS != null 
+   Formula: (Y0.CORP_ASUM_DRML_ABS)
+Case Name: 
+   Condition: Y0.CORP_ASUM_DRML_PERSR != null 
+   Formula: (Math.round (-Y0.CORP_ASUM_DRML_PERSR, 4) * Y0.CORP_IS_SR)
+Case Name: 
+   Condition: Y0.CORP_ASUM_DRML_ATS != null &&  Y0.CORP_ASUM_DRML_ATS != 0
+   Formula: (( YB1.CORP_IS_DRML/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_DRML_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_DIRREMM,CORP_IS,Directors Remuneration (Mainboard Listed),5,0,1277,1276,399,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_DIRREMM    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_DRO,CORP_IS,Directors Remuneration (Others),6,6,1278,,310,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_DRO_ABS != 0 && Y0.CORP_ASUM_DRO_ABS != null 
+   Formula: (Y0.CORP_ASUM_DRO_ABS)
+Case Name: 
+   Condition: Y0.CORP_ASUM_DRO_PERSR != null 
+   Formula: (Math.round (-Y0.CORP_ASUM_DRO_PERSR, 4) * Y0.CORP_IS_SR)
+Case Name: 
+   Condition: Y0.CORP_ASUM_DRO_ATS != null &&  Y0.CORP_ASUM_DRO_ATS != 0
+   Formula: (( YB1.CORP_IS_DRO/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_DRO_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_DIRREMOTH,CORP_IS,Directors Remuneration (Others),6,0,1279,1278,400,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_DIRREMOTH   , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_IE,CORP_IS,Interest Expense,7,7,1280,,317,6,,"Case Name: 
+   Condition: true
+   Formula:  -( Math.Max((( Y0.CORP_ASUM_SRATE+Y0.CORP_ASUM_SRATE_ATI ) * (Y0.CORP_BS_STD + Y0.CORP_BS_BP )  + (Y0.CORP_ASUM_LRATE +Y0.CORP_ASUM_LRATE_ATI) * (Y0.CORP_BS_LTD + Y0.CORP_BS_CPLTD )),0))
+",
+CORP_IS_GROSSINTEXP,CORP_IS,Interest Expense,7,0,1302,1280,401,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_GROSSINTEXP   , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_DEP,CORP_IS,Depreciation,8,8,1386,,306,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_DEP_ABS != 0 &&  Y0.CORP_ASUM_DEP_ABS != null
+   Formula: (Y0.CORP_ASUM_DEP_ABS)
+Case Name: 
+   Condition: Y0.CORP_ASUM_DEP_PERFA != 0 && Y0.CORP_ASUM_DEP_PERFA != null 
+   Formula: Y0.CORP_PROJ_DEP 
+Case Name: 
+   Condition: Y0.CORP_ASUM_DEP_PERSR != null
+   Formula: (Math.Round (-Y0.CORP_ASUM_DEP_PERSR, 4) * Y0.CORP_IS_SR)
+Case Name: 
+   Condition: Y0.CORP_ASUM_DEP_ATS != null &&  Y0.CORP_ASUM_DEP_ATS != 0
+   Formula: (( YB1.CORP_IS_DEP/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_DEP_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_DEPREXP,CORP_IS,Depreciation (Non-cash),8,0,1387,1386,402,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_DEPREXP    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_AMORT,CORP_IS,Amortisation,9,9,1384,,304,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_AMORT_ABS != null 
+   Formula: (Y0.CORP_ASUM_AMORT_ABS)
+Case Name: 
+   Condition: Y0.CORP_ASUM_AMORT_PERINTG != 0 && Y0.CORP_ASUM_AMORT_PERINTG != null 
+   Formula: (Math.Round (-Y0.CORP_ASUM_AMORT_PERINTG, 4) * YB1.CORP_BS_INT)
+Case Name: 
+   Condition: Y0.CORP_ASUM_AMORT_ATS != null &&  Y0.CORP_ASUM_AMORT_ATS != 0
+   Formula: (( YB1.CORP_IS_AMORT/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_AMORT_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_AMOREXP,CORP_IS,Amortisation (Non-cash),9,0,1385,1384,403,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_AMOREXP    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_FXGL,CORP_IS,FX Gains (Losses),10,10,1382,,313,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_FXGL_ABS != 0 && Y0.CORP_ASUM_FXGL_ABS != null 
+   Formula: (Y0.CORP_ASUM_FXGL_ABS)
+Case Name: 
+   Condition: Y0.CORP_ASUM_FXGL_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_FXGL_PERSR, 4) * Y0.CORP_IS_SR
+Case Name: 
+   Condition: Y0.CORP_ASUM_FXGL_ATS != null &&  Y0.CORP_ASUM_FXGL_ATS != 0
+   Formula: (( YB1.CORP_IS_FXGL/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_FXGL_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_FXGAINLOSS,CORP_IS,FX Gains (Losses) - Ordinary Course of Business,10,0,1383,1382,405,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_FXGAINLOSS    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_OE,CORP_IS,Other Operating Expenses,11,11,1380,,325,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_OE_ABS != 0 && Y0.CORP_ASUM_OE_ABS != null
+   Formula: -math.abs (Y0.CORP_ASUM_OE_ABS)
+Case Name: 
+   Condition: Y0.CORP_ASUM_OE_PERSR != null
+   Formula: Math.Round (-Y0.CORP_ASUM_OE_PERSR, 4) * Y0.CORP_IS_SR
+Case Name: 
+   Condition: Y0.CORP_ASUM_OE_ATS != null &&  Y0.CORP_ASUM_OE_ATS != 0
+   Formula: (( YB1.CORP_IS_OE/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_OE_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_OTHNONCASHCHAR,CORP_IS,Other Operating Expenses,11,0,1381,1380,406,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_OTHNONCASHCHAR     , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_OPL,CORP_IS,Operating Profit (Loss),12,12,1281,,327,6,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_GPL + Y0.CORP_IS_SAE + Y0.CORP_IS_DRML + Y0.CORP_IS_DRO + Y0.CORP_IS_IE + Y0.CORP_IS_DEP + Y0.CORP_IS_AMORT + Y0.CORP_IS_OE + Y0.CORP_IS_FXGL
+","Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_OPL  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths ) 
+"
+,CORP_IS,<Empty Line>,13,13,1489,,,6,,,
+CORP_IS_SACPL,CORP_IS,Share of Profits (Losses) of Associated Cos,14,14,1282,,329,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_SACPL_ABS != 0 && Y0.CORP_ASUM_SACPL_ABS  != null 
+   Formula: Y0.CORP_ASUM_SACPL_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_SACPL_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_SACPL_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_SACPL_ATS != null &&  Y0.CORP_ASUM_SACPL_ATS != 0
+   Formula: (( YB1.CORP_IS_SACPL/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_SACPL_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_SHOFOFASSO,CORP_IS,Share of Profits (Losses) of Associated Cos,14,0,1283,1282,407,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_SHOFOFASSO  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_OI,CORP_IS,Other Non-operating Income,15,15,1284,,326,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_OI_ABS != null && Y0.CORP_ASUM_OI_ABS != 0
+   Formula: Y0.CORP_ASUM_OI_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_OI_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_OI_PERSR, 4) * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_OI_ATS != null &&  Y0.CORP_ASUM_OI_ATS != 0
+   Formula: (( YB1.CORP_IS_OI/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_OI_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_OTHINTINC,CORP_IS,Interest Income,15,1,1285,1284,408,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_OTHINTINC , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_NONOPINC,CORP_IS,Non-operating Income,15,0,1602,1284,409,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_NONOPINC  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_NONOPEXP,CORP_IS,Non-operating Expenses,16,0,1604,1603,410,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_NONOPEXP  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_NONOPINEXP,CORP_IS,Other Non-operating Expenses,16,16,1603,,659,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_NONOPINEXP_ABS  != 0 && Y0.CORP_ASUM_NONOPINEXP_ABS != null 
+   Formula: -math.abs ( Y0.CORP_ASUM_NONOPINEXP_ABS )
+Case Name: 
+   Condition: Y0.CORP_ASUM_NONOPINEXP_PERSR != null
+   Formula: Math.Round (- Y0.CORP_ASUM_NONOPINEXP_PERSR , 4) * Y0.CORP_IS_SR
+Case Name: 
+   Condition: Y0.CORP_ASUM_NONOPINEXP_ATS != null &&  Y0.CORP_ASUM_NONOPINEXP_ATS != 0
+   Formula: (( YB1.CORP_IS_NONOPINEXP/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_NONOPINEXP_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_GLSFA,CORP_IS,Gains (Losses) on Sale of Fixed Assets,17,17,1286,,314,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_GLSFA_ABS  != 0 && Y0.CORP_ASUM_GLSFA_ABS  != null 
+   Formula: Y0.CORP_ASUM_GLSFA_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_GLSFA_PERFA != null 
+   Formula: Y0.CORP_PROJ_GLSFA
+",
+CORP_IS_GLFRMSALOFFA,CORP_IS,Gains (Losses) from Sale of Fixed Assets,17,0,1287,1286,411,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_GLFRMSALOFFA  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_GLSOA,CORP_IS,Gains (Losses) from Non-Operating Activities,18,18,1303,,315,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_GLSOA_ABS   != 0 && Y0.CORP_ASUM_GLSOA_ABS  != null 
+   Formula: Y0.CORP_ASUM_GLSOA_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_GLSOA_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_GLSOA_PERSR, 4)  * Y0.CORP_IS_SR 
+Case Name: 
+   Condition: Y0.CORP_ASUM_GLSOA_ATS != null &&  Y0.CORP_ASUM_GLSOA_ATS != 0
+   Formula: (( YB1.CORP_IS_GLSOA/ YB1.CORP_IS_SR )+ Y0.CORP_ASUM_GLSOA_ATS ) * Y0.CORP_IS_SR 
+",
+CORP_IS_GLFRMSALOFOTHASS,CORP_IS,Gains (Losses) from Sale of Other Assets,18,0,1304,1303,412,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_GLFRMSALOFOTHASS  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_FXGLOTHACT,CORP_IS,FX Gains (Losses) - Other Activities,18,1,1666,1303,413,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_FXGLOTHACT    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_NPBT,CORP_IS,Net Profit (Loss) Before Tax,19,19,1305,,324,6,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_OPL + Y0.CORP_IS_SACPL + Y0.CORP_IS_OI + Y0.CORP_IS_GLSFA + Y0.CORP_IS_GLSOA + Y0.CORP_IS_NONOPINEXP
+","Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_NPBT , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths ) 
+"
+,CORP_IS,<Empty Line>,20,20,1504,,,6,,,
+CORP_IS_ITE,CORP_IS,Income Tax Expense,21,21,1306,,319,6,,"Case Name: 
+   Condition: Y0.CORP_IS_NPBT < 0
+   Formula: 0
+Case Name: 
+   Condition: Y0.CORP_ASUM_ITE_PERR != null 
+   Formula: -( Math.Round(Y0.CORP_ASUM_ITE_PERR, 4) * Y0.CORP_IS_NPBT )
+",
+CORP_IS_INCTAX,CORP_IS,Income Tax Expense,21,0,1307,1306,414,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_INCTAX   , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_NPAT,CORP_IS,Net Profit (Loss) After Tax,22,22,1308,,322,6,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_NPBT + Y0.CORP_IS_ITE 
+","Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod (YB1.CORP_IS_NPAT, YB1.CONST_ProjectionInterval, YB1.CONST_NumOfMonths)
+"
+,CORP_IS,<Empty Line>,23,23,1505,,,6,,,
+CORP_IS_MISPL,CORP_IS,Minority Interest Share of P/L,24,24,1378,,321,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_MISPL_ABS != null 
+   Formula: (Y0.CORP_ASUM_MISPL_ABS)
+",
+CORP_IS_MI,CORP_IS,Minority Interests,24,0,1379,1378,415,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_MI , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_EIC,CORP_IS,Extraordinary Items (Cash),25,25,1288,,311,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_EIC != null 
+   Formula: (Y0.CORP_ASUM_EIC)
+",
+CORP_IS_EXTITEMSCASH,CORP_IS,Extraordinary Items (Cash),25,0,1289,1288,416,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_EXTITEMSCASH  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_EINC,CORP_IS,Extraordinary Items (Non-cash),26,26,1290,,312,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_EINC != null 
+   Formula: (Y0.CORP_ASUM_EINC)
+",
+CORP_IS_EXTITEMSNONCASH,CORP_IS,Extraordinary Items (Non-cash),26,0,1291,1290,417,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_EXTITEMSNONCASH  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_IMPLOSS,CORP_IS,Impairment Losses,26,1,1292,1290,418,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_IMPLOSS  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_FAIRVALGL,CORP_IS,Fair Value Gain (Loss),26,2,1293,1290,419,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_FAIRVALGL  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_NPATM,CORP_IS,"Net Profit (Loss) After Tax, M.I & E.I.",27,27,1294,,323,6,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_NPAT + Y0.CORP_IS_MISPL + Y0.CORP_IS_EIC + Y0.CORP_IS_EINC 
+","Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_NPATM  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )  
+"
+,CORP_IS,<Empty Line>,28,28,1642,,,6,,,
+CORP_IS_DML,CORP_IS,Dividends (Mainboard Listed),29,29,1295,,307,6,,"Case Name: 
+   Condition: Y0.CORP_IS_NPATM < 0
+   Formula: 0
+Case Name: 
+   Condition: Y0.CORP_ASUM_DML_ABS != null
+   Formula: Y0.CORP_ASUM_DML_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_DML_PERNPATM != null
+   Formula: (Math.Round (-Y0.CORP_ASUM_DML_PERNPATM, 4) * Y0.CORP_IS_NPATM)
+",
+CORP_IS_DIVM,CORP_IS,Dividends (Mainboard Listed),29,0,1377,1295,420,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_DIVM   , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_DO,CORP_IS,Dividends (Others),30,30,1375,,308,6,,"Case Name: 
+   Condition: Y0.CORP_IS_NPATM < 0
+   Formula: 0
+Case Name: 
+   Condition: Y0.CORP_ASUM_DO_ABS != null
+   Formula: Y0.CORP_ASUM_DO_ABS
+Case Name: 
+   Condition: Y0.CORP_ASUM_DO_PERNPATM != null
+   Formula: (Math.Round (-Y0.CORP_ASUM_DO_PERNPATM, 4) * Y0.CORP_IS_NPATM)
+",
+CORP_IS_DIVOTH,CORP_IS,Dividends (Others),30,0,1376,1375,421,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_DIVOTH   , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+,CORP_IS,<Empty Line>,31,31,1653,,,6,,,
+,CORP_IS,Reserve Movements,32,32,1657,,,6,,,
+CORP_IS_TGR,CORP_IS,Transfer from (to) General Reserves,33,33,1373,,332,6,,"Case Name: 
+   Condition: true
+   Formula: null 
+",
+CORP_IS_TFRGENSERV,CORP_IS,Transfer from (to) General Reserves,33,0,1374,1373,422,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_TFRGENSERV    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_TRR,CORP_IS,Transfer from (to) Revaluation Reserves,34,34,1371,,334,6,,"Case Name: 
+   Condition: true
+   Formula: null 
+",
+CORP_IS_TFRREVRESV,CORP_IS,Transfer from (to) Revaluation Reserves,34,0,1372,1371,423,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_TFRREVRESV    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_TPUCB,CORP_IS,Transfer (to) Paid Up Capital (Bonus Issue),35,35,1369,,333,6,,"Case Name: 
+   Condition: true
+   Formula: null 
+",
+CORP_IS_TFRPAIDIPCAPNBI,CORP_IS,Transfer (to) Paid Up Capital (Bonus Issue),35,0,1370,1369,424,6,,,"Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_TFRPAIDIPCAPNBI  , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+,CORP_IS,<Empty Line>,36,36,1654,,,6,,,
+,CORP_IS,Applicable to Corporate Real Estate Obligors,37,37,1658,,,6,,,
+CORP_IS_LC,CORP_IS,Lease Charges,38,38,1368,,320,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_LC_ABS == 0 && Y0.CORP_ASUM_LC_ABS == null 
+   Formula: YB1.CORP_IS_LC 
+Case Name: 
+   Condition: Y0.CORP_ASUM_LC_ABS != null 
+   Formula: Y0.CORP_ASUM_LC_ABS 
+","Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_LC    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_PDEP,CORP_IS,Preference Dividends Payout,39,39,1416,,328,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_PDEP_ABS == 0 && Y0.CORP_ASUM_PDEP_ABS == null 
+   Formula: YB1.CORP_IS_PDEP 
+Case Name: 
+   Condition: Y0.CORP_ASUM_PDEP_ABS != null 
+   Formula: Y0.CORP_ASUM_PDEP_ABS 
+","Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_PDEP    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_IS_II,CORP_IS,Interest Income,40,40,1415,,318,6,,"Case Name: 
+   Condition: Y0.CORP_ASUM_II_ABS == 0 && Y0.CORP_ASUM_II_ABS == null 
+   Formula: YB1.CORP_IS_II 
+Case Name: 
+   Condition: Y0.CORP_ASUM_II_ABS != null 
+   Formula: Y0.CORP_ASUM_II_ABS 
+","Case Name: 
+   Condition: true
+   Formula: Math.StandardizePeriod ( YB1.CORP_IS_II    , YB1.CONST_ProjectionInterval , YB1.CONST_NumOfMonths )
+"
+CORP_GC_ARDOH_TR,CORP_OTH,ARDOH (Intermediate Trend Computation Prior Year),0,0,1750,,858,4,,"Case Name: 1
+   Condition: (( YB1.CORP_IS_SR ==  null ) || ( YB1.CORP_IS_SR ==  0 )) && (YB1.CORP_BS_NAR + YB1.CORP_BS_NARRP) > 0
+   Formula: 365
+Case Name: 2
+   Condition: ( YB1.CORP_IS_SR != null ) || ( YB1.CORP_IS_SR != 0 )
+   Formula: (YB1.CORP_BS_NAR + YB1.CORP_BS_NARRP) / YB1.CORP_IS_SR * (YB1.CONST_NumOfMonths / 12 ) * 365
+","Case Name: 
+   Condition: true
+   Formula: Y0.CORP_GC_ARDOH_TR 
+"
+CORP_GC_INVDOH_TR,CORP_OTH,InvDOH (Intermediate Trend Computation Prior Year),1,1,1751,,859,4,,"Case Name: 1
+   Condition: ((YB1.CORP_IS_COGS ==  null ) || ( YB1.CORP_IS_COGS ==  0 ) ) && YB1.CORP_BS_INV > 0
+   Formula: 365
+Case Name: 2
+   Condition: (YB1.CORP_IS_COGS != null ) || ( YB1.CORP_IS_COGS != 0 ) 
+   Formula: YB1.CORP_BS_INV / (-YB1.CORP_IS_COGS * ( 12 / YB1.CONST_NumOfMonths)) * 365
+","Case Name: 
+   Condition: true
+   Formula: Y0.CORP_GC_INVDOH_TR 
+"
+CORP_IS_OPL_Y1,CORP_OTH,Operating Profit (Loss) (Previous Year),2,2,1749,,857,4,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_IS_GPL +  YB1.CORP_IS_SAE +  YB1.CORP_IS_DRML +  YB1.CORP_IS_DRO + YB1.CORP_IS_IE +  YB1.CORP_IS_DEP +  YB1.CORP_IS_AMORT +  YB1.CORP_IS_OE +  YB1.CORP_IS_FXGL
+",
+CORP_GC_SR_Y1,CORP_OTH,Sales Revenue (Previous Year),3,3,1711,,714,4,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula:  0.00 
+"
+CORP_GC_COGS_Y1,CORP_OTH,Costs of Goods Sold (Previous Year),4,4,1710,,713,4,,"Case Name: 
+   Condition: true
+   Formula: YB1.CORP_IS_COGS 
+","Case Name: 
+   Condition: true
+   Formula:  0.00 
+"
+CORP_GC_OPMAR_Y1,CORP_OTH,Operating Margin (Previous Year),5,5,1706,,224,4,,"Case Name: 
+   Condition: YB1.CORP_IS_SR != null 
+   Formula: YB1.CORP_IS_OPL / YB1.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula:  0 
+"
+CORP_GC_ARDOH_Y1,CORP_OTH,ARDOH (days-Previous Year),6,6,1703,,226,4,,"Case Name: 
+   Condition: ( YB1.CORP_IS_SR != null ) || ( YB1.CORP_IS_SR != 0 )
+   Formula: (YB1.CORP_BS_NAR + YB1.CORP_BS_NARRP) / YB1.CORP_IS_SR * (YB1.CONST_NumOfMonths / 12 ) * 365
+","Case Name: 
+   Condition: true
+   Formula:  0 
+"
+CORP_GC_INVDOH_Y1,CORP_OTH,InvDOH (days-Previous Year),7,7,1705,,228,4,,"Case Name: 
+   Condition: (YB1.CORP_IS_COGS != null ) || ( YB1.CORP_IS_COGS != 0 ) 
+   Formula: YB1.CORP_BS_INV / (-YB1.CORP_IS_COGS * ( 12 / YB1.CONST_NumOfMonths)) * 365
+","Case Name: 
+   Condition: true
+   Formula:  0 
+"
+CORP_GC_EBITDA_DSR_Y1,CORP_OTH,EBITDA DSR (Previous Year),8,8,1704,,227,4,,"Case Name: 
+   Condition:  (  -YB1.CORP_IS_IE * 12/YB1.CONST_NumOfMonths + YB1.CORP_BS_STD + YB1.CORP_BS_CPLTD + YB1.CORP_BS_BP ) != null 
+   Formula: ( YB1.CORP_IS_NPBT - YB1.CORP_IS_IE - YB1.CORP_IS_DEP -  YB1.CORP_IS_AMORT ) * 12/ YB1.CONST_NumOfMonths  / (  -YB1.CORP_IS_IE * 12/YB1.CONST_NumOfMonths   + YB1.CORP_BS_STD + YB1.CORP_BS_CPLTD + YB1.CORP_BS_BP ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_GC_EBITDA_DSR_Y1 
+"
+CORP_GC_LIQASS_DSR_Y1,CORP_OTH,Liquid Assets DSR (Previous Year),9,9,1707,,223,4,,"Case Name: 
+   Condition: ( (-YB1.CORP_IS_IE * 12/YB1.CONST_NumOfMonths) + YB1.CORP_BS_STD + YB1.CORP_BS_CPLTD + YB1.CORP_BS_BP ) != null 
+   Formula: (YB1.CORP_BS_CFD + YB1.CORP_BS_GS + (YB1.CORP_BS_MS * 0.5  )) / ( (-YB1.CORP_IS_IE * 12/YB1.CONST_NumOfMonths) + YB1.CORP_BS_STD + YB1.CORP_BS_CPLTD + YB1.CORP_BS_BP ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_GC_LIQASS_DSR_Y1 
+"
+CORP_GC_TL_ADJTNW_Y1,CORP_OTH,Total Liab / Adj. TNW (Previous Year),10,10,1708,,225,4,,"Case Name: 
+   Condition: ( YB1.CORP_BS_NW - YB1.CORP_BS_INT - YB1.CORP_BS_RPA  ) != null 
+   Formula: YB1.CORP_BS_TL / ( YB1.CORP_BS_NW - YB1.CORP_BS_INT - YB1.CORP_BS_RPA  ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_GC_TL_ADJTNW_Y1 
+"
+CORP_PROJ_CASH,CORP_PROJ,Cash Calculation,0,0,1558,,684,13,,"Case Name: 
+   Condition: Y0.CORP_BS_CFD == null
+   Formula: Math.AssignValue(Y0, ""CORP_BS_CFD"", 0)
+Case Name: 
+   Condition: Y0.CORP_BS_TLNW > Y0.CORP_BS_TA && Y0.CORP_ASUM_BP_ABS != null 
+   Formula: Math.AssignValue(Y0, ""CORP_BS_CFD"", (Y0.CORP_BS_TLNW - Y0.CORP_BS_TA))
+Case Name: 
+   Condition: Y0.CORP_BS_TLNW > Y0.CORP_BS_TA
+   Formula: Math.AssignValue(Y0, ""CORP_BS_CFD"", (Y0.CORP_BS_TLNW - Y0.CORP_BS_TA - (( Y0.CORP_ASUM_SRATE + Y0.CORP_ASUM_SRATE_ATI ) * Y0.CORP_BS_BP ))) 
+Case Name: 
+   Condition: Y0.CORP_BS_TLNW < Y0.CORP_BS_TA
+   Formula: Math.AssignValue(Y0, ""CORP_BS_CFD"", 0)
+",
+CORP_PROJ_IE,CORP_PROJ,Interest Expense,1,1,1753,,860,13,,"Case Name: 
+   Condition: Y0.CORP_ASUM_SRATE != null && Y0.CORP_ASUM_LRATE != null
+   Formula: - Math.Max((( Y0.CORP_ASUM_SRATE+Y0.CORP_ASUM_SRATE_ATI ) * (Y0.CORP_BS_BP )),0)
+",
+CORP_PROJ_SRATE,CORP_PROJ,Effective Short Term Rate Calculation,2,2,1752,,856,13,,"Case Name: 
+   Condition: true 
+   Formula:  Y0.CORP_ASUM_SRATE+Y0.CORP_ASUM_SRATE_ATI
+",
+CORP_PROJ_STD,CORP_PROJ,Short Term Debts Calculation,3,3,1557,,683,13,,"Case Name: 
+   Condition: Y0.CORP_BS_STD == null
+   Formula: Math.AssignValue(Y0, ""CORP_BS_STD"", 0)
+Case Name: 
+   Condition: Y0.CORP_BS_TA > Y0.CORP_BS_TLNW && Y0.CORP_ASUM_BP_ABS != null 
+   Formula: Math.AssignValue(Y0, ""CORP_BS_STD"", (Y0.CORP_BS_TA - Y0.CORP_BS_TLNW)  / (1 - Y0.CORP_PROJ_SRATE))
+Case Name: 
+   Condition: Y0.CORP_BS_TA > Y0.CORP_BS_TLNW
+   Formula: Math.AssignValue(Y0, ""CORP_BS_STD"", (Y0.CORP_BS_TA - Y0.CORP_BS_TLNW + (( Y0.CORP_ASUM_SRATE + Y0.CORP_ASUM_SRATE_ATI ) * Y0.CORP_BS_BP )) / (1 - Y0.CORP_PROJ_SRATE))
+Case Name: 
+   Condition: Y0.CORP_BS_TA < Y0.CORP_BS_TLNW
+   Formula: Math.AssignValue(Y0, ""CORP_BS_STD"", 0)
+",
+CORP_BS_DIVPM_NEG,CORP_PROJ,Dividends Payable (Mainboard Listed) Checking,4,4,1564,,690,13,,"Case Name: Dividends Payable (Mainboard Listed) is Negative
+   Condition: (Y0.CORP_BS_DIVPM / Y0.CONST_Denomination) < 0 
+   Formula: ""Balance Sheet: Dividends Payable (Mainboard Listed) should not be Negative value""
+Case Name: Dividends Payable (Mainboard Listed) is Positive
+   Condition: true
+   Formula: null 
+",
+CORP_BS_DIVPOTH_NEG,CORP_PROJ,Dividends Payable (Others) Checking,5,5,1565,,691,13,,"Case Name: Dividends Payable (Others) is Negative
+   Condition: ( Y0.CORP_BS_DIVPOTH  / Y0.CONST_Denomination) < 0 
+   Formula: ""Balance Sheet: Dividends Payable (Others) should not be Negative value""
+Case Name: Dividend Payable (Mainboard Listed) is Positive
+   Condition: true
+   Formula: null 
+",
+CORP_BS_INT_NEG,CORP_PROJ,Intangibles Checking,6,6,1566,,689,13,,"Case Name: Intangibles is Negative
+   Condition: ( Y0.CORP_BS_INT  / Y0.CONST_Denomination) < 0 
+   Formula: ""Balance Sheet: Intangibles should not be Negative value""
+Case Name: Intangibles is Positive
+   Condition: true
+   Formula: null 
+",
+CORP_ASUM_SRATE_CHK,CORP_PROJ,Ave. Int Rate on Short Term Debt Checking,7,7,1675,,700,13,,,
+CORP_ASUM_LRATE_CHK,CORP_PROJ,Ave. Int Rate on Long Term Debt Checking,8,8,1676,,701,13,,,
+CORP_PORTFOLIO_CASHRATE,CORP_PROJ,Portfolio Cash Rate,9,9,1712,,819,13,,,
+CORP_PROJ_SR,CORP_PROJ_FA,IS Sales Revenue,0,0,1570,,695,14,,"Case Name: 
+   Condition: Y0.CORP_ASUM_SR_ABS != 0 && Y0.CORP_ASUM_SR_ABS != null 
+   Formula: Y0.CORP_ASUM_SR_ABS 
+Case Name: 
+   Condition: true
+   Formula: (YB1.CORP_IS_SR) * (1 + Math.Round(Y0.CORP_ASUM_SR_Grw, 4))
+",
+CORP_PROJ_NFA,CORP_PROJ_FA,BS Net Fixed Assets,1,1,1569,,694,14,,"Case Name: 
+   Condition: Y0.CORP_ASUM_FA_ABS != 0 && Y0.CORP_ASUM_FA_ABS != null 
+   Formula: Y0.CORP_ASUM_FA_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_FA_PERSR != null 
+   Formula:  Math.Round(Y0.CORP_ASUM_FA_PERSR, 4) * Y0.CORP_PROJ_SR 
+",
+CORP_PROJ_DEP,CORP_PROJ_FA,BS Depreciation,2,2,1567,,693,14,,"Case Name: 
+   Condition: Y0.CORP_ASUM_DEP_ABS != 0 &&  Y0.CORP_ASUM_DEP_ABS != null
+   Formula: (Y0.CORP_ASUM_DEP_ABS)
+Case Name: 
+   Condition: Y0.CORP_ASUM_DEP_PERFA != 0 && Y0.CORP_ASUM_DEP_PERFA != null 
+   Formula: (Math.Round (-Y0.CORP_ASUM_DEP_PERFA, 4) * (Y0.CORP_PROJ_NFA))
+Case Name: 
+   Condition: Y0.CORP_ASUM_DEP_PERSR != null
+   Formula: (Math.Round (-Y0.CORP_ASUM_DEP_PERSR, 4) * Y0.CORP_PROJ_SR)
+",
+CORP_PROJ_GLSFA,CORP_PROJ_FA,IS GLSFA,3,3,1568,,692,14,,"Case Name: 
+   Condition: Y0.CORP_ASUM_GLSFA_ABS  != 0 && Y0.CORP_ASUM_GLSFA_ABS  != null 
+   Formula: Y0.CORP_ASUM_GLSFA_ABS 
+Case Name: 
+   Condition: Y0.CORP_ASUM_GLSFA_PERFA != null 
+   Formula: ( Math.Round(Y0.CORP_ASUM_GLSFA_PERFA, 4)   * Y0.CORP_PROJ_NFA )
+",
+,CORP_RATIO,Risk Grading,0,0,1650,,,10,,,
+CORP_RC_RG_EBITDA,CORP_RATIO,EBITDA,1,1,1589,,568,10,,"Case Name: 
+   Condition: true
+   Formula:  ( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP - Y0.CORP_IS_AMORT ) * (12 / Y0.CONST_NumOfMonths ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_EBITDA
+"
+CORP_RC_RG_NPROFMGN,CORP_RATIO,Net Profit Margin (%),2,2,1588,,569,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_NPAT / Y0.CORP_IS_SR
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_NPROFMGN
+"
+CORP_RC_RG_TLIABOTGNW,CORP_RATIO,Total Liab / Tangible NW,3,3,1587,,570,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_TL / ( Y0.CORP_BS_NW - Y0.CORP_BS_INT ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_TLIABOTGNW
+"
+CORP_RC_RG_TGNGOSTDEBT,CORP_RATIO,Tangible NW / (Int + ST Debt + CPLTD),4,4,1586,,571,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == false 
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_NW - Y0.CORP_BS_INT ) / ((-Y0.CORP_IS_IE * 12 / Y0.CONST_NumOfMonths )  + Y0.CORP_BS_STD + YB1.CORP_BS_CPLTD ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_TGNGOSTDEBT
+"
+CORP_RC_RG_CHAOPOSTDEBT,CORP_RATIO,Cash after Ops / (Int + ST Debt + CPLTD),5,5,1465,,572,10,,"Case Name: 
+   Condition: Y0.CORP_CF_CAOP == null 
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_CF_CAOP * 12 / Y0.CONST_NumOfMonths) / ( (-Y0.CORP_IS_IE * 12 / Y0.CONST_NumOfMonths) + Y0.CORP_BS_STD + YB1.CORP_BS_CPLTD )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_CHAOPOSTDEBT
+"
+CORP_RC_RG_SALOTASS,CORP_RATIO,Sales / Total Assets,6,6,1466,,573,10,,"Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_IS_SR * 12 / Y0.CONST_NumOfMonths) / Y0.CORP_BS_TA
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_SALOTASS
+"
+CORP_RC_RG_SALGRW,CORP_RATIO,Sales Growth,7,7,1467,,574,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == false 
+   Formula: null 
+Case Name: 
+   Condition: YB1.CORP_IS_SR != null
+   Formula: ((Y0.CORP_IS_SR * 12 / Y0.CONST_NumOfMonths ) - (YB1.CORP_IS_SR * 12 / YB1.CONST_NumOfMonths )) / (YB1.CORP_IS_SR * 12 / YB1.CONST_NumOfMonths)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_SALGRW
+"
+CORP_RC_RG_LIQASSOCURRLIAB,CORP_RATIO,Adj. Liquid Assets / Adj. Curr Liab,8,8,1468,,575,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_GS + Y0.CORP_BS_CFD + Y0.CORP_BS_MS *0.5 )*12 / ( Y0.CORP_BS_BP + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_AP + Y0.CORP_BS_APRP + Y0.CORP_BS_ITP + Y0.CORP_BS_IP )  
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_LIQASSOCURRLIAB
+"
+CORP_RC_RG_TGNW,CORP_RATIO,Tangible Net Worth,9,9,1469,,576,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_NW - Y0.CORP_BS_INT 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_TGNW
+"
+,CORP_RATIO,<Empty Line>,10,10,1631,,,10,,,
+,CORP_RATIO,Growth,11,11,1601,,,10,,,
+CORP_RC_GW_SALGRW,CORP_RATIO,Sales Growth,12,12,1585,,577,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == false 
+   Formula: null 
+Case Name: 
+   Condition: YB1.CORP_IS_SR != null
+   Formula: ((Y0.CORP_IS_SR * 12 / Y0.CONST_NumOfMonths ) - (YB1.CORP_IS_SR * 12 / YB1.CONST_NumOfMonths )) / (YB1.CORP_IS_SR * 12 / YB1.CONST_NumOfMonths)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GW_SALGRW
+"
+CORP_RC_GW_NETINCGRW,CORP_RATIO,Net Income Growth,13,13,1584,,578,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == false 
+   Formula: null 
+Case Name: 
+   Condition: YB1.CORP_IS_NPAT != null 
+   Formula: (( Y0.CORP_IS_NPAT * 12/Y0.CONST_NumOfMonths) - (YB1.CORP_IS_NPAT * 12/YB1.CONST_NumOfMonths)) / ( Math.Abs(YB1.CORP_IS_NPAT)* 12/YB1.CONST_NumOfMonths)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GW_NETINCGRW
+"
+CORP_RC_GW_TOTASSGRW,CORP_RATIO,Total Asset Growth,14,14,1583,,579,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == false 
+   Formula: null 
+Case Name: 
+   Condition: YB1.CORP_BS_TA != null 
+   Formula: ( Y0.CORP_BS_TA - YB1.CORP_BS_TA ) / YB1.CORP_BS_TA 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GW_TOTASSGRW
+"
+,CORP_RATIO,Performance,15,15,1648,,,10,,,
+CORP_RC_PE_RETONASS,CORP_RATIO,Return on Assets,16,16,1582,,580,10,,"Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_IS_NPAT / Y0.CORP_BS_TA )* 12/Y0.CONST_NumOfMonths
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_PE_RETONASS
+"
+CORP_RC_PE_RETONEQU,CORP_RATIO,Return on Equity,17,17,1581,,581,10,,"Case Name: 
+   Condition: ( Y0.CORP_BS_NW - Y0.CORP_BS_INT ) <= 0
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_IS_NPAT / (Y0.CORP_BS_NW - Y0.CORP_BS_INT ) ) * 12/Y0.CONST_NumOfMonths
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_PE_RETONEQU
+"
+,CORP_RATIO,<Empty Line>,18,18,1630,,,10,,,
+,CORP_RATIO,Coverage,19,19,1600,,,10,,,
+CORP_RC_CO_EBITOSTDEBT,CORP_RATIO,EBIT / (Int + ST Debt + CPLTD + BP),20,20,1580,,582,10,,"Case Name: 
+   Condition: true
+   Formula: (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE) * 12/ Y0.CONST_NumOfMonths)   / ( (-Y0.CORP_IS_IE * 12/ Y0.CONST_NumOfMonths) + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD  + Y0.CORP_BS_BP )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CO_EBITOSTDEBT
+"
+CORP_RC_CO_EBITOINT,CORP_RATIO,EBIT / Int,21,21,1579,,583,10,,"Case Name: 
+   Condition: Y0.CORP_IS_IE == null || Y0.CORP_IS_IE == 0
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE )  / ( -Y0.CORP_IS_IE ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CO_EBITOINT
+"
+CORP_RC_CO_EBITDAOSTDEBT,CORP_RATIO,EBITDA / (Int + ST Debt + CPLTD + BP),22,22,1578,,584,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP -  Y0.CORP_IS_AMORT ) * 12/ Y0.CONST_NumOfMonths  / (  -Y0.CORP_IS_IE * 12/Y0.CONST_NumOfMonths   + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_BP ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CO_EBITDAOSTDEBT
+"
+CORP_RC_CO_EBITDAOINT,CORP_RATIO,EBITDA / Int,23,23,1577,,585,10,,"Case Name: 
+   Condition: Y0.CORP_IS_IE == null || Y0.CORP_IS_IE == 0
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP - Y0.CORP_IS_AMORT ) / ( -Y0.CORP_IS_IE ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CO_EBITDAOINT
+"
+CORP_RC_CO_NCAOPOSTDEBT,CORP_RATIO,Net Cash after Ops / (Int + ST Debt + CPLTD + BP),24,24,1576,,586,10,,"Case Name: 
+   Condition: Y0.CORP_CF_NCAOP == null 
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_CF_NCAOP * 12 / Y0.CONST_NumOfMonths) / ( (-Y0.CORP_IS_IE * 12 / Y0.CONST_NumOfMonths) + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD  + Y0.CORP_BS_BP )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CO_NCAOPOSTDEBT
+"
+CORP_RC_CO_NCAOPOINT,CORP_RATIO,Net Cash after Ops / Int ,25,25,1575,,587,10,,"Case Name: 
+   Condition: Y0.CORP_CF_NCAOP == null || Y0.CORP_IS_IE == null || Y0.CORP_IS_IE == 0
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_CF_NCAOP * 12 / Y0.CONST_NumOfMonths) / (-Y0.CORP_IS_IE * 12 / Y0.CONST_NumOfMonths) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CO_NCAOPOINT
+"
+CORP_RC_RG_CAOPOSTDEBT,CORP_RATIO,Cash after Ops / (Int + ST Debt + CPLTD + BP),26,26,1574,,588,10,,"Case Name: 
+   Condition: Y0.CORP_CF_CAOP == null 
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_CF_CAOP * 12 / Y0.CONST_NumOfMonths) / ( (-Y0.CORP_IS_IE * 12 / Y0.CONST_NumOfMonths)  + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_BP )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_CAOPOSTDEBT
+"
+,CORP_RATIO,<Empty Line>,27,27,1629,,,10,,,
+,CORP_RATIO,Liquidity,28,28,1599,,,10,,,
+CORP_RC_LQ_WCAP,CORP_RATIO,Working Capital,29,29,1470,,589,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_CA - Y0.CORP_BS_CL 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_LQ_WCAP
+"
+CORP_RC_LQ_QUICKRAT,CORP_RATIO,Quick Ratio,30,30,1471,,590,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_CA - Y0.CORP_BS_INV ) / Y0.CORP_BS_CL 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_LQ_QUICKRAT
+"
+CORP_RC_LQ_CURRRAT,CORP_RATIO,Current Ratio,31,31,1472,,591,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_CA / Y0.CORP_BS_CL 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_LQ_CURRRAT
+"
+CORP_RC_LQ_LIQASSOTOTASS,CORP_RATIO,Liquid Assets / Total Assets,32,32,1473,,592,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_CFD + Y0.CORP_BS_GS + Y0.CORP_BS_MS*0.5 ) / Y0.CORP_BS_TA 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_LQ_LIQASSOTOTASS
+"
+CORP_RC_LQ_LIQASSOSTDEBT,CORP_RATIO,Liquid Assets / (ST Debt + CPLTD +BP),33,33,1474,,593,10,,"Case Name: 
+   Condition: true
+   Formula:  (Y0.CORP_BS_CFD + Y0.CORP_BS_GS + (Y0.CORP_BS_MS * 0.5  )) / ( Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_BP ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_LQ_LIQASSOSTDEBT
+"
+CORP_RC_LQ_LIQASSOTCURRLIAB,CORP_RATIO,Adj. Liquid Assets / Adj. Total Curr Liab,34,34,1475,,594,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_CFD + Y0.CORP_BS_GS + Y0.CORP_BS_MS*0.5 )*12 / ( Y0.CORP_BS_BP + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_AP + Y0.CORP_BS_APRP + Y0.CORP_BS_ITP + Y0.CORP_BS_IP ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_LQ_LIQASSOTCURRLIAB
+"
+,CORP_RATIO,<Empty Line>,35,35,1628,,,10,,,
+,CORP_RATIO,Leverage,36,36,1598,,,10,,,
+CORP_RC_LV_TLIABOEBITDA,CORP_RATIO,Total Liab / EBITDA,37,37,1573,,595,10,,"Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_BS_TL)  / (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP - Y0.CORP_IS_AMORT ) * 12 / Y0.CONST_NumOfMonths)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_LV_TLIABOEBITDA
+"
+CORP_RC_LV_TLIABOTGNW,CORP_RATIO,Total Liab / Tangible NW,38,38,1572,,596,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_TL / ( Y0.CORP_BS_NW - Y0.CORP_BS_INT ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_LV_TLIABOTGNW
+"
+CORP_RC_LV_TSLIABOTGNW,CORP_RATIO,Tot Snr Liab / (Tangible NW + Sub Debt + Quasi Capital),39,39,1539,,597,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_TL - Y0.CORP_BS_SDOCB ) / (  Y0.CORP_BS_NW + Y0.CORP_BS_SDOCB + Y0.CORP_BS_SDQU - Y0.CORP_BS_INT ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_LV_TSLIABOTGNW
+"
+CORP_RC_RG_TGNWOSTDDEBT,CORP_RATIO,Tangible NW / (Int + ST Debt + CPLTD +BP),40,40,1538,,598,10,,"Case Name: 
+   Condition: true
+   Formula:  (Y0.CORP_BS_NW - Y0.CORP_BS_INT ) / ( (-Y0.CORP_IS_IE * 12 / Y0.CONST_NumOfMonths ) + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_BP ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RG_TGNWOSTDDEBT
+"
+,CORP_RATIO,<Empty Line>,41,41,1627,,,10,,,
+,CORP_RATIO,Activity,42,42,1597,,,10,,,
+CORP_RC_AC_ARDOH,CORP_RATIO,ARDOH (days),43,43,1476,,599,10,,"Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_BS_NAR + Y0.CORP_BS_NARRP) / Y0.CORP_IS_SR * (Y0.CONST_NumOfMonths / 12 ) * 365
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_AC_ARDOH
+"
+CORP_RC_AC_INVDOH,CORP_RATIO,InvDOH (days),44,44,1477,,600,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_INV / (-Y0.CORP_IS_COGS * ( 12 / Y0.CONST_NumOfMonths)) * 365
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_AC_INVDOH
+"
+CORP_RC_AC_APDOH,CORP_RATIO,APDOH (days),45,45,1478,,601,10,,"Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_BS_AP + Y0.CORP_BS_APRP)  / (-Y0.CORP_IS_COGS * ( 12 / Y0.CONST_NumOfMonths)) * 365
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_AC_APDOH
+"
+CORP_RC_AC_INVDOHOSAL,CORP_RATIO,InvDOH (days) over sales,46,46,1479,,602,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_INV / Y0.CORP_IS_SR * ( Y0.CONST_NumOfMonths / 12 ) * 365
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_AC_INVDOHOSAL
+"
+CORP_RC_AC_ARDOHOSAL,CORP_RATIO,APDOH (days) over sales,47,47,1480,,603,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_AP + Y0.CORP_BS_APRP ) / Y0.CORP_IS_SR * ( Y0.CONST_NumOfMonths / 12 )*365
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_AC_ARDOHOSAL
+"
+CORP_RC_AC_AROSAL,CORP_RATIO,AR / Sales,48,48,1481,,604,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_NAR + Y0.CORP_BS_NARRP ) / Y0.CORP_IS_SR * ( Y0.CONST_NumOfMonths / 12 )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_AC_AROSAL
+"
+CORP_RC_AC_COGSOSAL,CORP_RATIO,COGS / Sales,49,49,1537,,605,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_COGS*(-1) / Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_AC_COGSOSAL
+"
+CORP_RC_AC_CASHOSAL,CORP_RATIO,Cash SG&A / Sales,50,50,1536,,606,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_SAE*(-1) / Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_AC_CASHOSAL
+"
+,CORP_RATIO,<Empty Line>,51,51,1626,,,10,,,
+,CORP_RATIO,Cash Flow Effect,52,52,1596,,,10,,,
+CORP_RC_CF_ARTOSAL,CORP_RATIO,^   AR due to ^  Sales,53,53,1535,,607,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == true 
+   Formula: ( YB1.CORP_BS_NAR + YB1.CORP_BS_NARRP ) *(-1) *  ((Y0.CORP_IS_SR * ( 12 / Y0.CONST_NumOfMonths)) - (YB1.CORP_IS_SR *( 12 / YB1.CONST_NumOfMonths ) )) / (YB1.CORP_IS_SR  * 12 / YB1.CONST_NumOfMonths )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CF_ARTOSAL
+"
+CORP_RC_CF_ARTOARDOH,CORP_RATIO,^    AR due to   ^    ARDOH,54,54,1534,,608,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == true 
+   Formula: ( YB1.CORP_BS_NAR + YB1.CORP_BS_NARRP ) - ( Y0.CORP_BS_NAR + Y0.CORP_BS_NARRP ) + ( ( YB1.CORP_BS_NAR + YB1.CORP_BS_NARRP ) * ( ( Y0.CORP_IS_SR * 12 / Y0.CONST_NumOfMonths)  - (YB1.CORP_IS_SR* 12 / YB1.CONST_NumOfMonths ) )  /  (YB1.CORP_IS_SR * 12 / YB1.CONST_NumOfMonths )) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CF_ARTOARDOH
+"
+CORP_RC_CF_COGSOSAL,CORP_RATIO,^    COGS / Sales,55,55,1533,,609,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == true 
+   Formula: ( ( Y0.CORP_IS_COGS / Y0.CORP_IS_SR ) - ( YB1.CORP_IS_COGS / YB1.CORP_IS_SR ) ) * Y0.CORP_IS_SR * 12 / Y0.CONST_NumOfMonths 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CF_COGSOSAL
+"
+CORP_RC_CF_INVTOCOGS,CORP_RATIO,^    Inv due to ^   COGS,56,56,1532,,610,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == true 
+   Formula: ( -YB1.CORP_BS_INV * ( (Y0.CORP_IS_COGS * 12 / Y0.CONST_NumOfMonths)  - (YB1.CORP_IS_COGS * 12 / YB1.CONST_NumOfMonths ) ) )/ ( YB1.CORP_IS_COGS * 12 / YB1.CONST_NumOfMonths ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CF_INVTOCOGS
+"
+CORP_RC_CF_INVTOINVDOH,CORP_RATIO,^    Inv due to ^   InvDOH,57,57,1531,,611,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == true 
+   Formula: ((((Y0.CORP_IS_COGS *  12 / Y0.CONST_NumOfMonths ) - ( YB1.CORP_IS_COGS *  12 / YB1.CONST_NumOfMonths ))/( YB1.CORP_IS_COGS *  12 / YB1.CONST_NumOfMonths )) * YB1.CORP_BS_INV ) - Y0.CORP_BS_INV+YB1.CORP_BS_INV
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CF_INVTOINVDOH
+"
+CORP_RC_CF_APTOCOGS,CORP_RATIO,^    AP due to ^   COGS ,58,58,1530,,612,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == true 
+   Formula: (((Y0.CORP_IS_COGS * 12 / Y0.CONST_NumOfMonths) - (YB1.CORP_IS_COGS * 12 / YB1.CONST_NumOfMonths )) / (YB1.CORP_IS_COGS * 12 / YB1.CONST_NumOfMonths )) * (YB1.CORP_BS_AP + YB1.CORP_BS_APRP)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CF_APTOCOGS
+"
+CORP_RC_CF_APTOAPDOH,CORP_RATIO,^    AP due to  ^  APDOH,59,59,1529,,613,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == true 
+   Formula: ( ( Y0.CORP_BS_AP + Y0.CORP_BS_APRP ) - ( YB1.CORP_BS_AP + YB1.CORP_BS_APRP )) - ( (YB1.CORP_IS_COGS * 12 / YB1.CONST_NumOfMonths )   - (Y0.CORP_IS_COGS * 12 / Y0.CONST_NumOfMonths )) / (YB1.CORP_IS_COGS * 12 / YB1.CONST_NumOfMonths) * (-1) * ( YB1.CORP_BS_AP + YB1.CORP_BS_APRP ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_CF_APTOAPDOH
+"
+CORP_RC_OT_SGAOSAL,CORP_RATIO,^    SG&A/Sales,60,60,1528,,614,10,,"Case Name: 
+   Condition: YB1.CONST_HasData == true 
+   Formula:  (( -Y0.CORP_IS_SAE / Y0.CORP_IS_SR )- ((-1)* YB1.CORP_IS_SAE / YB1.CORP_IS_SR) ) * Y0.CORP_IS_SR * 12 / Y0.CONST_NumOfMonths 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_OT_SGAOSAL
+"
+,CORP_RATIO,<Empty Line>,61,61,1625,,,10,,,
+,CORP_RATIO,Other,62,62,1595,,,10,,,
+CORP_RC_OT_DIVPAYRATE,CORP_RATIO,Dividend Payout Rate,63,63,1527,,615,10,,"Case Name: 
+   Condition: true
+   Formula: ( ( Y0.CORP_IS_DO + Y0.CORP_IS_DML ) * ( -1 ) )  / Y0.CORP_IS_NPATM
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_OT_DIVPAYRATE
+"
+CORP_RC_OT_SALOTASS,CORP_RATIO,Sales / Total Assets,64,64,1526,,616,10,,"Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_IS_SR *  12 / Y0.CONST_NumOfMonths) / Y0.CORP_BS_TA
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_OT_SALOTASS
+"
+CORP_RC_OT_DEPREXPONFIXASS,CORP_RATIO,Dep Exp / Net Fixed Assets,65,65,1525,,617,10,,"Case Name: 
+   Condition: true
+   Formula: ( -Y0.CORP_IS_DEP * 12 / Y0.CONST_NumOfMonths  ) / ( Y0.CORP_BS_NFA ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_OT_DEPREXPONFIXASS
+"
+CORP_RC_OT_CPFAODEPREXP,CORP_RATIO,Cash paid for Fixed Assets / Dep Exp,66,66,1524,,618,10,,"Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_CF_FA ) / ( Y0.CORP_IS_DEP )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_OT_CPFAODEPREXP
+"
+,CORP_RATIO,<Empty Line>,67,67,1624,,,10,,,
+,CORP_RATIO,NBFI Model - Ratios,68,68,1646,,,10,,,
+CORP_RC_NB_ROE,CORP_RATIO,ROE (EBT),69,69,1523,,619,10,,"Case Name: 
+   Condition: true
+   Formula: (Y0.CORP_IS_NPBT * 12 / Y0.CONST_NumOfMonths)  / ( Y0.CORP_BS_NW - Y0.CORP_BS_INT )  
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_NB_ROE
+"
+CORP_RC_NB_TDEBTOTLIAB,CORP_RATIO,Total Debt / Total Liabilities,70,70,1522,,620,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_LTD + Y0.CORP_BS_SDOCB + Y0.CORP_BS_RPL ) / (Y0.CORP_BS_TL) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_NB_TDEBTOTLIAB
+"
+CORP_RC_NB_TDEBTOEQTDEBT,CORP_RATIO,Total Debt / (Equity + Total Debt),71,71,1521,,621,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_LTD + Y0.CORP_BS_SDOCB + Y0.CORP_BS_RPL ) / ( Y0.CORP_BS_NW - Y0.CORP_BS_INT + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_LTD + Y0.CORP_BS_SDOCB + Y0.CORP_BS_RPL )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_NB_TDEBTOEQTDEBT
+"
+CORP_RC_NB_QTMOFCAP,CORP_RATIO,Quantum of Capital,72,72,1520,,622,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_NW - ( Y0.CORP_BS_INT + Y0.CORP_BS_RR + Y0.CORP_BS_FXGLR + Y0.CORP_BS_SDQU ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_NB_QTMOFCAP
+"
+,CORP_RATIO,<Empty Line>,73,73,1623,,,10,,,
+,CORP_RATIO,RECO Models - Ratios,74,74,1647,,,10,,,
+CORP_RC_RED_SAL,CORP_RATIO,Sales,75,75,1519,,623,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_SR * 12 / Y0.CONST_NumOfMonths 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RED_SAL
+"
+CORP_RC_RED_EBITINTCOVG,CORP_RATIO,EBIT Interest coverage (x),76,76,1482,,624,10,,"Case Name: 
+   Condition: ( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE  - Y0.CORP_IS_II ) >= 0
+   Formula: ( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE  - Y0.CORP_IS_II  + Y0.CORP_BS_IOBSD )  / ( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE  - Y0.CORP_IS_II )
+Case Name: 
+   Condition: (( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE  - Y0.CORP_IS_II ) < 0) && (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE  - Y0.CORP_IS_II  + Y0.CORP_BS_IOBSD ) > 0)
+   Formula: 999
+Case Name: 
+   Condition: (( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE  - Y0.CORP_IS_II ) < 0) && (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE  - Y0.CORP_IS_II  + Y0.CORP_BS_IOBSD ) = 0)
+   Formula: 0
+Case Name: 
+   Condition: (( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE  - Y0.CORP_IS_II ) < 0) && (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE  - Y0.CORP_IS_II  + Y0.CORP_BS_IOBSD ) < 0)
+   Formula: -999
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RED_EBITINTCOVG
+"
+CORP_RC_RED_OPINCOSAL,CORP_RATIO,Operating Income / Sales (%),77,77,1483,,625,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_OPL / Y0.CORP_IS_SR
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RED_OPINCOSAL
+"
+CORP_RC_RED_EBITDAINTCOVG,CORP_RATIO,EBITDA Interest Coverage (x),78,78,1484,,626,10,,"Case Name: 
+   Condition: ( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_II ) >= 0
+   Formula: ( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP - Y0.CORP_IS_AMORT  - Y0.CORP_IS_II  + Y0.CORP_BS_IOBSD ) / ( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_II ) 
+Case Name: 
+   Condition: (( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_II ) < 0) && (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP - Y0.CORP_IS_AMORT  - Y0.CORP_IS_II  + Y0.CORP_BS_IOBSD ) >0)
+   Formula: 999
+Case Name: 
+   Condition: (( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_II ) < 0) && (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP - Y0.CORP_IS_AMORT  - Y0.CORP_IS_II  + Y0.CORP_BS_IOBSD ) =0)
+   Formula: 0
+Case Name: 
+   Condition: (( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_II ) < 0) && (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP - Y0.CORP_IS_AMORT  - Y0.CORP_IS_II  + Y0.CORP_BS_IOBSD ) < 0)
+   Formula: -999
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RED_EBITDAINTCOVG
+"
+CORP_RC_RED_TDEBTOEBITDA,CORP_RATIO,Total Debt / EBITDA (x),79,79,1485,,627,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_STD + Y0.CORP_BS_BP + Y0.CORP_BS_CPLTD + Y0.CORP_BS_LTD + Y0.CORP_BS_SDOCB + Y0.CORP_BS_CCLO + Y0.CORP_BS_CLO + Y0.CORP_BS_TOBSD ) / (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP -Y0.CORP_IS_AMORT )*12 / Y0.CONST_NumOfMonths)
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_RED_TDEBTOEBITDA
+"
+CORP_RC_REI_TGNWINCMI,CORP_RATIO,Tangible Net Worth Includes MI,80,80,1486,,628,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_NW - Y0.CORP_BS_INT + Y0.CORP_BS_MI 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_REI_TGNWINCMI
+"
+CORP_RC_REI_ROPERMCAP,CORP_RATIO,Return on Permanent Capital (%),81,81,1645,,629,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_IS_NPBT- Y0.CORP_IS_II - Y0.CORP_IS_IE - Y0.CORP_IS_PDEP + Y0.CORP_BS_IOBSD ) *( 12 / Y0.CONST_NumOfMonths)  / ( Y0.CORP_BS_NW  - Y0.CORP_BS_INT + Y0.CORP_BS_MI +  Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_CCLO + Y0.CORP_BS_CLO + Y0.CORP_BS_LTD + Y0.CORP_BS_DIT )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_REI_ROPERMCAP  
+"
+CORP_RC_REI_DEBTSVCCOVG,CORP_RATIO,Debt Service Coverage (x),82,82,1644,,630,10,,"Case Name: 
+   Condition: true
+   Formula: (( Y0.CORP_IS_OPL - Y0.CORP_IS_IE + Y0.CORP_IS_II - Y0.CORP_IS_AMORT - Y0.CORP_IS_DEP ) *  12 / Y0.CONST_NumOfMonths ) / ( Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD - Y0.CORP_IS_IE*(12 / Y0.CONST_NumOfMonths) ) 
+
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_REI_DEBTSVCCOVG
+"
+CORP_RC_REI_FIXCHRCOVG,CORP_RATIO,Fixed Charge Coverage (x),83,83,1643,,631,10,,"Case Name: 
+   Condition: ( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_LC - Y0.CORP_IS_II ) >= 0
+   Formula: ( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_AMORT - Y0.CORP_IS_DEP - Y0.CORP_IS_LC ) / ( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_LC - Y0.CORP_IS_II ) 
+Case Name: 
+   Condition: (( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_LC - Y0.CORP_IS_II ) < 0) && (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_AMORT - Y0.CORP_IS_DEP - Y0.CORP_IS_LC ) > 0)
+   Formula: 999
+Case Name: 
+   Condition: (( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_LC - Y0.CORP_IS_II ) < 0) && (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_AMORT - Y0.CORP_IS_DEP - Y0.CORP_IS_LC ) = 0)
+   Formula: 0
+Case Name: 
+   Condition: (( Y0.CORP_BS_IOBSD - Y0.CORP_IS_IE - Y0.CORP_IS_LC - Y0.CORP_IS_II ) < 0) && (( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_AMORT - Y0.CORP_IS_DEP - Y0.CORP_IS_LC ) <  0)
+   Formula: -999
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_REI_FIXCHRCOVG
+"
+CORP_RC_REI_VARATDEBTOTDEBT,CORP_RATIO,Variable Rate Debt / Total Debt (%),84,84,1487,,632,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_VIRD / ( Y0.CORP_BS_BP + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_LTD + Y0.CORP_BS_SDOCB + Y0.CORP_BS_CCLO + Y0.CORP_BS_CLO + Y0.CORP_BS_TOBSD  )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_REI_VARATDEBTOTDEBT
+"
+CORP_RC_REI_TDEBTTOCAP,CORP_RATIO,Total Debt to Capitalisation (%),85,85,1488,,633,10,,"Case Name: 
+   Condition: true
+   Formula: ( Y0.CORP_BS_BP + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_LTD + Y0.CORP_BS_SDOCB + Y0.CORP_BS_CCLO + Y0.CORP_BS_CLO + Y0.CORP_BS_TOBSD  ) / ( Y0.CORP_BS_BP + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_LTD + Y0.CORP_BS_SDOCB + Y0.CORP_BS_CCLO + Y0.CORP_BS_CLO + Y0.CORP_BS_TOBSD + Y0.CORP_BS_MI  + Y0.CORP_BS_NW  - Y0.CORP_BS_INT  )
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_REI_TDEBTTOCAP
+"
+,CORP_RATIO,<Empty Line>,86,86,1684,,,10,,,
+,CORP_RATIO,OWH Corp Model - Ratios,87,87,1683,,,10,,,
+CORP_RC_GC_SALGRW,CORP_RATIO,Sales Growth,88,88,1698,,237,10,,"Case Name: 
+   Condition: True
+   Formula: Y0.CORP_RC_RG_SALGRW 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_SALGRW 
+"
+CORP_RC_GC_SALGRW_Trend,CORP_RATIO,Sales Growth Trend (1=Not Deteriorating),89,89,1699,,244,10,,"Case Name: 1.Not Deteriorating
+   Condition: YB1.CORP_RC_GC_SALGRW == null 
+   Formula: 1
+Case Name: 2.Deteriorating - Zero Sales
+   Condition: Y0.CORP_RC_GC_SALGRW == null && Y0.CORP_IS_SR == 0 && YB1.CORP_IS_SR == 0 && YB1.CORP_RC_GC_SALGRW < -0.05
+   Formula: 2
+Case Name: 3.Deteriorating
+   Condition: YB1.CORP_RC_GC_SALGRW < -0.05 && Y0.CORP_RC_GC_SALGRW < -0.05
+   Formula: 2
+Case Name: 4.Else
+   Condition: true 
+   Formula: 1
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_SALGRW_Trend 
+"
+CORP_RC_GC_OPMARG,CORP_RATIO,Operating Margin,90,90,1696,,238,10,,"Case Name: 
+   Condition: Y0.CORP_IS_SR != null 
+   Formula: Y0.CORP_IS_OPL / Y0.CORP_IS_SR 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_OPMARG 
+"
+CORP_RC_GC_OPMAR_Trend,CORP_RATIO,Operating Margin Trend (1=Not Deteriorating),91,91,1697,,243,10,,"Case Name: 1.Deteriorating
+   Condition: Y0.CORP_RC_GC_OPMARG < -0.05 && ((Y0.CORP_GC_OPMAR_Y1 == null && Y0.CORP_IS_OPL_Y1 < 0) ||Y0.CORP_GC_OPMAR_Y1 < -0.05 ) && ((YB1.CORP_GC_OPMAR_Y1 == null && YB1.CORP_IS_OPL_Y1 < 0) || YB1.CORP_GC_OPMAR_Y1 < -0.05)
+   Formula: 2
+Case Name: 2.Not Deteriorating
+   Condition: Y0.CORP_GC_OPMAR_Y1 == null || YB1.CORP_GC_OPMAR_Y1 == null
+   Formula: 1
+Case Name: 3.Null
+   Condition: Y0.CORP_RC_GC_OPMARG == null && Y0.CORP_GC_OPMAR_Y1 < -0.05 && YB1.CORP_GC_OPMAR_Y1 < -0.05
+   Formula: null 
+Case Name: 4.Else
+   Condition: true 
+   Formula: 1
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_OPMAR_Trend
+"
+CORP_RC_GC_ARDOH,CORP_RATIO,ARDOH (days),92,92,1686,,236,10,,"Case Name: 
+   Condition: (Y0.CORP_IS_SR * (Y0.CONST_NumOfMonths / 12 ) * 365 ) == 0
+   Formula: NULL
+Case Name: 
+   Condition: ( Y0.CORP_IS_SR != null ) || ( Y0.CORP_IS_SR != 0 )
+   Formula: (Y0.CORP_BS_NAR + Y0.CORP_BS_NARRP) / Y0.CORP_IS_SR * (Y0.CONST_NumOfMonths / 12 ) * 365
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_ARDOH 
+"
+CORP_RC_GC_ARDOH_Trend,CORP_RATIO,ARDOH Trend (1=Not Deteriorating),93,93,1687,,245,10,,"Case Name: 1.Not Deteriorating
+   Condition: ((YB1.CORP_IS_SR  == 0 || YB1.CORP_IS_SR  ==  null) && (Y0.CORP_GC_ARDOH_TR == null || Y0.CORP_GC_ARDOH_TR == 0)) || ((YB1.CORP_GC_SR_Y1 == 0 || YB1.CORP_GC_SR_Y1 == null) && (YB1.CORP_GC_ARDOH_TR == null || YB1.CORP_GC_ARDOH_TR == 0))
+   Formula: 1
+Case Name: 2.Null
+   Condition:  (Y0.CORP_GC_ARDOH_TR  > YB1.CORP_GC_ARDOH_TR ) && (Y0.CORP_IS_SR  == 0 || Y0.CORP_IS_SR == null)
+   Formula: null 
+Case Name: 3.Deteriorating
+   Condition: (Y0.CORP_RC_GC_ARDOH > Y0.CORP_GC_ARDOH_TR)  && (Y0.CORP_GC_ARDOH_TR  > YB1.CORP_GC_ARDOH_TR)  && Math.Round(Y0.CORP_RC_GC_ARDOH,2) - Math.Round( YB1.CORP_GC_ARDOH_TR ,2) > 20
+   Formula: 2
+Case Name: 4.Else
+   Condition: true 
+   Formula: 1
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_ARDOH_Trend
+"
+CORP_RC_GC_INVDOH,CORP_RATIO,InvDOH (days),94,94,1691,,229,10,,"Case Name: 
+   Condition: ((-Y0.CORP_IS_COGS * ( 12 / Y0.CONST_NumOfMonths)) * 365 ) == 0
+   Formula: null 
+Case Name: 
+   Condition: (Y0.CORP_IS_COGS != null ) || ( Y0.CORP_IS_COGS != 0 )
+   Formula: Y0.CORP_BS_INV / (-Y0.CORP_IS_COGS * ( 12 / Y0.CONST_NumOfMonths)) * 365
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_INVDOH 
+"
+CORP_RC_GC_INVDOH_Trend,CORP_RATIO,InvDOH Trend (1=Not Deteriorating),95,95,1692,,242,10,,"Case Name: 1.Not Deteriorating
+   Condition: ((YB1.CORP_IS_COGS  == 0 || YB1.CORP_IS_COGS  == null) && (Y0.CORP_GC_INVDOH_TR == null || Y0.CORP_GC_INVDOH_TR == 0)) || ((YB1.CORP_GC_COGS_Y1 == 0 || YB1.CORP_GC_COGS_Y1 == null) && (YB1.CORP_GC_INVDOH_TR == 0 || YB1.CORP_GC_INVDOH_TR == null))
+   Formula: 1
+Case Name: 2.Null
+   Condition: (Y0.CORP_GC_INVDOH_TR  > YB1.CORP_GC_INVDOH_TR) && (Y0.CORP_IS_COGS  == 0 || Y0.CORP_IS_COGS  == null)
+   Formula: null 
+Case Name: 3.Deteriorating
+   Condition: (Y0.CORP_RC_GC_INVDOH  > Y0.CORP_GC_INVDOH_TR) && (Y0.CORP_GC_INVDOH_TR  > YB1.CORP_GC_INVDOH_TR) && Math.Round(Y0.CORP_RC_GC_INVDOH,2) - Math.Round( YB1.CORP_GC_INVDOH_TR ,2) > 20
+   Formula: 2
+Case Name: 4.Else
+   Condition: true 
+   Formula: 1
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_INVDOH_Trend
+"
+CORP_RC_GC_EBITDA_DSR,CORP_RATIO,EBITDA DSR,96,96,1689,,234,10,,"Case Name: 
+   Condition:  (  -Y0.CORP_IS_IE * 12/Y0.CONST_NumOfMonths   + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_BP ) != null 
+   Formula: ( Y0.CORP_IS_NPBT - Y0.CORP_IS_IE - Y0.CORP_IS_DEP -  Y0.CORP_IS_AMORT ) * 12/ Y0.CONST_NumOfMonths  / (  -Y0.CORP_IS_IE * 12/Y0.CONST_NumOfMonths   + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_BP ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_EBITDA_DSR 
+"
+CORP_RC_GC_EBITDA_DSR_Trend,CORP_RATIO,EBITDA DSR Trend (1=Not Deteriorating),97,97,1690,,239,10,,"Case Name: 1.Not Deteriorating
+   Condition: Y0.CORP_GC_EBITDA_DSR_Y1 == null || YB1.CORP_GC_EBITDA_DSR_Y1 == null 
+   Formula: 1
+Case Name: 2.Null
+   Condition: Y0.CORP_GC_EBITDA_DSR_Y1 - YB1.CORP_GC_EBITDA_DSR_Y1 < 0 && Y0.CORP_RC_GC_EBITDA_DSR == null
+   Formula: null 
+Case Name: 1a.Not Deteriorating
+   Condition: Y0.CORP_RC_GC_EBITDA_DSR - Y0.CORP_GC_EBITDA_DSR_Y1 >= 0 || Y0.CORP_GC_EBITDA_DSR_Y1 - YB1.CORP_GC_EBITDA_DSR_Y1 >= 0
+   Formula: 1
+Case Name: 3.Deteriorating - Positive Ratios
+   Condition: Y0.CORP_RC_GC_EBITDA_DSR - Y0.CORP_GC_EBITDA_DSR_Y1 < 0 && Y0.CORP_GC_EBITDA_DSR_Y1 - YB1.CORP_GC_EBITDA_DSR_Y1 < 0 && Y0.CORP_RC_GC_EBITDA_DSR - YB1.CORP_GC_EBITDA_DSR_Y1 < -0.1 && YB1.CORP_GC_EBITDA_DSR_Y1 != 0 && ((Y0.CORP_RC_GC_EBITDA_DSR - YB1.CORP_GC_EBITDA_DSR_Y1) / YB1.CORP_GC_EBITDA_DSR_Y1) < -0.1
+   Formula: 2
+Case Name: 4.Deteriorating - Negative Ratios
+   Condition: Y0.CORP_RC_GC_EBITDA_DSR < 0 && Y0.CORP_GC_EBITDA_DSR_Y1 < 0 && YB1.CORP_GC_EBITDA_DSR_Y1 < 0  && Y0.CORP_RC_GC_EBITDA_DSR - Y0.CORP_GC_EBITDA_DSR_Y1 < 0 && Y0.CORP_GC_EBITDA_DSR_Y1 - YB1.CORP_GC_EBITDA_DSR_Y1 < 0 && Y0.CORP_RC_GC_EBITDA_DSR - YB1.CORP_GC_EBITDA_DSR_Y1 < -0.1 && YB1.CORP_GC_EBITDA_DSR_Y1 != 0 && ((Y0.CORP_RC_GC_EBITDA_DSR - YB1.CORP_GC_EBITDA_DSR_Y1) / YB1.CORP_GC_EBITDA_DSR_Y1) > 0.1
+   Formula: 2
+Case Name: 5. Null - Zero Value
+   Condition: YB1.CORP_GC_EBITDA_DSR_Y1 == 0 && Y0.CORP_RC_GC_EBITDA_DSR - Y0.CORP_GC_EBITDA_DSR_Y1 < 0 && Y0.CORP_GC_EBITDA_DSR_Y1 - YB1.CORP_GC_EBITDA_DSR_Y1 < 0 && Y0.CORP_RC_GC_EBITDA_DSR - YB1.CORP_GC_EBITDA_DSR_Y1 < -0.1						
+   Formula: Null
+Case Name: 6.Else
+   Condition: true 
+   Formula: 1
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_EBITDA_DSR_Trend 
+"
+CORP_RC_GC_DEBT,CORP_RATIO,Debt Servicing,98,98,1688,,222,10,,"Case Name: 
+   Condition: true
+   Formula:  -Y0.CORP_IS_IE * 12/Y0.CONST_NumOfMonths   + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_BP 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_DEBT 
+"
+CORP_RC_GC_LIQASS_DSR,CORP_RATIO,Liquid Assets DSR,99,99,1693,,235,10,,"Case Name: 
+   Condition: ( (-Y0.CORP_IS_IE * 12/Y0.CONST_NumOfMonths) + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_BP ) != null 
+   Formula:  (Y0.CORP_BS_CFD + Y0.CORP_BS_GS + (Y0.CORP_BS_MS * 0.5  )) / ( (-Y0.CORP_IS_IE * 12/Y0.CONST_NumOfMonths) + Y0.CORP_BS_STD + Y0.CORP_BS_CPLTD + Y0.CORP_BS_BP ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_LIQASS_DSR 
+"
+CORP_RC_GC_LIQASS_DSR_Trend,CORP_RATIO,Liquid Assets DSR Trend (1=Not Deteriorating),100,100,1694,,241,10,,"Case Name: 1.Not Deteriorating
+   Condition: Y0.CORP_GC_LIQASS_DSR_Y1 == null || YB1.CORP_GC_LIQASS_DSR_Y1 == null
+   Formula: 1
+Case Name: 2.Null
+   Condition: Y0.CORP_GC_LIQASS_DSR_Y1 - YB1.CORP_GC_LIQASS_DSR_Y1 < 0 && Y0.CORP_RC_GC_LIQASS_DSR == null
+   Formula: null 
+Case Name: 1a.Not Deteriorating
+   Condition: Y0.CORP_RC_GC_LIQASS_DSR - Y0.CORP_GC_LIQASS_DSR_Y1 >= 0 || Y0.CORP_GC_LIQASS_DSR_Y1 - YB1.CORP_GC_LIQASS_DSR_Y1 >= 0
+   Formula: 1
+Case Name: 3.Deteriorating
+   Condition: Y0.CORP_RC_GC_LIQASS_DSR - Y0.CORP_GC_LIQASS_DSR_Y1 < 0 && Y0.CORP_GC_LIQASS_DSR_Y1 - YB1.CORP_GC_LIQASS_DSR_Y1 < 0 && Y0.CORP_RC_GC_LIQASS_DSR - YB1.CORP_GC_LIQASS_DSR_Y1 < -0.1 && YB1.CORP_GC_LIQASS_DSR_Y1 != 0 && ((Y0.CORP_RC_GC_LIQASS_DSR - YB1.CORP_GC_LIQASS_DSR_Y1) / YB1.CORP_GC_LIQASS_DSR_Y1) < -0.1
+   Formula: 2
+Case Name: 4.Null - Zero Value
+   Condition: YB1.CORP_GC_LIQASS_DSR_Y1 == 0 && Y0.CORP_RC_GC_LIQASS_DSR - Y0.CORP_GC_LIQASS_DSR_Y1 < 0 && Y0.CORP_GC_LIQASS_DSR_Y1 - YB1.CORP_GC_LIQASS_DSR_Y1 < 0 && Y0.CORP_RC_GC_LIQASS_DSR - YB1.CORP_GC_LIQASS_DSR_Y1 < -0.1						
+   Formula: Null
+Case Name: 5.Else
+   Condition: true
+   Formula: 1
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_LIQASS_DSR_Trend
+"
+CORP_RC_GC_TL_ADJTNW,CORP_RATIO,Total Liab / Adj. TNW,101,101,1701,,230,10,,"Case Name: 
+   Condition: ( Y0.CORP_BS_NW - Y0.CORP_BS_INT - Y0.CORP_BS_RPA  ) != null 
+   Formula: Y0.CORP_BS_TL / ( Y0.CORP_BS_NW - Y0.CORP_BS_INT - Y0.CORP_BS_RPA  ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_TL_ADJTNW 
+"
+CORP_RC_GC_TL_ADJTNW_Trend,CORP_RATIO,Total Liab / Adj. TNW Trend (1=Not Deteriorating),102,102,1702,,240,10,,"Case Name: 1.Negative TNW
+   Condition: ( Y0.CORP_RC_GC_TL_ADJTNW < 0) ||  ( Y0.CORP_GC_TL_ADJTNW_Y1 < 0) ||  ( YB1.CORP_GC_TL_ADJTNW_Y1 < 0) 
+   Formula: null 
+Case Name: 2.Not Deteriorating
+   Condition: ( Y0.CORP_GC_TL_ADJTNW_Y1 ==  null ) ||  ( YB1.CORP_GC_TL_ADJTNW_Y1 == null )
+   Formula: 1
+Case Name: 3.Null
+   Condition: Y0.CORP_GC_TL_ADJTNW_Y1 - YB1.CORP_GC_TL_ADJTNW_Y1 > 0 && Y0.CORP_RC_GC_TL_ADJTNW ==  null
+   Formula: null 
+Case Name: 4.Deteriorating
+   Condition: Y0.CORP_RC_GC_TL_ADJTNW - Y0.CORP_GC_TL_ADJTNW_Y1 > 0 && Y0.CORP_GC_TL_ADJTNW_Y1 - YB1.CORP_GC_TL_ADJTNW_Y1 > 0 && Y0.CORP_RC_GC_TL_ADJTNW - YB1.CORP_GC_TL_ADJTNW_Y1 > 0.1 && YB1.CORP_GC_TL_ADJTNW_Y1 !=  0 && ((Y0.CORP_RC_GC_TL_ADJTNW - YB1.CORP_GC_TL_ADJTNW_Y1)/YB1.CORP_GC_TL_ADJTNW_Y1) > 0.1
+   Formula: 2
+Case Name: 4a.Null - Zero
+   Condition: YB1.CORP_GC_TL_ADJTNW_Y1 ==   0 && Y0.CORP_RC_GC_TL_ADJTNW - Y0.CORP_GC_TL_ADJTNW_Y1 > 0 && Y0.CORP_GC_TL_ADJTNW_Y1 - YB1.CORP_GC_TL_ADJTNW_Y1 > 0 && Y0.CORP_RC_GC_TL_ADJTNW - YB1.CORP_GC_TL_ADJTNW_Y1 > 0.1
+   Formula: Null
+Case Name: 5.Else
+   Condition: true
+   Formula: 1
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_TL_ADJTNW_Trend
+"
+CORP_RC_GC_FUND_MISMATCH,CORP_RATIO,Non Curr Assets / (LT Liab +NW),103,103,1695,,233,10,,"Case Name: 
+   Condition: ( Y0.CORP_BS_LTL + Y0.CORP_BS_NW ) != null 
+   Formula: Y0.CORP_BS_NCA / ( Y0.CORP_BS_LTL + Y0.CORP_BS_NW ) 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_FUND_MISMATCH 
+"
+CORP_RC_GC_ANN_SALES,CORP_RATIO,Annual Sales,104,104,1685,,232,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_SR * 12 / Y0.CONST_NumOfMonths 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_ANN_SALES 
+"
+CORP_RC_GC_TNW,CORP_RATIO,Tangible Net Worth,105,105,1700,,231,10,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_NW - Y0.CORP_BS_INT 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_RC_GC_TNW 
+"
+,CORP_RECON,Retained Earnings Reconciliation,0,0,1622,,,7,,,
+CORP_CE_OPRETERN,CORP_RECON,Opening Retained Earnings,1,1,1621,,634,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_REAL
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_OPRETERN
+"
+CORP_CE_NPOL,CORP_RECON,Add Net Profit/(Loss),2,2,1620,,635,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_NPATM
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_NPOL
+"
+CORP_CE_DIV,CORP_RECON,Less Dividends,3,3,1619,,636,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_DML + Y0.CORP_IS_DO
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_DIV
+"
+CORP_CE_CLRETERNPIS,CORP_RECON,Closing Retained Earnings Per P/L,4,4,1618,,637,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: YB1.CORP_BS_REAL + Y0.CORP_IS_NPATM+ Y0.CORP_IS_DML+ Y0.CORP_IS_DO
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_CLRETERNPIS
+"
+CORP_CE_CLRETERNPBS,CORP_RECON,Closing Retained Earnings Per B/S,5,5,1617,,638,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_REAL
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_CLRETERNPBS
+"
+CORP_CE_DIFFCLRETERN,CORP_RECON,Difference,6,6,1616,,639,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CE_CLRETERNPIS - Y0.CORP_CE_CLRETERNPBS
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_DIFFCLRETERN
+"
+,CORP_RECON,Add Transfer from/(to),7,7,1615,,,7,,,
+CORP_CE_BNSISS,CORP_RECON,#NAME?,8,8,1614,,640,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_TPUCB
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_BNSISS
+"
+CORP_CE_GENRESV,CORP_RECON,#NAME?,9,9,1613,,641,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_TGR
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_GENRESV
+"
+CORP_CE_REVRESV,CORP_RECON,#NAME?,10,10,1612,,642,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: Y0.CORP_IS_TRR
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_REVRESV
+"
+CORP_CE_RECONDIFF,CORP_RECON,Reconciliation Difference,11,11,1611,,643,7,,"Case Name: 
+   Condition: YB1.CONST_HasData == false  
+   Formula: null 
+Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CE_DIFFCLRETERN+ Y0.CORP_CE_BNSISS+ Y0.CORP_CE_GENRESV+ Y0.CORP_CE_REVRESV
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_RECONDIFF
+"
+,CORP_RECON,<Empty Line>,12,12,1649,,,7,,,
+,CORP_RECON,Balance Sheet Reconciliation,13,13,1610,,,7,,,
+CORP_CE_TOTASSFYE,CORP_RECON,Total assets as at end of year,14,14,1609,,644,7,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_TA
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_TOTASSFYE
+"
+CORP_CE_TOTLIABNEQUFYE,CORP_RECON,Total liab & equity as at end of year,15,15,1608,,645,7,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_BS_TLNW
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_TOTLIABNEQUFYE
+"
+CORP_CE_DIFFBSRECON,CORP_RECON,Reconciliation Difference,16,16,1607,,646,7,,"Case Name: 
+   Condition: true
+   Formula: Y0.CORP_CE_TOTASSFYE - Y0.CORP_CE_TOTLIABNEQUFYE
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_DIFFBSRECON
+"
+,CORP_RECON,<Empty Line>,17,17,1651,,,7,,,
+CORP_CE_RECONRESL,CORP_RECON,Reconciliation Result,18,18,1506,,647,7,,"Case Name: Pending
+   Condition: ( YB1.CONST_HasData == false  )  &&  ( ( (Y0.CORP_CE_DIFFBSRECON / Y0.CONST_Denomination) > 1 ) ||   ( (Y0.CORP_CE_DIFFBSRECON / Y0.CONST_Denomination) < -1))
+   Formula: ""Account Status is Pending [Reconciliation]""
+Case Name: Pending
+   Condition: ( YB1.CONST_HasData == true ) && (( (Y0.CORP_CE_DIFFBSRECON / Y0.CONST_Denomination) > 1 )  ||  ( (Y0.CORP_CE_DIFFBSRECON / Y0.CONST_Denomination) < -1) || ( ( Y0.CORP_CE_RECONDIFF  / Y0.CONST_Denomination) > 1 )  ||  ( ( Y0.CORP_CE_RECONDIFF  / Y0.CONST_Denomination) < -1) )
+   Formula: ""Account Status is Pending [Reconciliation]""
+Case Name: Balanced
+   Condition: true
+   Formula: null 
+","Case Name: 
+   Condition: true
+   Formula: YB1.CORP_CE_RECONRESL
+"
